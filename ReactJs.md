@@ -331,7 +331,7 @@ code of counter with the helps of redux toolkit
 TRANSFORMATION OF DATA FROM PARENT TO CHILD(PROPS)
 TRANSFORMATION OF DATA FROM CHILD TO PARENT(STATE LIFTING)
 
-5.useContext hook?
+5. useContext hook?
 ANS:-it is a kind of hook which is used to sent data from parent compoent to its child most component without passing to the all child component which comes in between parent to child most component.
 useContext is used to overcome prop drilling problem so prop drilling simply mean data will be going on all the child coponents same as drill(pechkas).
 
@@ -463,6 +463,66 @@ class Hello extends react.Component{
 }
 
 so class components used before Hooks.before hooks state mangement and life cycle methods could handled by only class component.
+6. What is useSelector?
+ANS:-useSelector is a React-Redux hook that allows you to read (access) data from the Redux store inside a React component.
+
+7. two ways to install. react app?
+ANS:- webpack bundler- npx create-react-app my-app
+      vite bundler- npm create vite@latest my-app
+
+8. difference between state and props in react?
+ANS:-State is a built-in object that stores data that can change over time within a component.
+Props (short for properties) are inputs passed from a parent component to a child component.
+state is mutable and props is immutable.
+state managed by compoent itself and props is mamanged by parent compoent.
+
+9. pure and impure compoent in react?
+   ANS:-
+     🌿 1. Pure Component
+
+     A Pure Component in React:
+     Renders the same output for the same props and state
+     Does not re-render if props/state are unchanged
+     
+     PARENT COMPONENT pass below data as props
+     <User name="Shreya" />
+
+     CHILD COMPONENT
+     
+     const User = React.memo(function User({ name }) {
+     console.log("Rendered");
+       return <h3>{name}</h3>;
+    });
+
+    Pure components are all about performance optimization — they skip unnecessary re-renders when input data (props/state) hasn’t changed.
+
+    ⚡ 2. Impure Component
+
+   An Impure Component:
+   Always re-renders when its parent re-renders, even if props/state haven’t changed.
+   Doesn’t do any comparison — just renders every time.
+
+   exa.:- same example of pure function but child parent without React.memo
+
+   function User({ name }) {
+  console.log("Rendered");
+  return <h3>{name}</h3>;
+}
+
+
+Quick Tip (Interview Answer)
+
+“A pure component in React re-renders only when its props or state change — it avoids unnecessary re-renders using shallow comparison. An impure component re-renders every time its parent does, even if data hasn’t changed.”
+
+| Feature                       | Pure Component                     | Impure Component               |
+| ----------------------------- | ---------------------------------- | ------------------------------ |
+| Re-render on same props/state | ❌ No                               | ✅ Yes                          |
+| Performance                   | ⚡ Faster                           | 🐢 Slower                      |
+| Used for                      | Optimization                       | Regular behavior               |
+| Example (Class)               | `class User extends PureComponent` | `class User extends Component` |
+| Example (Functional)          | `React.memo(MyComponent)`          | `function MyComponent()`       |
+
+
 
 
 
