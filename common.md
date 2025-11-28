@@ -161,6 +161,61 @@ ANS:- expain and give its live example with waiter in restaurent.
           Kitchen (Database / Backend) prepares it 
           Waiter (API) delivers it back to customer
 
+9. types of API?
+ANS:- 
+⭐ REST API (Representational State Transfer):-
+A REST API is a web service that uses standard HTTP methods (GET, POST, PUT, DELETE) to access and manipulate resources, which are identified by URLs. It is stateless, uses structured data formats like JSON, and follows a uniform set of rules to make communication simple and scalable.
+
+Stateless ka matlab: server ko aapki previous request ya history yaad nahi rehti.
+Har request nayi request jaisi hoti hai.
+Aap jo bhi kaam karna chahte ho, har request me saari information dubara bhejni padti hai.
+
+
+⭐ SOAP API (Simple Object Access Protocol)
+A SOAP API is a protocol-based web service that uses XML for sending and receiving data. It follows strict standards defined in the WSDL contract and includes built-in support for security, transactions, and error handling, making it suitable for enterprise systems.
+SOAP API ek strict rule-following system hai jo XML me data bhejta/leta hai, WSDL contract follow karta hai, aur security + transactions + error handling built-in deta hai — isliye bade companies ke liye best hota hai.
+
+defined in the WSDL contract
+WSDL = Web Service Description Language
+Ye ek document hota hai jisme likha hota hai:
+service kya karegi
+request ka format kya hoga
+response kya hoga
+errors kya honge
+→ WSDL = contract → “Ye rules follow karna hi padega.”
+
+⭐ GraphQL API(“Graph” + “Query Language”)
+GraphQL is a query-based API technology that allows the client to request exactly the data it needs from a single endpoint. It provides a strongly typed schema, supports nested queries, and reduces overfetching and underfetching of data.
+Give me student name + subjects only.
+
+from a single endpoint meaning
+
+REST me normally bahut endpoints hote:
+/users, /users/5/orders, /products, etc.
+
+GraphQL me sirf ek endpoint hota hai:
+/graphql
+
+→ Pure system ka data ek hi link se mil jata hai using queries
+
+GraphQL ek smart API system hai jisme client ek hi endpoint se bilkul utna hi data manga sakta hai jitna usse chahiye — na zyada, na kam — aur wo nested, typed, clean format me milta hai.
+
+⭐ WebSocket API
+
+A WebSocket API enables a persistent, full-duplex connection between client and server, allowing both sides to send data at any time. It is used for real-time features such as chat, notifications, and live updates.
+
+⭐ Webhook
+
+A webhook is a server-to-server callback mechanism in which one system sends an automatic HTTP request to another system when a specific event occurs. It is used for event notifications without requiring polling.
+
+
+
+
+
+
+
+
+
 
 
 

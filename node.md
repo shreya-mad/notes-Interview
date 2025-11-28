@@ -371,7 +371,6 @@ A stub is a temporary fake function that helps you test your code without runnin
 
 
 
-
 17. server creation using express ,easiest code?
 ANS:-
 
