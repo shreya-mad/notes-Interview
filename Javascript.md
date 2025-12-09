@@ -1,9 +1,13 @@
 1. Event Loop?
 ANS:-The Event Loop is a mechanism in JavaScript that allows non-blocking, asynchronous code execution by managing the interaction between the call stack, callback queue, and microtask queue.
 
+---------------------------------------------------------------------------------------------------------------------------
+
 2. whats the need of callbak queue?
 ANS:- The callback queue (also called the task queue or macrotask queue) is needed to store asynchronous callback functions until the call stack is empty —
 so that JavaScript can continue running other code without blocking.
+
+---------------------------------------------------------------------------------------------------------------------------
 
 3. implement callback hell condition?
 ANS:-
@@ -73,6 +77,7 @@ step1()
   .then(result3 => console.log("All steps done:", result3))
   .catch(error => console.error(error));
 
+---------------------------------------------------------------------------------------------------------------------------
 
 4. easiest promiss implementation?
 ANS:-  
@@ -89,6 +94,8 @@ let promise = new Promise((resolve, reject) => {
 promise
   .then((message) => console.log(message))   // when resolved
   .catch((error) => console.log(error));     // when rejected
+
+---------------------------------------------------------------------------------------------------------------------------
 
   5. above code with async/await?
   ANS:-
@@ -110,6 +117,8 @@ async function getData(){
   }
 }
 getData();
+
+---------------------------------------------------------------------------------------------------------------------------
 
 5. implementation of Promis.All()?
 ANS:- 
@@ -133,6 +142,8 @@ Promise.all([p1,p2,p3])
 .catch(val=>console.log(val))
  output:- there is some error in p2
 
+---------------------------------------------------------------------------------------------------------------------------
+
  6. implementation of allSettled?
  Ans:-
  const p1=Promise.resolve("p1");
@@ -150,6 +161,8 @@ OUTPUT:-
   { status: 'fulfilled', value: 'p3' }
 ]
 
+---------------------------------------------------------------------------------------------------------------------------
+
 7. implementation of race?
 ANS:-
 const p1=Promise.resolve("p1");
@@ -162,6 +175,8 @@ Promise.race([p1,p2,p3])
 
 OUTPUT:-
 p1
+
+---------------------------------------------------------------------------------------------------------------------------
 
 8. Implementation of any?
 ANS:-
@@ -176,6 +191,7 @@ Promise.any([p2,p1,p3])
 OUTPUT:-
 p3
 
+---------------------------------------------------------------------------------------------------------------------------
 
 9.  What are the different data types present in javascript?
 Ans:-
@@ -185,6 +201,8 @@ Ans:-
  b.non-primitive:-mutable and To store multiple and complex values, non-primitive data types are used.
 Object,Array,Function,Date, Map, Set, etc.
 
+---------------------------------------------------------------------------------------------------------------------------
+
 10. What are the types of errors in javascript?
 ANS:-There are two types of errors in javascript.
 
@@ -192,6 +210,7 @@ a.Syntax error: Syntax errors are mistakes or spelling problems in the code that
 
 b.Logical error: Reasoning mistakes occur when the syntax is proper but the logic or program is incorrect. The application executes without problems in this case. However, the output findings are inaccurate. These are sometimes more difficult to correct than syntax issues since these applications do not display error signals for logic faults.
 
+---------------------------------------------------------------------------------------------------------------------------
 
 11. Explain Implicit Type Coercion in javascript.
 Implicit type coercion in javascript is the automatic conversion of value from one data type to another. It takes place when the operands of an expression are of different data types.
@@ -203,8 +222,12 @@ var x = 3;
 var y = "3";
 x + y // Returns "33" 
 
+---------------------------------------------------------------------------------------------------------------------------
+
 12. Is javascript a statically typed or a dynamically typed language?
 JavaScript is a dynamically typed language. In a dynamically typed language, the type of a variable is checked during run-time in contrast to a statically typed language, where the type of a variable is checked during compile-time.
+
+---------------------------------------------------------------------------------------------------------------------------
 
 13. What is NaN property in JavaScript?
 NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
@@ -221,9 +244,12 @@ isNaN(true) // Returns false, since true converted to Number type results in 1 (
 isNaN(false) // Returns false
 isNaN(undefined) // Returns true
 
+---------------------------------------------------------------------------------------------------------------------------
 
 14. Explain passed by value and passed by reference.
 In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
+
+---------------------------------------------------------------------------------------------------------------------------
 
 15.  What is an Immediately Invoked Function in JavaScript?
 An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
@@ -233,6 +259,8 @@ Syntax of IIFE :
 (function(){ 
   // Do something;
 })();
+
+---------------------------------------------------------------------------------------------------------------------------
 
 16. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
 ANS:- Strict mode is a special mode in JavaScript that helps you write safer, cleaner, and more secure code.
@@ -249,7 +277,7 @@ It makes the language behave in a stricter way, catching mistakes that are usual
 | **7. Reserved keywords are protected**                | Future JS keywords like `implements`, `interface`, `let`, `package`, etc., can’t be used as variable names. |
 | **8. Safer eval()**                                   | Variables inside `eval()` don’t leak to outside scope.                                                      |
 
-
+---------------------------------------------------------------------------------------------------------------------------
 
 14. explain “this” keyword.
 The “this” keyword refers to the object that the function is a property of.
@@ -276,6 +304,8 @@ In simple words:
     person.greet(); // Hi, I’m Shreya
     Here this → refers to the person object because person is calling the function.
     
+
+---------------------------------------------------------------------------------------------------------------------------
 
 15. Explain call(), apply() and, bind() methods.
 ANS:- Let’s break down call(), apply(), and bind() — they are all methods in JavaScript used to control the value of this when calling a function.
@@ -306,6 +336,8 @@ getDataLater();
 | `apply()` | ✅ Yes              | As array              | Result       |
 | `bind()`  | ❌ No               | Individually          | New function |
 
+---------------------------------------------------------------------------------------------------------------------------
+
 16. What is the difference between exec () and test () methods in javascript?
 ANS:-both are regular expression in javaScript. regular expressions are pattern used to search,match or replace text in string.
 
@@ -325,6 +357,9 @@ console.log(ans);
 output:-[ 'Hello', index: 4, input: 'fgfbHellonh World', groups: undefined ]
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 17. What is currying in JavaScript?
 ANS:-curring is the process of trinsforming function which taken multiple arguiment into series of function, each take one argument at a time.
 
@@ -335,6 +370,7 @@ function add(a){
 }
 console.log(add(2,3));
 
+---------------------------------------------------------------------------------------------------------------------------
 
 18. What are some advantages of using External JavaScript?
 ANS:-| ✅ Advantage                               | 💬 Explanation                                                                                      |
@@ -347,16 +383,25 @@ ANS:-| ✅ Advantage                               | 💬 Explanation           
 | **6. Collaboration Friendly**             | Multiple developers can work on the same project easily — HTML, CSS, and JS handled independently.  |
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 19. Mention some advantages of javascript.
 ANS:-
 a. follows server side rendering and client side rendering both.
 b.we can write frontent and backend both using js.
 c.it is syncronous sigle threaded language but with the help of callback function ,w e can make it asyncronous.
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 20. React follows ssr or csr?
 ANS:-
 🔹 React = CSR by default
 🔹 React can do SSR using tools like Next.js or react-dom/server
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 21. What is Object Prototype?
 AnS:-
@@ -380,6 +425,9 @@ const person1=Object.create(person);
 person1.greet();
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 22. What is the use of a constructor function in javascript?
 ANS:- A constructor function in JavaScript is a special function used to create multiple objects of the same type with similar properties and methods.
 
@@ -396,8 +444,14 @@ console.log(person1);
 var person2 = new Person("Courtney", 34, "female");
 console.log(person2);
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 23. Which method is used to retrieve a character from a certain index?
 ANS:- The charAt() function of the JavaScript string finds a char element at the supplied index. The index number begins at 0 and continues up to n-1, Here n is the string length. The index value must be positive, higher than, or the same as the string length.
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 24. What do you mean by BOM?
 Ans:-It allows JavaScript to interact with the browser window (not the web page itself — that’s the DOM). The BOM provides objects that let you control things like browser history, location, screen size, alerts, etc.
@@ -410,6 +464,9 @@ Ans:-It allows JavaScript to interact with the browser window (not the web page 
 | `location`                         | Gives info about the current URL and allows redirection.                                  |
 | `history`                          | Allows access to the browser’s history (back, forward, etc.).                             |
 | `alert()`, `confirm()`, `prompt()` | Window methods to show popups.                                                            |
+
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 25. what is destructing assingment?
@@ -434,6 +491,9 @@ const person={
 const{name}=person;
 console.log(name);
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 25. Spread and rest operator?
 ANS:-
 Rest operator:-
@@ -451,6 +511,9 @@ function add(a,b,c,d,e){
 }
 const arr=[1,3,2,3,2];
 console.log(add(...arr));  
+
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 26. Difference berween json.stringify and json.parse?
@@ -473,6 +536,9 @@ const jsonString = '{"name":"Shreya","age":22}';
 const obj = JSON.parse(jsonString);
 console.log(obj.name); 
 // Output: Shreya  
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 27. what is deep and shallow copy ?
 ANS:-In JavaScript, objects and arrays are reference types — they are stored by reference, not by value.
@@ -525,6 +591,9 @@ OUTPUT:-
 { name: 'Shreya', address: { city: 'Bahraich', pin: 201855 } }
 { name: 'Rekha', address: { city: 'Noida', pin: 201855 } }
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 28. what is pure and impure function in js?
 ANS:- 
     PURE FUNCTION:-
@@ -565,6 +634,9 @@ add(2, 3); // always 5
    will give unpredictable number on every call
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
    
 29. How to know that data is fetched in promise?
 Ans:- → When the .then() callback runs,
@@ -577,6 +649,39 @@ Ans:- → When the .then() callback runs,
         console.log("data from promiss fetched succefully");
         console.log(msg);
       })
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+30. splice and slice difference?
+ANS:-
+🟦 1. slice() → DOES NOT change original array
+➤ Copy nikalta hai
+➤ Original array same rehta hai
+Use when you want a portion of array without modifying the original.    
+arr.slice(startIndex,endIndex)...here end is exlusive
+arr=[1,4,2,22,4,5,3,266];
+temp=arr.slice(2,5);  //[2,22,4];
+
+🟦 1. splice() → Changes the original array
+➤ Add, remove, replace sab karta hai
+➤ Original array ko modify karta hai
+
+array.splice(start, deleteCount, item1, item2, ...);
+
+remove
+arr=[1,3,22,5,644,3,2,554,453];
+for removing
+arr.splice(1,3);  //[1,644,3,2,554,453];
+for adding
+arr.splice(1,0,7,8,6);  //[1,7,8,9,644,3,2,554,453];
+for replacing
+arr.splice(1,3,8888);   //[1,8888,644,3,2,554,453];
+
+
+
+
 
 
 

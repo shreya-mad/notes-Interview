@@ -1,6 +1,9 @@
 1. What is Node.js and how it works?
 Ans: node is open source,run time js environment ,which allows user to run js outside the browser.basically on server.it has event_driven architecture which alllows it to run multiple task at a time.
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 2. What tools can be used to assure consistent code style?
 ANS:  👉 “Which tools can help developers write clean, uniform, and properly formatted code when working in Node.js projects?”
 
@@ -36,6 +39,9 @@ d.Husky + lint-staged:-
 Run ESLint or Prettier automatically before every Git commit, ensuring that only clean code is committed.
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 3. What is a first class function in Javascript?
 ANS:  first class function are those function that have these 3 properties:-
  a. it can be used as variable 
@@ -69,6 +75,9 @@ const myFunc = outer();
 myFunc(); // Output: Inner function called!
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 4. How do you manage packages in your node.js project?
 ANS:- 👉 “How do you install, update, remove, and keep track of external libraries (called packages) that your Node.js project uses?”
@@ -88,6 +97,9 @@ Update packages	npm update..........Updates all packages
 Install all dependencies..........npm install..........Installs everything listed in package.json
 View installed packages..........npm list..........Shows what’s installed
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 5. How is Node.js better than other frameworks most popularly used?
 ANS:- 
@@ -96,6 +108,9 @@ b.Developer dont need to learn two languages for frontend and backend, he/she ca
 c.Fast Performance: Node.js runs on Google’s V8 JavaScript Engine.
 d.Huge NPM Ecosystem:- Node.js has NPM (Node Package Manager)
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 6. Explain the steps how “Control Flow” controls the functions calls?
 ANS:- In Node.js (and JavaScript), Control Flow means the order in which the code or functions are executed.
 
@@ -103,6 +118,9 @@ a.Run all synchronous code first.
 b.When async operations finish, push their callbacks to the queue.
 c.The event loop moves callbacks to the call stack one by one.
 d.Continue until all tasks are done.
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 7. What are some commonly used timing features of Node.js?
 ANS:-  a.setTimeout/clearTimeout – This is used to implement delays in code execution.
@@ -147,8 +165,14 @@ SUMMARY:-
 | `clearTimeout()`     | Stop timeout                        | Before it executes             |
 | `clearInterval()`    | Stop interval                       | Stop repeating                 |
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 8. What are the advantages of using promises instead of callbacks?
 ANS:- a.callBack hell ,b.inversion of controll
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 9. what is fork in. node.js?
 In Node.js, a fork means creating a new child process (a separate instance of the Node.js program) that runs in parallel with the main process.
@@ -200,6 +224,9 @@ Main app is running...
 Child received: Start the task
 Message from child: Task completed! Sum = 499999999500000000
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 10. Why is Node.js single-threaded?
 Node.js is single-threaded because it uses one main thread to handle all requests using the event loop and non-blocking I/O operations.
@@ -219,6 +246,9 @@ Scalability:
 A single-threaded event loop can handle thousands of concurrent connections using minimal resources.
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 11. How do you create a simple server in Node.js that returns Hello World?
 
@@ -235,6 +265,9 @@ app.lister(3000,()=>{
 })
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 12. How many types of API functions are there in Node.js?
 
@@ -242,6 +275,9 @@ app.lister(3000,()=>{
 | ---------------- | ----------------------------------- | ------------------------------ |
 | **Asynchronous** | Non-blocking, uses event loop       | Preferred for server apps      |
 | **Synchronous**  | Blocking, waits for task completion | Used in setup or small scripts |
+
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 13. What is REPL?
@@ -290,6 +326,9 @@ undefined
 It will read, execute, print, and then wait for the next input — that’s the “loop”.
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 14. List down the two arguments that async.queue takes as input?
 Ans:-In Node.js, when using the async.queue() method (from the async library), it takes two main arguments as input 👇
@@ -322,6 +361,9 @@ Example: if you set concurrency = 2, it means two tasks will run in parallel.
 const queue = async.queue(worker, 2);
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 15. What is the purpose of module.exports?
@@ -343,6 +385,9 @@ module.exports = add;
 const add = require('./math');
 
 console.log(add(5, 3));  // Output: 8
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 
 16. Explain the concept of stub in Node.js?
@@ -368,6 +413,9 @@ A stub is a temporary fake function that helps you test your code without runnin
 
 2.whats the requiement of express if we have node js? 
 “We use Express.js over Node.js because it simplifies server creation with features like routing, middleware, and request handling — reducing boilerplate code and making development faster and cleaner.”
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 
 

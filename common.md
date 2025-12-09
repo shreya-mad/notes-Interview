@@ -42,6 +42,9 @@ Browser displays it immediately.
 | Example                | React, Angular    | Next.js, Nuxt.js  |
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 
 
 2. difference between javascript and typescript?
@@ -63,10 +66,16 @@ reason for 3rd point:
 TypeScript is a developer-friendly language, not a browser language.
 It must convert to JavaScript for execution because browser dont understand typscript.
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 3. which one takes large time and how?
 ANS:-
    a.typescript check data type at compile time while javascript checks at run time.  
    b.typescript get conveted into js and this is called compilation and that takes time and js dont need any kind of conversion for execution so typescipt takes larger time than js.
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 4. ways of getting data from user request in api?
 ANS:- 
@@ -78,16 +87,25 @@ ANS:-
 | `req.query`  | Query params (`?page=1&limit=10`)    |
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 5. purpose of adding middleware "app.use(express.json())"?
 ANS:-
 It tells Express:
 “If the client sends data in JSON format, please parse it and put it inside req.body.”
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 6. how to decalre any variable in environment varible file?
 ANS:- dont use any quotes inless your value has space.
   like:- PORT=3000
          MONGO_URL=mongodb+srv://shreya19457:KwzezBL2Exo2JyD2@cluster0.nxabzdq.mongodb.net/devTinder
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 7. node project complete folder structuring?
 ANS:- 
@@ -154,12 +172,18 @@ project-name/
   so by this our all the basic setup for node project is ready.
 but allways keep app.js and server.js outside the src as it will work while deploement on aws because if we kleep both the file inside src then that will respond an unexprected issue during delployemnt told by ankur.
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 8. what is api?
 ANS:- expain and give its live example with waiter in restaurent.
       So an API is like a waiter in a restaurant:
           Customer (Frontend) requests food (Data)
           Kitchen (Database / Backend) prepares it 
           Waiter (API) delivers it back to customer
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 9. types of API?
 ANS:- 
@@ -209,9 +233,46 @@ A WebSocket API enables a persistent, full-duplex connection between client and 
 A webhook is a server-to-server callback mechanism in which one system sends an automatic HTTP request to another system when a specific event occurs. It is used for event notifications without requiring polling.
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
+10. what is fucntion overloading and function overridding?
+ANS:- function overloading is came function with different number of parameter, different parameter type in same class.
+
+class Demo {
+public:
+    void add(int a, int b) {
+        cout << a + b;
+    }
+
+    void add(double a, double b) {     // different type
+        cout << a + b;
+    }
+
+    void add(int a, int b, int c) {    // different number
+        cout << a + b + c;
+    }
+};
 
 
 
+
+and function overridding is nothing but when child class redefine function of parent class with same name + same parameters + same return type then it is called function overrriding.
+
+
+class Parent {
+public:
+     void show() {
+        cout << "Parent function";
+    }
+};
+
+class Child : public Parent {
+public:
+    void show() override {   // same signature
+        cout << "Child function";
+    }
+};
 
 
 

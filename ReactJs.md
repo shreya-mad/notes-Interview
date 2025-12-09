@@ -1,4 +1,4 @@
-1.useMemo Hook?
+1. useMemo Hook?
 ANS: It is nothing but one of the react hooks.here use meaning its a hook becuase use word is used in all the hooks and memo means Memoisation.
 imagine there are two person.person a is teacher and person b is student so teacher asked student ,tell me the ans of 2*3 so student didnt know its ans so calculated its ans and decided to store it somewhere so that if someone will ask later then simply will ans from the stored part  and then replied thats ans to teacher,its ans would be 6.
 and similarly for 4*7 and 5+102 as well so here student stores all the ans somewhere so that if it will be asked later then will reply by picking from that location so student dont need to perform operation again and again.
@@ -91,7 +91,7 @@ then simply call  expensiveTask inside useMemo like below mentioned code
 
 if we are thinking that useMemo store result of every varible then that is wrong ,it store response of only last task or variable,like if we have selected 3 then 4 then then 5 and we are expecting that usememo has allready stored value of 3 and 4 both then that is wrong ,i stotred only respnse of 4,not 3. so if we enter 3 after 5 then it recall that function so simple that if value of dependency dones change then it will not call that function and it get changed then will call that function again and store response of last one.
 
-
+---------------------------------------------------------------------------------------------------------------------------
 
 2.useCallback Hook?
 ANS:-it is a kind of hook which memoize function reference so it doesn't get recreated every time  similar to memoization of the value in useMemo.
@@ -211,8 +211,9 @@ function App() {
 
 export default App;
 
+---------------------------------------------------------------------------------------------------------------------------
 
-3.what is Debouncer?
+3. what is Debouncer?
 
 ANS:-Debouncing is the programming technique that limit how often function get executed.it ensures that function get executed once after certain dealay like few miliseconds since last time it was called.
 when we search something on google then on every alphabet type it shows some suggection and that comes by api call.so if we type anything like js question the it call api on every alphabet call so here total api call will be 11(like j js js  js i js in.......) but this will not be good practice becuase calling api for 11 only for searching any word is not good so for resolving this issue developer thinks that if user is continuosly typing anything then dont call api and if user stop typing even for some miliseconds as well then simply call api and this concept is called as debouncing.
@@ -305,33 +306,8 @@ return (
 )
 }
 export default debounce;
-
-
-4.Redux toolkit?
-ANS:-redux is a state management library.it helps us to manage state of our application in a centralised store or we can say global storage instead of spreading it in many components.
-state simply mean all the data used by the application.
-👉 In simple words:
-It’s like having one big container (store) for all your important data, and every component can:
-
-Read from it
-Update it (in a controlled way)
-
-terms used in redux
--Action
--Reducer
--Slice
--Store
--State
-
-react reudx was used earliar and currently redux toolkit(modern redux) is used
-
-code of counter with the helps of redux toolkit
-==> onClick-->handleClick()-->Action Dispatch-->Store-->Reducer-->Logic Execute-->Dtore-->state update->UI update
-
-TRANSFORMATION OF DATA FROM PARENT TO CHILD(PROPS)
-TRANSFORMATION OF DATA FROM CHILD TO PARENT(STATE LIFTING)
-
-5. useContext hook?
+---------------------------------------------------------------------------------------------------------------------------
+4. useContext hook?
 ANS:-it is a kind of hook which is used to sent data from parent compoent to its child most component without passing to the all child component which comes in between parent to child most component.
 useContext is used to overcome prop drilling problem so prop drilling simply mean data will be going on all the child coponents same as drill(pechkas).
 
@@ -463,20 +439,20 @@ class Hello extends react.Component{
 }
 
 so class components used before Hooks.before hooks state mangement and life cycle methods could handled by only class component.
-6. What is useSelector?
+5. What is useSelector?
 ANS:-useSelector is a React-Redux hook that allows you to read (access) data from the Redux store inside a React component.
-
-7. two ways to install. react app?
+---------------------------------------------------------------------------------------------------------------------------
+6. two ways to install. react app?
 ANS:- webpack bundler- npx create-react-app my-app
       vite bundler- npm create vite@latest my-app
-
-8. difference between state and props in react?
+---------------------------------------------------------------------------------------------------------------------------
+7. difference between state and props in react?
 ANS:-State is a built-in object that stores data that can change over time within a component.
 Props (short for properties) are inputs passed from a parent component to a child component.
 state is mutable and props is immutable.
 state managed by compoent itself and props is mamanged by parent compoent.
-
-9. pure and impure compoent in react?
+---------------------------------------------------------------------------------------------------------------------------
+8. pure and impure compoent in react?
    ANS:-
      🌿 1. Pure Component
 
@@ -516,11 +492,247 @@ Quick Tip (Interview Answer)
 
 | Feature                       | Pure Component                     | Impure Component               |
 | ----------------------------- | ---------------------------------- | ------------------------------ |
-| Re-render on same props/state | ❌ No                               | ✅ Yes                          |
+| Re-render on same props/state | ❌ No                                ✅ Yes                          |
 | Performance                   | ⚡ Faster                           | 🐢 Slower                      |
 | Used for                      | Optimization                       | Regular behavior               |
 | Example (Class)               | `class User extends PureComponent` | `class User extends Component` |
 | Example (Functional)          | `React.memo(MyComponent)`          | `function MyComponent()`       |
+
+---------------------------------------------------------------------------------------------------------------------------
+
+9. Difference Between Redux and Redux Toolkit (RTK)
+ANS:-Think of Redux as the old manual way
+and Redux Toolkit as the new easy smart way of using Redux.
+
+🔵 1. Redux
+✔ It is a state management library
+✔ Pure, original Redux
+✔ Requires a lot of boilerplate code
+✔ You write everything manually:
+actions
+action types
+reducers
+store configuration
+immutable logic
+thunk setup (middleware)
+👉 More code, more chances of mistakes.
+
+🟣 2. Redux Toolkit (RTK)
+
+✔ It is also a library, but it is built on top of Redux
+✔ Officially recommended way to use Redux
+✔ Makes Redux much easier and faster
+✔ Gives built-in helpers:
+createSlice() → automatically makes actions + reducers
+configureStore() → store setup becomes simple
+createAsyncThunk() → easy async API calls
+Removes 70–80% boilerplate code
+👉 Less code, fewer errors, super developer-friendly.
+---------------------------------------------------------------------------------------------------------------------------
+10. Redux toolkit(RTK)?
+ANS:-
+we have  react hooks for state mamangement and that is context API with the help of useReducer hook.but for large scale data management we use redux toolkit.
+it is not part of react. it is sepaearte library for managing large data. it works in data layer of our application.
+redux is a state management library.it helps us to manage state of our application in a centralised store or we can say global storage instead of spreading it in many components.
+state simply mean all the data used by the application.
+
+redux is not manadatory for our application.it depends on our project size.
+all the application build using redux can be build without using redux. us eit only when it required.
+
+redux is not a library to mange state,there are are many more libraries...like zustand.
+plane redux is also known as vanilla redux.
+here we are going to study redux toolkit.
+we are going to make item addition in our cart like swiggy zomato,flipkart etc. we can get all the information of the item by clicking on the cart so we will store all the cart information in redux.
+
+we make slices in redux which is slice of redux store and there could be many slices. we make logical parts in redux and which is nothing but slices.so if we are goin to add cart data in the redux then we maker seperate slice for cart data. like if we are going to store ligin user info into redux then we make seperate slice for that.similarly for theme.
+
+exa:-
+-cartSlice
+-useSlice
+-themeSlice
+
+if we are clicking on + button on any item then we cannt add that item or modify cartSlice direclty,there is different rule for that.
+so when we click on + of any item then that dispatches (action) and that action calls a function and that function modifies cartSlice.
+this called function is nothing but reducer function.
+
+steps of writtting data into redux:--
+clcking on add button for adding item----->dispatch(action)----->reducer function----->cartSlice updation
+
+now for showing count of the added item on the top right cart icon we need to perform get(read) operation from the redux.for that we use something known as selector. then thsi selector will cart count on the cart icon. when we use selector then this phenomenon is known as subscribing to the store.
+this process of updating cart is automatic process.
+
+project is in same folder named redux-project
+
+steps for using redux toolkit
+-install @reduxjs/toolkit and react-redux
+-build our store
+-connect our store to our app
+-slice(cartSlice)
+-dispatch (action)
+-reducer function
+-selector for reading data
+
+make a folder and then make store inside that folder ,like i have taken name AppStore.js then create store by below code using @reduxjs/toolkit library-
+
+import {configureStore} from '@reduxjs/toolkit';
+const AppStore=configureStore();
+
+we add slices in () of configureStore() later.
+
+now we will provide this store to our application.
+so we need to come to main component of our project and that is app.js
+
+and import Provider from react-readux library for providing redux to our react application by below code
+import {Provider} from 'react-redux'; 
+
+so react-redux library is used for providing redux to our application and reduxjs/toolkit is used for creation store.
+then simply wrap our whole porject into Provider and for providing redux store to our application,we simply pass our Store created in redux as props inside this Provider
+    <Provider store={AppStore}>
+      <div>hello</div>
+    </Provider>
+
+if we dont want to provide redux to whole application then simply wrap that specific component into  Provider only.
+wrapping inside Provider is same as Context api provider.
+
+so store creation and store providing to our application stelp DONE.
+
+now we create slice.
+ this cartSlice will be created by a function named createSlice and this comes from @reduxjs/toolkit
+import  {creatSlice} from '@reduxjs/toolkit';
+
+now make structure of slice. 
+name of our store.
+intialState of our store which will be empty as our store has 0 item item in cart.
+we will write reducer function corresponding to those actions like add items,remove item,clearing the items. we can think it as api to communicate with redux-store.
+
+const cartSlice=creatSlice({
+  name:'cart',
+  initialState:{
+    items:[]
+  },
+  reducers:{
+
+  }
+});
+
+
+below one is complete cartSlice logic
+
+import  {creatSlice} from '@reduxjs/toolkit';
+const cartSlice=creatSlice({
+  name:'cart',
+  initialState:{
+    items:[]
+  },
+  // we will write reducer function corresponding to those actions like add items,remove item,clearing the items. we can 
+  // think it as api to communicate with redux-store.
+  // here state is nothing but intial state of our store which is emplty array.
+  // now it will modify our state based on the action.
+  reducers:{
+     addItem: (state,action)=>{
+          state.items.push(action.payload);
+     },
+     removeItem: (state,action)=>{
+        //here we have removed first top element only but i actual; we need to pass index of item to be removed.
+         state.items.pop();
+     },
+     clearCart: (state,action)=>{
+        //this will make our item array empty so we can avoid weriting action
+        state.items.length=0;
+     }
+  }
+});
+
+
+
+now we need to export actions and reducers both by and this syntax is provided by redux toolkit so we are not allowed to modify it.
+
+export const {addItem,removeItem,clearCart}=cartSlice.actions;
+export default cartSlice.reducer;
+
+upart ka syntax isliye hai kyuki redux toolkit jo createSlice provide krta hai vo ek object return krta hai jiska format kuch aisa hota hai
+
+{
+  actions: {
+    addItem,removeItem,clearItem
+  },
+  reducer
+}
+
+
+now we need to add this slice to our store so simply add that inside () of configureStore(). look in the below code.
+
+import {configureStore} from '@reduxjs/toolkit';
+import App from '../App';
+import cartReducer from './CartSlice';
+
+const AppStore=configureStore({
+    reducer:{
+        cart:cartReducer 
+    }
+});
+
+export default AppStore;
+
+so here reduces is whole reducer of our store and cartReducer is one of the part of that reducer. reducer is big reducer and cartReducer is small reducer.
+
+now we will get count of all the items present in the cart from redux store and we do that with the help of selector and that is nothing but hook.
+this useSelector hook is coming from react-redux library.
+
+write below code in dsried component ,like here we want to get it in navbar becasue we are showing no og item in cart present in the navbar.
+import { useSelector } from "react-redux";
+
+then simply subscribe to the paert of the store that we need by below code,here we have subscribed to item inside the cart only. so simply get count of the items present in the store by cartItems.length
+const cartItems = useSelector((store)=>store.cart.items);
+
+
+now we are going to the part of adding item to the cart redux store 
+
+so for that we simply disptach an action on button which is used for adding any item.
+so simple get a dispatch from useDispatch hook which is provided by react-redux library. so useSelector hook is used for reading anf useDispatch hook is used for dispaching an action or we =can say simply for adding state(data) into redux store.
+
+import { useDispatch } from "react-redux";
+const dispatch=useDispatch();
+
+
+then import all the actions created in our redux store into required component.
+import {addItem,removeItem,clearCart} from './Redux/CartSlice';
+
+then simply call required reducer function and pass data inside that function.
+
+  const addToCart = (item) => {
+   //dispatch an action by clicking on + of any item
+   dispatch(addItem(item));
+  };
+
+  here item is nothing but action.payload which we wrote in cartSlice component.
+
+  when we dispatch any a ction then in that case redux create an object and that format is like
+  {
+    payload:item
+  }
+
+  anf then it pas this object as second argument inside the reducer function that we have created and that is named as action there. and thats why we get sent item in redux by action.payload.
+
+  similarly for other reducer function as well.
+  
+
+  rather than subscribing to the some part of the store like below, 
+  const cartItems = useSelector((store)=>store.cart.items);
+
+  we can subscribe whole store as well like bellow and then simply extract desired part of the store
+
+  const store = useSelector((store)=>store);
+  const cartItem=store.cart.items;
+
+ but this is not good for big and complex project. because if we are chaning any other part of the store then that will reflect to cartItem reload because but we dont want to reload cartItem unnesserarily to miantain application performace.
+ we are selecting store thats why it is named as useSelector.
+
+
+
+
+
+
 
 
 

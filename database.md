@@ -24,8 +24,14 @@ a.downtime(period when a database system is unavailable and inaccessible to user
 b.data loss,
 c.breaking existing functionality. 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+
 2. What is Sharding?
 ANS:-Sharding in MongoDB means splitting (dividing) a large collection of data into smaller, more manageable chunks and distributing them across multiple servers (called shards).
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 3. What is a Replica in MongoDB?
 
