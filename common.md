@@ -274,6 +274,49 @@ public:
     }
 };
 
+---------------------------------------------------------------------------------------------------------------------------
+
+11. it is about calling authorised api call after login successfull.
+    If cookie missing होती → Chrome API call को BLOCK कर देता। 
+    request गई है → मतलब cookie गई है।
+   
+  Production pe below code kam nhi krega cookies ko store krne ke liye ,iski jagah uske neeche wala syntax kam. krega kyuki devTinder wale me isi vajah se feed api connection api aur baki api kam nhi kr rhi thi
+
+    res.cookie("token",token);
+      res.cookie("token", token, {
+  httpOnly: true,
+  secure: true,       // Render पर जरूरी
+  sameSite: "none",   // Cross-site के लिए जरूरी
+});
+
+---------------------------------------------------------------------------------------------------------------------------
+12. how to remove environment varible from github alter if i mistkaenly pushed that into github at first? WHY your .env is still visible on GitHub even after adding it to .gitignore?
+ANS: 
+Because .gitignore does NOT delete already-tracked files.
+
+Means →
+Agar .env file pehle commit ho chuki थी GitHub pe,
+phir chahe aap 100 baar .gitignore me daal do…
+
+👉 Git still remembers it.
+👉 Git STILL tracks it.
+👉 Git STILL pushes it to GitHub.
+
+.gitignore only stops future tracking — not old tracking.
+
+to resolve this issue put below code in .gitignore
+
+node_modules
+.env
+.env.local
+.env.production
+.env.development
+
+
+and then push and commit chnage then this will ignore .env file
+
+
+
 
 
 

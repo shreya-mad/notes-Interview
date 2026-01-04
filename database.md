@@ -43,3 +43,23 @@ This system of maintaining copies is called a Replica Set.
 Replication = Data Backup + High Availability
 
 It ensures that even if one server fails, the system continues to work using the copies on other servers.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+4. how to handle large data using mongoDB
+ANS:- 
+
+| Problem                          | Solution                  |
+| -------------------------------- | ------------------------- |
+| Slow queries                     | Use indexes               |
+| Too much data coming to frontend | Use pagination            |
+| Heavy objects                    | Use projection (`fields`) |
+| Server lag                       | Use `.lean()`             |
+| Very big database                | Use sharding              |
+| Old useless data                 | Auto-delete using TTL     |
+| Large files (video,pdf,etc)      | Use S3 or GridFS          |
+
+---------------------------------------------------------------------------------------------------------------------------
+
+4. how to handle large user on our website which uses mongoDB for database

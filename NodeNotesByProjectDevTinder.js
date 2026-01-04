@@ -393,8 +393,7 @@ app.use("/", (err, req, res, next) => {
 
 // so in this project we usde mongoose rather than mongodb
 const { MongoClient } = require("mongodb");
-const url =
-  "mongodb+srv://shreya19457:KwzezBL2Exo2JyD2@cluster0.nxabzdq.mongodb.net/";
+const url ="";
 const client = new MongoClient(url);
 async function main() {
   await client.connect();
@@ -414,9 +413,7 @@ main()
 // below one is the way connecting to database using mongoose
 
 const mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://shreya19457:KwzezBL2Exo2JyD2@cluster0.nxabzdq.mongodb.net/"
-);
+mongoose.connect(url);
 
 //above one is the way of connenting datbase but its not standard way to connect with database so we have
 //to connect to database using mongoose by wrapping up above code inside a async function so that we
@@ -424,9 +421,7 @@ mongoose.connect(
 //connect DB
 const mongoose = require("mongoose");
 const connectionDB = async () => {
-  await mongoose.connect(
-    "mongodb+srv://shreya19457:KwzezBL2Exo2JyD2@cluster0.nxabzdq.mongodb.net/"
-  );
+  await mongoose.connect(url);
 };
 connectionDB()
   .then(() => {

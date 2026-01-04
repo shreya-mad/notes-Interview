@@ -162,3 +162,81 @@
 // now we are safe to add data to redux tool
 
 
+// i have done deployment on render of frontend and backend both
+// for backend i have created a express app and pushed it to github and then connected that repo to render
+// using web services and then install all dependencies from package.json and 
+// then run the start command mentioned in package.json and then it deployed my backend app
+
+// for frontend i have created react app using vite and pushed it to github and then connected that repo to render
+// uisnf static site and then install all dependencies from package.json and 
+// then run the build command mentioned in package.json and then it deployed my frontend app
+
+// now for connecting frontend and backend we need to change the api url from localhost to render url
+
+// like if my backend render url is https://dev-tinder-backend.onrender.com
+// then i need to change all api url from localhost:4000 to https://dev-tinder-backend.onrender.com
+
+//give me whole stelp of deployment of react app on render.com
+
+// Step 1: Prepare Your React App
+// Make sure your React app is ready for production. You can create a production build by running:
+// npm run build
+// This will generate a build/ directory with optimized static files.
+// Step 2: Push to GitHub
+// Push your React app code (including the build/ directory) to a GitHub repository.
+// Step 3: Create a Render Account
+// If you don’t have one, sign up for a free account at render.com. 
+// Step 4: Create a New Static Site on Render
+// Log in to your Render dashboard.
+// Click on the "New" button and select "Static Site" from the dropdown.
+// Step 5: Connect Your GitHub Repository
+// Choose "Connect a repository" and authorize Render to access your GitHub account.
+// Select the repository where your React app is hosted.
+// Step 6: Configure Build Settings
+// In the "Build Command" field, enter:
+// npm install && npm run build
+// In the "Publish Directory" field, enter:
+// build
+// Step 7: Deploy Your Site
+// Click the "Create Static Site" button to start the deployment process.
+// Render will clone your repository, install dependencies, build the app, and deploy it.
+// Step 8: Access Your Deployed App
+// Once the deployment is complete, Render will provide you with a URL where your React app is live.
+// You can visit this URL to see your deployed React application in action.
+// Step 9: Set Up Custom Domain (Optional)
+// If you have a custom domain, you can configure it in the Render dashboard under your static site settings.
+// Follow Render’s instructions to point your domain to the Render servers.
+// That’s it! Your React app should now be successfully deployed on Render.com.
+// give me whole steps of deployment of express js backend on render.com
+
+// Step 1: Prepare Your Express.js App  
+// Ensure your Express.js app is ready for deployment. Make sure you have a start script defined in your package.json file:
+// "scripts": {
+//   "start": "node app.js" // or your main server file   
+// }
+// Step 2: Push to GitHub  
+// Push your Express.js app code to a GitHub repository.
+// Step 3: Create a Render Account
+// If you don’t have one, sign up for a free account at render.com.  
+// Step 4: Create a New Web Service on Render  
+// Log in to your Render dashboard.
+// Click on the "New" button and select "Web Service" from the dropdown.  
+// Step 5: Connect Your GitHub Repository  
+// Choose "Connect a repository" and authorize Render to access your GitHub account.
+// Select the repository where your Express.js app is hosted.  
+// Step 6: Configure Service Settings  
+// In the "Environment" section, select variables from .env "Node.js" project and put it into that .
+// In the "Build Command" field, enter:
+// npm install
+// In the "Start Command" field, enter:
+// npm start
+
+// Step 7: Deploy Your Service
+// Click the "Create Web Service" button to start the deployment process.
+// Render will clone your repository, install dependencies, and start your Express.js server.  
+// Step 8: Access Your Deployed API
+// Once the deployment is complete, Render will provide you with a URL where your Express.js API is live.
+// You can use this URL to make API requests to your deployed backend.
+
+
+
