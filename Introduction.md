@@ -5,7 +5,7 @@ My name is Shreya Madeshiya, and I’m from Noida.
 
 I have completed my B.Tech in Electronics Engineering from Kamla Nehru Institute of Technology and my schooling from Jawahar Navodaya Vidyalaya.
 
-I have 2.2 years of experience in web development and I’m skilled in C, C++, HTML, CSS, JavaScript, TypeScript, React.js, Node.js, Express.js, MongoDB, and SQL.
+I have 2.5 years of experience in web development and I’m skilled in C, C++, HTML, CSS, JavaScript, TypeScript, React.js, Node.js, Express.js, MongoDB, and SQL.
 I also have hands-on experience with Redux, Context API, and API Integration.
 
 

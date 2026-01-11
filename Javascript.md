@@ -28,7 +28,8 @@ function step2(data, callback) {
 function step3(data, callback) {
   setTimeout(() => {
     console.log("Step 3 done with:", data);
-    callback("Result of step 3");
+    callback("Res
+    ult of step 3");
   }, 1000);
 }
 
@@ -311,24 +312,28 @@ In simple words:
 ANS:- Let’s break down call(), apply(), and bind() — they are all methods in JavaScript used to control the value of this when calling a function.
 
 A.Call():-directly calls the function and passes arguments one by one.
-const person1={
-  name:"Shreya",
-  greet:function(city,workingCity){
-     console.log("this is "+this.name+" and she is from "+city+" and she is working in "+workingCity);
-  }
+
+function greet(city) {
+  console.log(`Hello ${this.name} from ${city}`);
 }
-const person1={name:"Shreya2"};
-person1.greet.call(person1,"Bahraich","Noida");
+
+const user = { name: "Shreya" };
+
+greet.call(user, "Delhi");
+);
 
 
 B.Apply():-directly calls the function and passes arguments one by one as an array.
  above object using Apply
- person1.greet.Apply(person2,["Bahraich","Noida"]);
+ greet.apply(user, ["Mumbai"]);
+
 
 C.Bind();-creates a new function to call later (doesn’t call immediately).
 above object using bind()
-const getDataLater=person1.greet.Bind(person1,"Bahraich","Noida");
-getDataLater();
+
+const newGreet = greet.bind(user, "Pune");
+newGreet();
+
 
 | Method    | Calls immediately? | How to pass arguments | Returns      |
 | --------- | ------------------ | --------------------- | ------------ |
@@ -496,8 +501,17 @@ console.log(name);
 
 25. Spread and rest operator?
 ANS:-
+
+Spread → expands values
+Rest → collects values
+
+Think of ... like this 👇
+
+Spread: “Open this box and spread everything out”
+
+Rest: “Put everything into one box”
 Rest operator:-
-it is a kind of operator which is denoted by three dot(...) and it is used colled the varible number of arguments into array.
+it is a kind of operator which is denoted by three dot(...) and it is used to collects the varible number of arguments into array.
 function add(...val){
   return val.reduce((acc,curr)=>acc+curr,0);
 };
@@ -678,6 +692,756 @@ for adding
 arr.splice(1,0,7,8,6);  //[1,7,8,9,644,3,2,554,453];
 for replacing
 arr.splice(1,3,8888);   //[1,8888,644,3,2,554,453];
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+31. What is JavaScript?
+ANS:-
+JavaScript is a programming language used to make web pages interactive and dynamic.
+It allows us to add behavior like clicking buttons, form validation, animations, and live data updates on a website.
+
+🔹 Easy Explanation (in simple words)
+
+HTML = structure (text, buttons, images)
+
+CSS = design (colors, layout, styles)
+
+JavaScript = action / logic (what happens when you click, type, or load a page)
+
+Without JavaScript, websites would be static (only text and images, no interaction).
+
+🔹 What JavaScript can do
+
+Handle user actions (click, scroll, type)
+
+Validate forms (email, password, required fields)
+
+Update content without reloading the page
+
+Work with APIs (fetch data from backend)
+
+Build full applications (using React, Node.js, etc.)
+
+JavaScript is a client-side language (runs in the browser)
+
+It can also run on the server using Node.js
+
+It is lightweight, fast, and widely used
+
+Supported by all modern browsers
+
+---------------------------------------------------------------------------------------------------------------------------
+
+32. What are arrow functions?
+ANS:-
+Arrow functions are a shorter and cleaner way to write functions in JavaScript.
+They were introduced in ES6 and help make the code more readable.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+33. What are template literals?
+ANS:-it is modern way(itroduced in ES6) of creating an string. we can create dynmic string with the help of tempelate literal.
+Writing HTML in JavaScript,like:-
+
+const user = "Admin";
+const role = "Developer";
+const info = `<div>
+  <h1>${user}</h1>
+  <p>Role: ${role}</p>
+</div>`;
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+34. What is the difference between undefined and null?
+ANS:- 
+undefined means a variable has been declared but no value is assigned.
+null means a variable is intentionally assigned an empty value.
+
+let a;
+console.log(a); // undefined
+
+let b = null;
+console.log(b); // null
+
+---------------------------------------------------------------------------------------------------------------------------
+
+35. What are higher-order functions?
+ANS:- Higher-order functions are functions that either take another function as an argument or return a function as a result.
+
+🔹 Easy Explanation (simple words)
+
+In JavaScript, functions are treated like values.
+So a function can:
+
+a. be passed to another function, or
+
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+function add(x, y) {
+  return x + y;
+}
+
+calculate(5, 3, add); // 8
+
+
+b. be returned from another function
+
+function greet(message) {
+  return function (name) {
+    return `${message} ${name}`;
+  };
+}
+
+const sayHello = greet("Hello");
+sayHello("Shreya"); // Hello Shreya
+
+
+If a function does any one of these, it is called a higher-order function.
+
+👉 Function that works with another function = Higher-order function
+
+---------------------------------------------------------------------------------------------------------------------------
+
+36. What is event bubbling and capturing?
+ANS:- 
+Event bubbling and event capturing define the order in which an event travels through the DOM when an element is interacted with.
+When you click a child element inside a parent element, the event doesn’t stay on just one element.
+It travels through elements in two phases:
+
+Capturing → Parent ➝ Child (top to bottom)
+Bubbling → Child ➝ Parent (bottom to top)
+
+🔹 1️⃣ Event Bubbling (Default behavior)
+
+Event bubbling means the event starts from the target element and moves upward to its parent elements.
+parent.addEventListener("click", () => {
+  console.log("Parent clicked");
+});
+
+child.addEventListener("click", () => {
+  console.log("Child clicked");
+});
+
+Output when child is clicked:-
+Child clicked
+Parent clicked
+
+🔹 2️⃣ Event Capturing (Trickling phase)
+
+Event capturing means the event starts from the outermost parent and moves down to the target element.
+parent.addEventListener("click", () => {
+  console.log("Parent clicked");
+}, true);
+
+child.addEventListener("click", () => {
+  console.log("Child clicked");
+}, true);
+
+Output when child is clicked:-
+Parent clicked
+Child clicked
+
+👉 By default, JavaScript uses bubbling.
+
+🔹 Stopping Event Propagation
+    event.stopPropagation();
+
+⭐ One-line interview answer
+
+Event bubbling is when an event propagates from child to parent, while event capturing is when it propagates from parent to child.
+
+
+| Feature             | Bubbling       | Capturing      |
+| ------------------- | -------------- | -------------- |
+| Direction           | Child → Parent | Parent → Child |
+| Default             | ✅ Yes          | ❌ No           |
+| Used in projects    | ✅ Very common  | ❌ Rare         |
+| Supports delegation | ✅ Yes          | ❌ No           |
+| Performance         | ✅ Better       | ❌ Less useful  |
+
+---------------------------------------------------------------------------------------------------------------------------
+
+37. What is async/await?
+ANS:- combination of is used for handling asyncronous operation.
+How It Works
+async → makes a function return a Promise
+await → pauses the function until the Promise is resolved or rejected
+
+---------------------------------------------------------------------------------------------------------------------------
+
+38. Difference between map(), forEach(), filter()?
+ANS:- 
+map() → change every item and get a new array
+const nums = [1, 2, 3];
+const doubled = nums.map(n => n * 2);
+// [2, 4, 6]
+
+forEach() → just loop and do something (no return)
+const nums = [1, 2, 3];
+nums.forEach(n => {
+  console.log(n * 2);
+});
+
+filter() → select some items and get a new array 
+const nums = [1, 2, 3, 4];
+const even = nums.filter(n => n % 2 === 0);
+// [2, 4]
+
+---------------------------------------------------------------------------------------------------------------------------
+
+39. What is an IIFE (Immediately Invoked Function Expression)?
+ANS:-
+An IIFE is a function that is executed immediately after it is defined.
+Normally, we define a function first and call it later.
+With an IIFE, we define and run the function at the same time.
+
+IIFE with Parameters
+(function (name) {
+  console.log(`Hello ${name}`);
+})("Shreya");
+
+✅ Why do we need IIFE if we already have normal functions?
+We need IIFE to execute code immediately and to create a private scope, which a normal function does not provide by default.
+An IIFE:
+
+Runs immediately
+Creates its own private scope
+Prevents variables from leaking into global scope.
+
+🔹 Problem with Normal Function ❌
+function test() {
+  var x = 10;
+}
+test();
+console.log(x); // ❌ undefined or error (but var can still pollute scope in some cases)
+With var, variables can still cause global pollution in older code.
+
+🔹 How IIFE Solves This ✅
+(function () {
+  var x = 10;
+  console.log(x);
+})();
+✔ x is completely private
+✔ No global pollution
+✔ Runs immediately
+
+🔹 Key Reasons Why IIFE Is Needed ⭐
+1️⃣ Immediate Execution
+You don’t need to call it separately.
+(function () {
+  console.log("Runs once");
+})();
+
+2️⃣ Avoid Global Namespace Pollution
+
+---------------------------------------------------------------------------------------------------------------------------
+
+40. What is lexical scoping?
+ANS:- “Lexical” means location in code.
+Lexical scoping means a function can use variables that are written outside it, and this access is decided by where the function is written in the code.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+41. What is the difference between stack and heap?
+ANS:-
+Stack and Heap are two different memory areas used by JavaScript to store data.
+Stack stores simple and fixed-size data
+Heap stores complex and dynamic data
+
+Stack stores primitive values and function calls, while Heap stores objects and reference types.
+Stack = value, Heap = reference
+
+---------------------------------------------------------------------------------------------------------------------------
+
+42.  How to clone an object in JavaScript?
+ANS:-
+it is done in two ways:-
+shallow copy and deep copy.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+43. What is event delegation in JavaScript?
+ANS:-
+Event delegation is a technique where we attach a single event listener to a parent element instead of adding listeners to multiple child elements.
+Instead of adding click events to every child, we add one event to the parent
+and detect which child was clicked.
+
+WIthout Delegation
+
+function List() {
+  return (
+    <ul>
+      <li onClick={() => alert("Item 1")}>Item 1</li>
+      <li onClick={() => alert("Item 2")}>Item 2</li>
+      <li onClick={() => alert("Item 3")}>Item 3</li>
+    </ul>
+  );
+}
+
+
+With Delegation
+
+function List() {
+  const handleClick = (e) => {
+    if (e.target.tagName === "LI") {
+      alert(e.target.innerText);
+    }
+  };
+
+  return (
+    <ul onClick={handleClick}>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  );
+}
+
+Why Event Delegation Is Important ⭐
+
+1️⃣ Better Performance
+Fewer event listeners
+Less memory usage
+
+2️⃣ Handles Dynamic Elements
+New child elements work automatically
+
+3️⃣ Cleaner Code
+Easy to manage and scale
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+44. ✅ What is a Promise Chain?
+ANS:- A promise chain is a sequence of .then() calls where the result of one promise is passed to the next promise.
+It is used to run multiple asynchronous operations one after another.
+A promise chain is a sequence of .then() calls where each promise waits for the previous one to resolve.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+45. What is optional chaining (?.)?
+ANS:- Normally, if you try to access a property that doesn’t exist, JavaScript throws an error ❌
+Optional chaining stops the error and returns undefined instead.
+
+🔹 Without Optional Chaining ❌
+const data = {};
+console.log(data.user.address.city); // ❌ Error
+
+🔹 With Optional Chaining ✅
+const data = {
+  user: {
+    address: {
+      city: "Delhi"
+    }
+  }
+};
+console.log(data.user?.address?.city); // Delhi
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+46. What is nullish coalescing (??)?
+ANS:- Nullish coalescing (??) is an operator that returns a default value only when the left side is null or undefined.
+
+null ?? "default"        // "default"
+undefined ?? "default"   // "default"
+false ?? true            // false
+"" ?? "text"             // ""
+
+const username = user.name ?? "Guest";
+
+---------------------------------------------------------------------------------------------------------------------------
+
+47. What is a thunk?
+ANS:- A thunk is a function that wraps an operation so it can be executed later instead of immediately.
+
+Normally:
+Code runs immediately
+
+With a thunk:
+Code is put inside a function
+That function is called later
+👉 Thunk = delay the execution
+
+const add = (a, b) => a + b;   // runs immediately
+const addThunk = () => add(2, 3); // thunk
+
+You can call any function later instead thunk but
+We create a thunk only when someone else needs to decide when to call it.
+Redux needs thunks because Redux decides when to execute your code, not you.
+
+You can’t write:
+dispatch(fetchData()); // ❌ runs immediately
+
+You must write:
+dispatch(fetchData); // ✅ Redux calls it later
+
+We create thunks when execution timing is controlled by another system, not by our own code.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+48. Difference between for...of and for...in?
+ANS:- for...of is used to loop over values, while for...in is used to loop over keys (property names).
+
+for...of → gives value
+for...in → gives key / index
+
+🔹 1️⃣ for...of (Values)
+Used mainly with arrays, strings, maps, sets.
+const arr = [10, 20, 30];
+for (let value of arr) {
+  console.log(value);
+}
+Output: 10 20 30
+
+🔹 2️⃣ for...in (Keys / Indexes)
+Used mainly with objects.
+const obj = { a: 1, b: 2 };
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+Output:
+a 1
+b 2
+
+---------------------------------------------------------------------------------------------------------------------------
+
+49. What is Debouncing and Throttling?
+Both debouncing and throttling are techniques used to control how often a function is executed, especially for frequent events like scroll, resize, and input typing.
+
+Easy Explanation (simple words)
+Debouncing → Run only after the user stops
+Throttling → Run at fixed time intervals
+Debouncing ensures a function runs only after a certain time has passed since the last event.
+Throttling ensures a function runs at most once in a specified time interval.
+
+
+| Feature   | Debouncing              | Throttling               |
+| --------- | ----------------------- | ------------------------ |
+| Execution | After delay             | At fixed interval        |
+| Trigger   | After user stops        | While user continues     |
+| Best for  | Search input, auto-save | Scroll, resize           |
+| API calls | Minimal                 | Controlled               |
+| Runs      | Once                    | Multiple times (limited) |
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+50. What are data attributes in HTML/JS?
+ANS:- Data attributes are custom attributes in HTML used to store extra information directly on elements, which can be accessed using JavaScript.
+
+<button data-id="101" data-user="Shreya">
+  Click Me
+</button>
+
+const btn = document.querySelector("button");
+console.log(btn.dataset.id);     // "101"
+console.log(btn.dataset.user);   // "Shreya"
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+51. What are the different types of errors in JS?
+ANS:- Syntax → writing mistake
+Runtime → execution problem
+Logical → wrong output
+Built-in error objects exist
+Errors can be handled using try...catch
+JavaScript errors are mainly Syntax errors, Runtime errors, and Logical errors.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+52. What is a generator function?
+ANS:-
+A generator function is a special function that can pause and resume execution using the yield keyword.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+53. real life Example of closure?
+ANS:- 
+1. Button Click Counter (Frontend)
+🧠 Real life
+Every time you click a button for liking any post on insta,utube,facebook
+Count increases
+Count is not reset
+💻 Code
+function createCounter() {
+  let count = 0;
+  return function () {
+    count++;
+    console.log(count);
+  };
+}
+
+const clickCounter = createCounter();
+clickCounter(); // 1
+clickCounter(); // 2
+clickCounter(); // 3
+
+2.Login System (Real App Example)
+🧠 Real life
+You log in once
+App remembers you
+You don’t enter password again on every page
+💻 Code (JavaScript)
+function login(username) {
+  return function checkUser() {
+    console.log("Welcome " + username);
+  };
+}
+const userSession = login("Shreya");
+userSession(); // Welcome Shreya
+
+➡️ checkUser() remembers username
+➡️ This is closure used for session handling
+
+3. Shopping Cart (E-commerce)
+🧠 Real life
+Add items
+Cart remembers previous items
+Cart total updates
+💻 Code
+function cart() {
+  let total = 0;
+  return function add(price) {
+    total += price;
+    console.log("Total:", total);
+  };
+}
+const myCart = cart();
+myCart(500); // Total: 500
+myCart(300); // Total: 800
+➡️ This is how cart state is preserved
+
+4. API Rate Limiter (Backend Concept)
+🧠 Real life
+App allows 5 requests per minute
+After limit → block
+💻 Code
+function rateLimiter(limit) {
+  let count = 0;
+
+  return function () {
+    if (count < limit) {
+      count++;
+      console.log("Request allowed", count);
+    } else {
+      console.log("Limit exceeded");
+    }
+  };
+}
+const apiCall = rateLimiter(3);
+apiCall();
+apiCall();
+apiCall();
+apiCall(); // Limit exceeded
+
+➡️ Closure stores request count
+➡️ Used in Node.js backend
+
+5. setTimeout with Closure (Very Common Interview)
+🧠 Real life
+Message sent after delay
+Uses old data
+💻 Code
+function delayedMessage(msg) {
+  setTimeout(function () {
+    console.log(msg);
+  }, 2000);
+}
+delayedMessage("Hello after 2 sec");
+
+6. login limit set,if that is more than 3 time then we block that user for 12hr or 24hr
+7. bank balance s
+
+---------------------------------------------------------------------------------------------------------------------------
+
+54. what is query selector?
+ANS:- querySelector is a JavaScript method used to select the first HTML element that matches a given CSS selector.
+
+Select by ID
+const box = document.querySelector("#box");
+
+Select by class
+const item = document.querySelector(".item");
+
+Select by tag
+const heading = document.querySelector("h1");
+
+Nested selector
+const btn = document.querySelector(".card button");
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+55. how useEffect works?
+ANS:- useEffect is a React Hook that lets you run side-effect code after a component renders.
+Side effects include API calls, subscriptions, timers, and DOM updates.
+
+How It Works
+
+Component renders
+React updates the DOM
+useEffect runs
+If dependencies change → effect runs again
+Cleanup runs before next effect (if provided)
+
+3 Most Important Cases (Interview GOLD ⭐)
+1️⃣ Run once (on mount)
+useEffect(() => {
+  console.log("Component mounted");
+}, []);
+
+
+✔ Runs only once
+✔ Used for API calls
+
+2️⃣ Run on dependency change
+useEffect(() => {
+  console.log("count changed");
+}, [count]);
+
+
+✔ Runs when count changes
+
+3️⃣ Run on every render (not recommended)
+useEffect(() => {
+  console.log("Runs every time");
+});
+
+🔹 Cleanup Function (Very Important ⭐)
+useEffect(() => {
+  const timer = setInterval(() => {
+    console.log("Running...");
+  }, 1000);
+
+  return () => {
+    clearInterval(timer);
+  };
+}, []);
+
+
+
+A cleanup function runs ONLY for the same useEffect before that effect runs again or when the component unmounts.
+It does NOT run because some other useEffect runs.
+
+🔹 Important rule (MOST IMPORTANT ⭐)
+
+Each useEffect manages its own cleanup.
+One useEffect has NOTHING to do with another useEffect.
+
+WHAT HAPPEN WHEN WE WANT TO USE MORE THAN ONE USEEFFECT
+useEffect hooks run asynchronously after render, and when multiple effects exist, React executes them sequentially in the order they are defined.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+56. Difference between useEffect and useLayoutEffect
+ANS:- Both hooks are used for side effects in React.
+useEffect runs after the browser Shows  UI, while useLayoutEffect runs before the browser shows the UI.
+
+useLayoutEffect is used for calculating DOM size.
+
+Easy Explanation (no jargon)
+
+useEffect
+👉 UI is shown first
+👉 Then your effect runs
+👉 Non-blocking, smooth UI
+
+useLayoutEffect
+👉 Effect runs before UI is shown
+👉 UI waits for it
+👉 Can block rendering
+
+🔹 Rendering Timeline (Very Important ⭐)
+useEffect
+Render → DOM updated → Browser paints → useEffect runs
+
+useLayoutEffect
+Render → DOM updated → useLayoutEffect runs → Browser paints
+
+Render does NOT mean showing UI.
+Render means “preparing what the UI should look like.”
+Render means React calculates the UI and creates a virtual description of it.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+57. what is the prmblem of over memory cunsumption in case of closre because not clearing that variable in closure.
+ANS:- Over memory consumption means the application is using more memory than needed.
+This leads to several serious problems.
+
+🔹 1️⃣ Application Becomes Slow 🐌
+🔹 2️⃣ UI Freezing / Lag (Very Common in JS & React) ❄️
+🔹 3️⃣ Application Crash 💥
+🔹 4️⃣ Increased Load Time ⏳
+🔹 5️⃣ Battery Drain (Mobile Devices) 🔋
+🔹 6️⃣ Browser “Page Unresponsive” Warning ⚠️
+🔹 7️⃣ Server Cost Increase (Backend / Node.js) 💰
+
+Over memory consumption leads to slow performance, UI freezes, application crashes, and poor user experience.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+58. ES6 features?
+ANS:-ES6 is the 2015 version of JavaScript that added modern features for writing cleaner and more efficient code.
+1️⃣ let and const
+2️⃣ Arrow Functions (=>)
+3️⃣ Template Literals
+4️⃣ Destructuring
+5️⃣ Spread & Rest Operator (...)
+6️⃣ Promises
+7️⃣ Modules (import / export)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+59. What is a Cron Job?
+ANS:-A cron job is a time-based scheduler used to run tasks automatically at fixed times or intervals.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 

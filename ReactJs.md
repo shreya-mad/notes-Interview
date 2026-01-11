@@ -1,5 +1,12 @@
+✅ What is Memoization?
+
+(Interview-ready answer, very easy language)
+
+Memoization is a technique where we store the result of a function so that when the same input is used again, the stored result is returned instead of recalculating it.
+ 
 1. useMemo Hook?
-ANS: It is nothing but one of the react hooks.here use meaning its a hook becuase use word is used in all the hooks and memo means Memoisation.
+ANS: useMemo is used to memoize a VALUE, not a function.
+It is nothing but one of the react hooks.here use meaning its a hook becuase use word is used in all the hooks and memo means Memoisation.
 imagine there are two person.person a is teacher and person b is student so teacher asked student ,tell me the ans of 2*3 so student didnt know its ans so calculated its ans and decided to store it somewhere so that if someone will ask later then simply will ans from the stored part  and then replied thats ans to teacher,its ans would be 6.
 and similarly for 4*7 and 5+102 as well so here student stores all the ans somewhere so that if it will be asked later then will reply by picking from that location so student dont need to perform operation again and again.
 this process of storing value somewhere so that can be used later is called as memoisation.so relate it will with coding  as well.
