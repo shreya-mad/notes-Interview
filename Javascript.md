@@ -395,7 +395,7 @@ ANS:-| ✅ Advantage                               | 💬 Explanation           
 ANS:-
 a. follows server side rendering and client side rendering both.
 b.we can write frontent and backend both using js.
-c.it is syncronous sigle threaded language but with the help of callback function ,w e can make it asyncronous.
+c.it is syncronous sigle threaded language but with the help of callback function ,we can make it asyncronous.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -1797,19 +1797,29 @@ ANS:- by spread operator, concat();
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-85. 
+85. why do we use the word “debugger” in javascript?
+ANS:- “debugger” for the browser must be activated in order to debug the code. Built-in debuggers may be switched on and off, requiring the user to report faults. The remaining section of the code should stop execution before moving on to the next line while debugging.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
+86. Explain Implicit Type Coercion in javascript.
+Implicit type coercion in javascript is the automatic conversion of value from one data type to another. It takes place when the operands of an expression are of different data types.
 
+var x = 3;
+var y = "3";
+x + y // Returns "33" 
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
+87. What is a WeakSet?
+ANS:- 
+A WeakSet is a special collection in JavaScript that stores only objects and holds them weakly, meaning they can be garbage-collected if there are no other references.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
+88. What is a WeakMap?
+ANS:-
+A WeakMap is a special type of Map where keys must be objects and those keys are held weakly, so they can be garbage-collected when no longer needed.
 
 
 

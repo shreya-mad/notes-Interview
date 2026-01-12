@@ -74,6 +74,8 @@ ANS:-
    a.typescript check data type at compile time while javascript checks at run time.  
    b.typescript get conveted into js and this is called compilation and that takes time and js dont need any kind of conversion for execution so typescipt takes larger time than js.
 
+   Compile time is when code is checked and converted before execution, while run time is when the code actually runs and produces output.
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 
