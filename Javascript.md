@@ -418,7 +418,7 @@ and your object can inherit them.
 
 So basically:
 
-Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+Prototypes are the mechanism by which JavaScript objects inherit features from one another and this is also called as Prototype chaining.
 
 const person={
   greet: function(){
@@ -438,7 +438,7 @@ ANS:- A constructor function in JavaScript is a special function used to create 
 
 function Person(name,age,gender){
   this.name = name;
-  this.age = age;
+  this.age = age; 
   this.gender = gender;
 }
 
@@ -1160,7 +1160,37 @@ JavaScript errors are mainly Syntax errors, Runtime errors, and Logical errors.
 
 52. What is a generator function?
 ANS:-
-A generator function is a special function that can pause and resume execution using the yield keyword.
+A generator function is a special function in JavaScript that can pause its execution and resume later, returning values one by one instead of all at once.
+
+🔹 Super-easy explanation (plain words)
+Normal function → runs once → returns one value → finishes
+Generator function → stops, resumes, stops again → gives values step-by-step
+👉 It works like a pause–play function ⏯️
+it uses  yield keyword to return  one at a time. it Uses yield instead of return.
+
+function* numbers() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+🔹 How it works
+
+const gen = numbers();
+gen.next(); // { value: 1, done: false }
+gen.next(); // { value: 2, done: false }
+gen.next(); // { value: 3, done: false }
+gen.next(); // { value: undefined, done: true }
+yield → pauses the function
+next() → resumes from where it stopped
+
+
+| Normal Function | Generator Function |
+| --------------- | ------------------ |
+| Runs once       | Runs in steps      |
+| Uses `return`   | Uses `yield`       |
+| One value       | Multiple values    |
+| No pause        | Can pause & resume |
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -1404,41 +1434,377 @@ ANS:-ES6 is the 2015 version of JavaScript that added modern features for writin
 
 59. What is a Cron Job?
 ANS:-A cron job is a time-based scheduler used to run tasks automatically at fixed times or intervals.
+In Node.js, cron jobs are usually handled using libraries like node-cron
+
+---------------------------------------------------------------------------------------------------------------------------
+
+60. What is a Bundler?
+A bundler is a tool that combines multiple files (JavaScript, CSS, images, etc.) into one or more optimized files so the browser can load the application efficiently.
+A bundler combines and optimizes multiple project files into a small number of files for faster loading in the browser.
+Bundler packs everything together for the browser.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+61. What is the new keyword in JS?
+ANS:- The new keyword is used to create a new object from a constructor function or a class.
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const p1 = new Person("Shreya", 22);
+
+---------------------------------------------------------------------------------------------------------------------------
+
+62.  What are template engines?
+ANS:- Template engines are tools that help us generate dynamic HTML by combining static templates with data.
+
+Template
+<h1>Hello {{name}}</h1>
+
+Data
+{ name: "Shreya" }
+
+Output HTML
+<h1>Hello Shreya</h1>
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+63. Difference between innerHTML and textContent?
+ANS:-innerHTML reads or writes HTML content, while textContent reads or writes only plain text.
+
+innerHTML
+const div = document.getElementById("box");
+div.innerHTML = "<b>Hello</b>";
+Result on page:
+👉 Hello (bold)
+
+textContent
+js
+Copy code
+div.textContent = "<b>Hello</b>";
+Result on page:
+👉 <b>Hello</b> (shown as text)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+64.  What is Object.freeze()?
+ANS:-Object.freeze() is a JavaScript method that makes an object completely immutable, meaning you cannot add, delete, or change its properties.
+Object.freeze() prevents any modification to an object’s properties.
+
+const user = {
+  name: "Shreya",
+  age: 22
+};
+
+Object.freeze(user);
+
+user.age = 25;      // ❌ Not allowed
+user.city = "Delhi"; // ❌ Not allowed
+delete user.name;  // ❌ Not allowed
+
+console.log(user);
+// { name: "Shreya", age: 22 }
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+65.  What is a Symbol?
+ANS:- A Symbol is a unique and immutable primitive value used as an object property key.
+
+const id1 = Symbol("id");
+const id2 = Symbol("id");
+console.log(id1 === id2); // false
+
+Symbol as Object Key (Main use ⭐)
+
+const user = {
+  name: "Shreya",
+  [Symbol("id")]: 101
+};
+
+
+const obj = {};
+obj.id = 1;
+obj.id = 2; // overwritten ❌
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+66. What are Rest Parameters?
+ANS:-
+Rest parameters allow a function to accept any number of arguments and store them in an array.
+
+function sum(...numbers) {
+  return numbers.reduce((a, b) => a + b);
+}
+sum(1, 2, 3, 4); // 10
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+67. What is typeof null?
+ANS:-
+typeof null returns "object" — this is a well-known bug in JavaScript.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+68. What are falsy values?
+ANS:- In JavaScript, falsy values are values that are treated as false when evaluated in a boolean context (like inside an if condition).
+
+✅ List of falsy values
+
+false
+0 (number zero)
+-0
+0n (BigInt zero)
+"" (empty string)
+null
+undefined
+NaN
+
+---------------------------------------------------------------------------------------------------------------------------
+
+69. How to check if a variable is an array?
+ANS:- with the help of Array.isArray(value);
+
+let a = [1, 2, 3];
+let b = { x: 1 };
+let c = "hello";
+Array.isArray(a); // true
+Array.isArray(b); // false
+Array.isArray(c); // false
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+70.  What is a tagged template literal?
+ANS:- A tagged template literal allows a function to process a template literal by receiving the static strings and dynamic values as arguments.
+
+function tag(strings, value) {
+  console.log(strings);
+  console.log(value);
+}
+let name = "Shreya";
+tag`Hello ${name}!`;
+
+Output:
+["Hello ", "!"]
+"Shreya"
+
+---------------------------------------------------------------------------------------------------------------------------
+
+71.  How do you compare objects and array in JS?
+ANS:- objects are not compared by value, they’re compared by reference.Even though they look the same, they’re stored in different memory locations.
+
+do it with with lodash as below or simply write manually 
+const a = { x: 1 };
+const b = { x: 1 };
+_.isEqual(a, b);
+
+
+MANUAL
+
+Shallow comparison (most common)
+
+const a = { x: 1 };
+const b = { x: 1 };
+function shallowEqual(obj1, obj2) {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) return false;
+
+  return keys1.every(key => obj1[key] === obj2[key]);
+}
+
+shallowEqual(a, b); // true ✅
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+72.  Difference between == and Object.is()?
+ANS:- == compares values after type coercion.
+0 == "0"        // true
+null == undefined // true
+false == 0      // true
+
+Object.is() (SameValue comparison)
+Object.is() compares values using strict, predictable rules.
+Object.is(5, 5);        // true
+Object.is("a", "a");    // true
+Object.is({}, {});      // false
+
+
+Why Object.is() exists
+
+JavaScript already had:
+
+== → too loose
+=== → almost perfect
+But === still fails in 2 cases:
+NaN === NaN      // false ❌
++0 === -0        // true ❌
+
+
+👉 Object.is() fixes both.
+
+Object.is() is like === but more accurate
+
+---------------------------------------------------------------------------------------------------------------------------
+
+73. What are optional parameters?
+ANS:- Optional parameters in JavaScript are function parameters that do not require a value when the function is called.
+👉 If an argument is not passed, the parameter becomes undefined (unless a default value is provided).
+
+function greet(name, message) {
+  console.log(name, message);
+}
+
+greet("Shreya"); 
+// name = "Shreya"
+// message = undefined
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+74. How to convert a string to number?
+ANS:- 
+| Method         | Handles decimals | Strict | Stops at text |
+| -------------- | ---------------- | ------ | ------------- |
+| `Number()`     | ✅                | ✅      | ❌             |
+| `parseInt()`   | ❌                | ❌      | ✅             |
+| `parseFloat()` | ✅                | ❌      | ✅             |
+| `+`            | ✅                | ✅      | ❌             |
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+75. What is the instanceof operator?
+ANS:- The instanceof operator in JavaScript is used to check whether an object is an instance of a specific constructor or class.
+
+function Person(name) {
+  this.name = name;
+}
+
+const p = new Person("Shreya");
+
+p instanceof Person; // true
+p instanceof Object; // true
+
+---------------------------------------------------------------------------------------------------------------------------
+
+76. What is destructuring with aliasing?
+ANS:- Destructuring with aliasing in JavaScript means extracting values from objects or arrays and assigning them to variables with different names.
+
+const user = {
+  name: "Shreya",
+  age: 22
+};
+
+const { name: userName, age: userAge } = user;
+
+console.log(userName); // Shreya
+console.log(userAge);  // 22
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+77. How to flatten an array?
+ANS:- 
+const arr = [1, [2, [3, 4]], 5];
+
+arr.flat();      // [1, 2, [3, 4]]
+arr.flat(2);     // [1, 2, 3, 4, 5]
+arr.flat(Infinity); // fully flat
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+78. What is dynamic typing?
+ANS:- it is nothing but dynamically typed.like js is dynamically typed language.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+79. What is a factory function?
+ANS:- A factory function in JavaScript is a function that creates and returns objects, instead of using the new keyword or classes.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+80. What is a polyfill?
+ANS:- A polyfill is JavaScript code that provides modern functionality in older browsers that don’t support that feature natively.
+It “fills the gap” for missing features.
+
+Polyfill:
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function (value) {
+    return this.indexOf(value) !== -1;
+  };
+}
+
+
+Now:
+
+[1, 2, 3].includes(2); // works everywhere
+
+---------------------------------------------------------------------------------------------------------------------------
+
+81. Difference between Object.seal() and Object.freeze()?
+ANS:- 🔹 Object.seal()
+
+👉 Prevents adding or deleting properties,
+👉 Allows modifying existing property values.
+
+Example:
+const user = { name: "Shreya", age: 22 };
+
+Object.seal(user);
+
+user.age = 23;      // ✅ allowed
+user.city = "Delhi"; // ❌ not allowed
+delete user.name;   // ❌ not allowed
+
+🔹 Object.freeze()
+
+👉 Prevents adding, deleting, AND modifying properties.
+
+Example:
+const user = { name: "Shreya", age: 22 };
+
+Object.freeze(user);
+
+user.age = 23;      // ❌ not allowed
+user.city = "Delhi"; // ❌ not allowed
+delete user.name;   // ❌ not allowed
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+82. How to prevent object modification?
+ANS:- by Object.freeze() and Object.seal();
+
+---------------------------------------------------------------------------------------------------------------------------
+
+83. How to generate random numbers?
+ANS:-  Math.random();  // e.g. 0.348927
+
+---------------------------------------------------------------------------------------------------------------------------
+
+84. How to merge arrays?
+ANS:- by spread operator, concat();
+
+---------------------------------------------------------------------------------------------------------------------------
+
+85. 
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 
----------------------------------------------------------------------------------------------------------------------------
-
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
-
-
----------------------------------------------------------------------------------------------------------------------------
 
 
 ---------------------------------------------------------------------------------------------------------------------------
