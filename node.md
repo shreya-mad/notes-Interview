@@ -3,7 +3,6 @@ Ans: node is open source,run time js environment ,which allows user to run js ou
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
 2. What tools can be used to assure consistent code style?
 ANS:  👉 “Which tools can help developers write clean, uniform, and properly formatted code when working in Node.js projects?”
 

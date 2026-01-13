@@ -4,6 +4,8 @@ CURRENT COMPANY PROJECT:-
 
     I have worked on several role-based modules like fee(which manages student fee collection), Admission (student details and document handling), Hostel Allotment (room allocation and vacancy tracking), Reimbursement (expense submission and approvals), along with Transport, Library modules.
 
+    i have made AI powred RAG chatbot,which take on e or more pdf as input data and give any open question relavent to that data just like chatGPT.
+
     Currently, I’m working on the Dashboard of same product, which reads the data entered through forms and presents it in graphs, charts and tabular form with variour filtering options for data visualisation.
     it also includes data export functionality and automated email alerts for fee dues and low attendance.
 
