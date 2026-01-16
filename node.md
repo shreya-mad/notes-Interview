@@ -125,7 +125,7 @@ d.Continue until all tasks are done.
 ANS:-  a.setTimeout/clearTimeout – This is used to implement delays in code execution.
        b.setInterval/clearInterval – This is used to run a code block multiple times.
        c.setImmediate/clearImediate- Executes a function immediately after the current event loop phase completes.
-
+       
 console.log("Before");
 setImmediate(() => {
   console.log("Inside setImmediate");
@@ -175,6 +175,7 @@ ANS:- a.callBack hell ,b.inversion of controll
 
 9. what is fork in. node.js?
 In Node.js, a fork means creating a new child process (a separate instance of the Node.js program) that runs in parallel with the main process.
+A fork in general is used to create child processes. In node it is used to create a new instance of v8 engine to run multiple workers to execute the code.
 It is done using the child_process.fork() method.
 
 Normally, when you run a Node.js app (like node app.js),
@@ -410,7 +411,11 @@ That way, you can test your code safely without connecting to databases, APIs, o
 🗣 In simple words:
 A stub is a temporary fake function that helps you test your code without running the real one.
 
-2.whats the requiement of express if we have node js? 
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+17. whats the requiement of express if we have node js? 
 “We use Express.js over Node.js because it simplifies server creation with features like routing, middleware, and request handling — reducing boilerplate code and making development faster and cleaner.”
 
 ---------------------------------------------------------------------------------------------------------------------------
@@ -418,7 +423,7 @@ A stub is a temporary fake function that helps you test your code without runnin
 
 
 
-17. server creation using express ,easiest code?
+18. server creation using express ,easiest code?
 ANS:-
 
 const express = require('express');
@@ -429,3 +434,334 @@ app.get('/', (req, res) => {
 app.listen(5000, () => {
     console.log("Server started on port 5000");
 });
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+19. How is Node.js better than other frameworks most popularly used?
+Node.js provides simplicity in development because of its non-blocking I/O and event-based model results in short response time and concurrent processing, unlike other frameworks where developers have to use thread management. 
+ 
+It runs on a chrome v8 engine which is written in c++ and is highly performant with constant improvement. 
+ 
+Also since we will use Javascript in both the frontend and backend the development will be much faster. 
+ 
+And at last, there are sample libraries so that we don’t need to reinvent the wheel.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+20. Describe the exit codes of Node.js?
+ANS:- Exit codes in Node.js indicate how a process ended — whether it finished successfully or failed due to an error.
+They are numeric values returned when a Node.js process exits.
+
+Node.js exit codes are numeric values that tell whether a Node.js process exited successfully or due to an error.
+
+Node.js automatically generates exit codes for crashes, signals, and internal errors, while developers explicitly set exit codes only when they want to control program termination.
+
+✅ 0 — Successful execution
+Program ran without any error
+process.exit(0);
+
+❌ 1 — Uncaught fatal exception
+General error
+Unhandled exception occurred
+throw new Error("Crash");
+
+❌ 2 — Incorrect usage
+Invalid command-line arguments
+Syntax misuse
+
+❌ 3 — Internal JavaScript parse error
+JS engine failed to parse code
+
+❌ 4 — Internal JavaScript evaluation error
+Error during JS execution inside Node
+
+❌ 5 — Fatal error
+Node.js encountered a critical internal error
+
+❌ 6 — Non-function internal exception handler
+Rare internal Node issue
+
+❌ 7 — Internal exception handler run-time failure
+Exception handling itself failed
+
+❌ 8 — Invalid argument
+Incorrect arguments passed to Node
+
+❌ 9 — Invalid argument type
+Wrong data type passed
+
+❌ 128 + signal — Process killed by signal
+Example:
+
+130 → terminated by Ctrl + C (SIGINT)
+137 → killed by system (SIGKILL, often OOM)
+
+
+=>that mean if my code will have any kind of error then in that case system will give error automatically with exit code
+ANS:-Yes. If your Node.js code has an unhandled error, the system (Node.js runtime / OS) will automatically terminate the process and return a non-zero exit code.
+we can write it manually as well for checking error.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+21. For Node.js, why Google uses V8 engine?
+ANS:-Well, are there any other options available? Yes, of course, we have Spidermonkey from Firefox, Chakra from Edge but Google’s v8 is the most evolved(since it’s open-source so there’s a huge community helping in developing features and fixing bugs) and fastest(since it’s written in c++) we got till now as a JavaScript and WebAssembly engine. And it is portable to almost every machine known.
+Node.js uses Google’s V8 engine because it executes JavaScript very fast, compiles it to native machine code, and is highly optimized and stable for server-side applications.
+Uses Just-In-Time (JIT) compilation.
+it uses varities of optimisation techniqyes. like ignition interpreter,turbofan compiler,inline compile,coppy ellision.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+22. Why should you separate Express app and server?
+ANS:- We separate the Express app and the server to make the code cleaner, reusable, testable, and easier to maintain.
+
+Express app → defines routes, middleware, business logic
+Server → only starts listening on a port
+
+What happens when they are mixed ❌
+const app = express();
+app.get("/", ...);
+app.listen(3000);
+
+
+Problems:
+Hard to test routes
+Hard to reuse app
+Hard to scale (HTTPS, clustering, sockets)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+23. Explain what a Reactor Pattern in Node.js?
+ANS:-The Reactor Pattern is a design pattern where a single thread  handles multiple requests using an event loop that listens for events and dispatches them to appropriate handlers without blocking execution.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+24. What is middleware?
+ANS:-Middleware is a function that executes between the incoming request and the outgoing response.
+
+When a request comes to a server, it does not go directly to the route.
+Common Uses ⭐
+
+Authentication & Authorization
+
+Logging
+Request validation
+Parsing JSON
+Error handling
+
+🔹 Simple Express Example
+app.use((req, res, next) => {
+  console.log("Request received");
+  next(); // pass to next middleware or route
+});
+
+🔹 Why next() is important ⚠️
+next() → move to next middleware
+If you don’t call it → request stops
+
+
+Types of Middleware ⭐
+1️⃣ Application-level
+app.use(authMiddleware);
+
+2️⃣ Route-level
+app.get("/profile", authMiddleware, handler);
+
+3️⃣ Built-in
+
+express.json()
+express.urlencoded()
+
+4️⃣ Error-handling
+app.use((err, req, res, next) => {
+  res.status(500).send(err.message);
+});
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+25. What are node.js buffers and buffer?
+NAS:-Buffers are used in Node.js to store and manipulate binary data.
+Files, network data, images, and videos are binary data, and Node.js uses Buffers to store and process this binary data in memory.
+
+Inside a file (image, pdf, video, even text file):
+Data is stored as binary (0s and 1s)
+JavaScript cannot directly work with raw binary data.
+
+JavaScript normally works with strings and objects, not binary data.
+But Node.js often deals with:
+
+files
+images
+videos
+network packets
+
+👉 Buffers allow Node.js to work with this binary data efficiently.
+
+Buffer loads the entire data into memory at once, while Stream processes data piece by piece.
+
+
+🔹 Buffer
+
+What it is:
+Stores all data in memory at once
+
+Example:
+fs.readFile("bigfile.txt", (err, data) => {
+  // data is a Buffer
+});
+
+Pros:
+Simple to use
+Good for small files
+
+Cons:
+High memory usage
+Not suitable for large files
+
+🔹 Stream
+
+What it is:
+Reads or writes data in chunks (small parts)
+
+Example:
+fs.createReadStream("bigfile.txt")
+  .on("data", chunk => {
+    // chunk is a Buffer
+  });
+
+---------------------------------------------------------------------------------------------------------------------------
+
+26. Differentiate between process.nextTick() and setImmediate()?
+ANS:- 🔹 Easy Explanation (simple words)
+
+process.nextTick()
+👉 Runs immediately after the current operation
+👉 Even before timers and I/O callbacks
+
+setImmediate()
+👉 Runs after I/O events
+👉 In the next cycle of the event loop
+
+
+Where they run in the Event Loop
+
+process.nextTick() → Microtask queue (runs ASAP)
+setImmediate() → Check phase
+
+
+🔹 Why process.nextTick() is dangerous ⚠️
+function loop() {
+  process.nextTick(loop);
+}
+loop();
+
+
+❌ Can block the event loop
+❌ Causes starvation
+
+---------------------------------------------------------------------------------------------------------------------------
+
+27. What is an Event Emitter in Node.js?
+ANS:- EventEmitter means: one part of the code says “something happened”, and another part reacts to it.
+emit means send.
+
+🛎️ Real-life analogy (this usually clicks)
+
+Think of a doorbell:
+
+🔔 You press the bell → event happens
+👂 People listening hear it and react
+👉 Bell = EventEmitter
+👉 Pressing = emit
+👉 Hearing = on / listener
+
+
+🔹 Step-by-step in Node.js (VERY SIMPLE)
+
+Step 1️⃣ Create an EventEmitter
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+
+👉 You created a bell
+
+Step 2️⃣ Listen to an event
+emitter.on("orderPlaced", () => {
+  console.log("Order received");
+});
+
+
+👉 Someone is waiting/listening
+
+Step 3️⃣ Emit (trigger) the event
+emitter.emit("orderPlaced");
+
+---------------------------------------------------------------------------------------------------------------------------
+
+28. Enhancing Node.js performance through clustering.
+ANS:- question means “How can we make a Node.js application faster and handle more users by using clustering?”
+How do you improve Node.js performance by using multiple CPU cores?
+Node.js is single-threaded, so it uses only one CPU core. Clustering allows us to create multiple worker processes that run on different CPU cores, which improves performance and helps the application handle more concurrent requests.
+
+Clustering makes Node.js use all CPU cores instead of just one.
+
+Clustering improves Node.js performance by using multiple CPU cores to run multiple instances of the application and handle more requests in parallel.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+29. What is a thread pool and which library handles it in Node.js?
+ANS:- it is container for performing async operation and it is handled by libuv library.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+30. What is WASI and why is it being introduced?
+ANS:- WASI (WebAssembly System Interface) is a standard that allows WebAssembly programs to safely interact with system resources like files, network, and environment outside the browser.
+WASI stands for WebAssembly System Interface.
+It defines a standard way for WebAssembly (Wasm) code to talk to the operating system.
+
+🔹 Why WASI is being introduced? (MOST IMPORTANT ⭐)
+1️⃣ Run WebAssembly outside the browser
+
+Before WASI:
+
+Wasm only worked well in browsers
+
+After WASI:
+
+Wasm can run on servers, Node.js, edge, CLI tools
+
+---------------------------------------------------------------------------------------------------------------------------
+
+31. How are worker threads different from clusters?
+ANS:-Worker threads use multiple threads inside one Node.js process, while clusters use multiple Node.js processes.
+
+Cluster
+👉 Creates multiple Node.js processes
+👉 Each process runs on a different CPU core
+
+Worker Threads
+👉 Creates multiple threads inside one process
+👉 Threads share memory
+
+---------------------------------------------------------------------------------------------------------------------------
+
+32. How to measure the duration of async operations?
+ANS:-We measure the duration of async operations by recording the start time before the async task and the end time after it completes, then calculating the difference.
+
+const start = Date.now();
+
+await fetchData();
+
+const end = Date.now();
+console.log("Time taken:", end - start, "ms");
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+33.  How to measure the performance of async operations?
+ANs:- Async performance is measured by calculating execution time and monitoring system metrics such as latency, memory usage, and event loop delay.
+
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
