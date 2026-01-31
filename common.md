@@ -292,6 +292,7 @@ public:
 });
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 12. how to remove environment varible from github alter if i mistkaenly pushed that into github at first? WHY your .env is still visible on GitHub even after adding it to .gitignore?
 ANS: 
 Because .gitignore does NOT delete already-tracked files.
@@ -318,6 +319,137 @@ node_modules
 and then push and commit chnage then this will ignore .env file
 
 
+---------------------------------------------------------------------------------------------------------------------------
+
+13. Why should we hire you?
+ans:- You should hire me because I have hands-on experience with the MERN stack—MongoDB, Express, React, and Node.js—and I’ve worked on real-world applications end to end.
+I can build REST APIs, integrate frontend with backend, manage databases, and write clean, reusable React components.
+I’m comfortable debugging issues, learning quickly, and delivering features as per business requirements while maintaining code quality.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+14. What are your strengths and weaknesses?
+ANS:- im quick learner and always curiors to learn new technologies. and if i talk about my weakness then somthimes i want to solve issue by myself and took longer time as usual rather than taking jelp from seniors and reason behind that is i hesitate sometime if my issue doesnt loooks bigger.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+15. Where do you see yourself in 3–5 years?
+ANS:- In the next 3–5 years, I see myself as a skilled MERN developer and llm with strong ownership of projects.
+I want to deepen my expertise in scalable backend systems, performance optimization, and clean frontend architecture.
+I also aim to take more responsibility—mentoring juniors, contributing to design decisions, and delivering high-quality solutions that add real business value.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+16. Difference between abstract class and interface.
+Ans:- An abstract class is used when classes are related and we want to share common code.
+An interface is used when classes are different but must follow the same rules.
+Abstract classes can have implemented methods, while interfaces only define what methods must exist.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+17. What is exception handling?
+ANS:- Exception handling is a way to handle runtime errors so that the application does not crash and can continue running gracefully.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+18. What is MVC architecture?
+ANS:- In MERN, MVC architecture separates the application into Model for database, View using React for UI, and Controller using Express for handling business logic and API requests.
+
+---------------------------------------------------------------------------------------------------------------------------
+19. What is normalization?
+ANS:-Normalization is a technique to organize database data by reducing redundancy and improving data integrity.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+20. Difference between primary key and foreign key.
+ANS:-A primary key uniquely identifies a record, while a foreign key creates a relationship between tables.
+| Primary Key                  | Foreign Key                   |
+| ---------------------------- | ----------------------------- |
+| Uniquely identifies a record | Links one table to another    |
+| Cannot be NULL               | Can be NULL                   |
+| One per table                | Can be multiple               |
+| Ensures entity integrity     | Ensures referential integrity |
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+21. What is indexing?
+ANS:- Indexing is a database technique used to speed up data retrieval.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+22. Write a query to find the second highest salary.
+ANS:-INNER JOIN returns only matching records, while LEFT JOIN returns all records from the left table.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+23. can we get data from post method?
+ANS:-es, we can get data from a POST request, but the data is sent in the request body instead of the URL, making it more secure than GET.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+24. What is a stored procedure?
+ANS:- A stored procedure is a precompiled SQL code stored in the database that can be executed whenever needed.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+25. what are the meajor issue that you get during making mern stack prject and how you tackle with that
+ANS:- cors error,highchart version chnge required as per cleint request but our 50% porject was allready prepared so we asked client for bit more time for that i re write all the code in new version.
+api speed was too shlow.
+
+---------------------------------------------------------------------------------------------------------------------------
+26. steps for pushing any project on github?
+ANS:- 
+| Step No. | Command / Action                   | What You Do                                                  | Why This Step Is Needed                                 |
+| -------- | ---------------------------------- | ------------------------------------------------------------ | ------------------------------------------ |
+| 1        | Create GitHub Repo                 | Create a new repository on GitHub (no README, no .gitignore) | Creates an empty **remote location** to store your code |
+| 2        | `cd project-folder`                | Open terminal inside your project directory                  | Git works only inside the project folder                |
+| 3        | `git init`                         | Initialize Git in the project                                | Converts folder into a **Git repository**               |
+| 4        | `git status`                       | Check current file state                                     | Shows untracked, modified, staged files                 |
+| 5        | `git add .`                        | Add all files to staging area                                | Tells Git which files should be saved                   |
+| 6        | `git commit -m "Initial commit"`   | Create first commit                                          | Saves a **snapshot** of your project                    |
+| 7        | `git remote add origin <repo-url>` | Link local repo to GitHub                                    | Connects local project to GitHub                        |
+| 8        | `git branch -M main`               | Rename branch to main                                        | Matches GitHub default branch                           |
+| 9        | `git push -u origin main`          | Push code to GitHub                                          | Uploads code to GitHub for the first time               |
+| 10       | Open GitHub Repo                   | Refresh repository page                                      | Confirms code is successfully pushed                    |
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+27. What is the Staging Area?
+ANS:- The staging area is a temporary holding place where you decide which changes should go into the next commit.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------
 
 
 

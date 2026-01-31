@@ -449,6 +449,7 @@ console.log(person1);
 var person2 = new Person("Courtney", 34, "female");
 console.log(person2);
 
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1487,7 +1488,7 @@ div.textContent = "<b>Hello</b>";
 Result on page:
 👉 <b>Hello</b> (shown as text)
 
----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 
 64.  What is Object.freeze()?
 ANS:-Object.freeze() is a JavaScript method that makes an object completely immutable, meaning you cannot add, delete, or change its properties.
@@ -1820,6 +1821,61 @@ A WeakSet is a special collection in JavaScript that stores only objects and hol
 88. What is a WeakMap?
 ANS:-
 A WeakMap is a special type of Map where keys must be objects and those keys are held weakly, so they can be garbage-collected when no longer needed.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+89. What are Lifecycle Methods in React?
+ANS:- Lifecycle methods are special methods in React that run at different stages of a component’s life:
+when it is created
+when it is updated
+when it is removed
+They allow us to control what happens at each stage.
+
+Mounting → Updating → Unmounting
+
+Mounting:- componentDidMount() {
+  // API call
+}
+
+Updating:- componentDidUpdate(prevProps, prevState) {
+  // runs after update
+}
+
+Unmounting:- componentWillUnmount() {
+  // cleanup
+}
+
+
+Important Note (Modern React)
+
+Lifecycle methods are mainly for Class Components
+In Functional Components, we use Hooks
+
+useEffect(() => {
+  // componentDidMount
+
+  return () => {
+    // componentWillUnmount
+  };
+}, []);
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+89. What is useRef?
+ANS:-
+useRef is a React hook used to:
+Access DOM elements directly
+Store values that do NOT cause re-render
+
+
+
+
+
+
+
 
 
 
