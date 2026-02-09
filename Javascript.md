@@ -96,9 +96,9 @@ promise
   .then((message) => console.log(message))   // when resolved
   .catch((error) => console.log(error));     // when rejected
 
----------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 
-  5. above code with async/await?
+5. above code with async/await?
   ANS:-
 
 const promiss=new Promise((resolve,reject)=>{
@@ -132,6 +132,7 @@ Promise.all([p1,p2,p3])
 .catch(val=>console.log(val))
 
 OUTPUT:- [p1,p2,p3];
+
 FOR HANDLING ERROR IN ANY OF ONE 
 
 const p1=Promise.resolve("p1");
@@ -1869,6 +1870,38 @@ ANS:-
 useRef is a React hook used to:
 Access DOM elements directly
 Store values that do NOT cause re-render
+
+---------------------------------------------------------------------------------------------------------------------------
+
+90. Closer application in your live project?
+ANS:- 
+
+a. “I used closure to manage sidebar open/close logic without exposing internal state globally.”
+
+function createSidebarController() {
+  let isOpen = true;
+
+  return {
+    toggle: () => isOpen = !isOpen,
+    getState: () => isOpen
+  };
+}
+
+
+b. i have used debounce in API call in AI-insight of the different data and used closure to handle time last time it was called.
+
+function debounce(fn, delay) {
+  let timer; // preserved via closure
+
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
+    }, delay);
+  };
+}
+
+
 
 
 
