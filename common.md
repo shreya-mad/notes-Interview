@@ -425,6 +425,25 @@ ANS:- The staging area is a temporary holding place where you decide which chang
 
 ---------------------------------------------------------------------------------------------------------------------------
 
+28. What does ERP mean?
+ANS:-
+ERP = Enterprise Resource Planning
+ERP is one big software system that manages all important data and processes of an organization in one place.
+
+
+=> Why your company’s college software is called an ERP 🎓
+
+Since your company provides data management services to colleges, their product is called an ERP because it combines many college activities into a single system instead of using separate software for each task.
+
+
+=>Why it’s called Enterprise Resource Planning
+
+Enterprise → an organization (college, school, company)
+Resources → students, teachers, money, courses, classrooms, time
+Planning → managing, tracking, and reporting all of it efficiently
+
+So ERP = 👉 Software that plans and manages all organizational resources together.
+
 ---------------------------------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------------------------------

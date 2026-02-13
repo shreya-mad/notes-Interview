@@ -1,25 +1,37 @@
 CURRENT COMPANY PROJECT:-
 ------------------------
-    I’m working on a centralized web application named “Software for Institute Management”, which manages data for multiple colleges across India through a single platform.
-
-    I have worked on several role-based modules like fee(which manages student fee collection), Admission (student details and document handling), Hostel Allotment (room allocation and vacancy tracking), Reimbursement (expense submission and approvals), along with Transport, Library modules.
-
-    i have made AI powred RAG chatbot,which take on e or more pdf as input data and give any open question relavent to that data just like chatGPT.
-
-    Currently, I’m working on the Dashboard of same product, which reads the data entered through forms and presents it in graphs, charts and tabular form with variour filtering options for data visualisation.
-    it also includes data export functionality and automated email alerts for fee dues and low attendance.
+    i have been working on two products. 
+    
+    first one is centralized web application named SIM, that is software for institute management system which is basically used for data management of various colleges across india through single platform  and another one DGX community which is used for management of AI training as my company provide AI training to faculty and student of varios institutes.
 
 
+    in first product, I have worked on several role-based modules like 
+        --fee ( i have implemented payment gateway and improved User Interface).
+        --Hostel(system automatically send alert mail to student's parent and Admin when they break hostel rule more than 2 times using cron job).
+        --Reimbursement (i automated reimburment process, earlier my company was doing it manually. employee enter the deatils from form and after aproval of manger they will get amout in their account in next 3-4 working days).
+    
+
+        Currently, I’m working on the Dashboard of same product, which reads the data entered through forms and presents it in graphs, charts and tabular form using various react libraries like highchart,big-calender and react table.
+        it also includes AI- data export functionality and automated email alerts for fee dues and low attendance.
+
+
+    in second product, i worked on 
+       --Quiz(authorised user create quiz winner will get free course as reward).
+       --LMS(learning management system, this module contains all the study materials) 
+          from scratch. 
+       --and integrated AI powered RAG chatbot,which take one or more pdf as input data and give any open question relavent to that data just like chatGPT.
+
+    
 INTERNSHIP PROJECT:-
 --------------------
 1. CAPSTONE PROJECT:-
-   Which is feature rich web application. It includes interest based search like Netflix, complete notes module using CRUD operation and live news  using third-party APIs and it uses JWT authentication for secure login.
+   Which is feature rich web application. It includes interest based search like Netflix, complete notes module using CRUD operation and live news  using third-party APIs.
 
 2. JOB POSTING AND SEARCHING PLATEFORM:-
-    it is role based job searchng and job posting web application for recruiter and job seekers.i used jwt and bycrypt for authentication and authorisation.
+    it is role based job searchng and job posting web application for recruiter and job seekers.
 
 3. QUIZ BUILDER SYSTEM:-
-    A role-based Quiz Creation Platform for school where teachers create and share quizzes with students, and the system auto-announces winners after the deadline. Teachers can see all student performances, while students only see their own results.
+    A role-based Quiz Creation Platform for school where teachers create and share quizzes with students and the system auto-announces winners after the deadline.
 
 
 
