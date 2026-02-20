@@ -589,21 +589,173 @@ Global Load Balancer
 --------------------------------------------------------------------------------------------------------------------------
 
 11. Create an API endpoint to list bikes with pagination and filters (city, battery level).
-ANS:- /api/bikes?city=Banglore&battery=50&limit=10&page=1
+ANS:-
+
+   /api/bikes?city=Banglore&battery=50&page=1&limit=10
+
+   here skip =(page-1)*limit;
+
+   its db will be 
+
+const mongoose=require('mongoose');
+const bikeSchema=new mongoose.Schema({
+    name:String,
+    City:String,
+    batteryLevel:Number
+});
+module.exports=mongoose.model('bike',bikeSchema);
+
+then it controller will be like bellow=====>>>>
+
+const bike=require('../model/bike');
+const bikeController=async(req,res)=>{
+const {City,bateryLevel,page=1,limit=10}=req.query;
+const filter={};
+if(City){
+    filter.City=City;
+}
+if(bateryLevel){
+    filter.batery=Number(bateryLevel);
+}
+let skip=(page-1)*limit;
+const BikeData=await bike.find(filter).skip(skip).limit(Number(limit));
+res.status(200).json({
+    success:true,
+    data:BikeData
+})
+};
+
+frontend call will be like bellow, in which we send all the data in params
+useEffect(() => {
+    axios.get("/api/bikes", {
+      params: {
+        city: "Mumbai",
+        battery: 40,
+        page: 1,
+        limit: 5
+      }
+    }).then(res => {
+      console.log(res.data);
+    });
+  }, []);
+
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+12. Fix a CORS error in a local dev setup (explain why browser throws it and how to fix server-side).
+ANS:- 
+ -insall cors
+ -app.use(cors({
+    origin:[
+          "localhost/3000",
+          "https://devconnectui.onrender.com",
+          "http://localhost:5173",
+          "https://devtinderui-4vjs.onrender.com"
+          ]
+    }));
+
+ 
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+13. Given a JSON of bookings, return total revenue per day (write code).
+ANs:- data will be like
+const data=[
+    {date:'12/09/2026',value:100},
+    {date:'12/09/2026',value:100},
+    {date:'14/09/2026',value:100},
+    {date:'14/09/2026',value:100},
+    {date:'13/09/2026',value:100},
+    {date:'13/09/2026',value:100},
+    {date:'13/09/2026',value:100},
+    {date:'16/09/2026',value:100}
+];
+
+function findRevenue(data){
+    const result={};
+    data.forEach((data)=>{
+        const date=data.date;
+        const value=data.value;
+        if(result[date]){
+            result[date]+=value;
+        }
+        else
+        result[date]=value;
+    })
+    return result;
+}
+
+console.log(findRevenue(data));
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+14. Small DSA: implement search for matching items from array (filter by prefix).
+ANs:- 
+const arr=["apple","banana","fruit","ba"];
+const pre="ba";
+function findPre(arr,pre){
+const ans=arr.filter(data=>data.startsWith(pre));
+return ans;
+}
+  console.log(findPre(arr,pre));
 
 --------------------------------------------------------------------------------------------------------------------------
+
+15. Debugging task: app is slow when rendering 1000 items — propose solutions.
+Ans:- 1.pagination
+      2.memoisation using useMemo , useCallabck + react.memo
+      3.Lazy load
+      4.virtualization(screen pe jo hoga vahi dikhega ,mtlb jo cheeech dikh nhi rhi vo nhi dikhegi like only 10 bike screen pe visible h to bas vhi dikhega aur vaki scroll krne par dikhega)
+      5.keep static data in CDN server
+
+--------------------------------------------------------------------------------------------------------------------------
+
+16. Short SQL problem: write a query to get counts per user / per bike.
+Ans:- 
+data structure would be like
+id.  user_id  bike_id
+
+count per user
+select user_id,COUNT(*) as riderCount from rider group by user_id
+
+count per bike
+select bike_id,COUNT(*) as riderCount from rider group by bike_id
+
+--------------------------------------------------------------------------------------------------------------------------
+
+17. Short Node task: write Express middleware for auth token validation.
+ANS:- 
+const jwt=require('jsonwebtoken');
+const Authorization=(req,res,next)=>{
+    try{
+         const token=req.header.authorization;
+    if(!token)
+    return es.status(401).json({message:"toekn is not present"});
+
+    const finalToken=token.split(" ")[1];
+    const autho=jwt.verify(token,process.env.secretKey);
+    req.user=autho;
+    next();
+    }
+    catch(err){
+        console.error("there is some error",err);
+    }
+};
+module.exports=Authorization;
+
+in the api end point
+
+const Authorization=require('./auth');
+Rounter.get("/bike",Authorization,(req,res)=>{
+    res.send("authorised");
+});
+module.exports=Router;
+
+--------------------------------------------------------------------------------------------------------------------------
+
+18. 
 
 --------------------------------------------------------------------------------------------------------------------------
 
