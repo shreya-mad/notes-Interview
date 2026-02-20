@@ -374,6 +374,7 @@ PARENT
  }
  export default app; 
  export UserContex;
+
 CHILD1
  import react from 'react';
  function Child1()
@@ -750,13 +751,153 @@ redux-logger → logs actions & state changes
 
 --------------------------------------------------------------------------------------------------------------------------
 
-11. 
+11. passing dat from child to parent?
+Ans:- by calling function which was declared in parent component and then pass data as parameter in function.
+“In React, data is passed from child to parent by passing a callback function from the parent to the child, and the child calls that function with required data.”
+context api ke case me ye hota h ki ham update function me as data child me bhej dete h to jb usse shared data ko update krte h to parent componet me bhi data update ho jata hai but child -> parent data send ka actual soultion callback hai phir uske bad context api hai jisse ek store bana dete h.
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+12. Create an API endpoint to list bikes with pagination and filters (city, battery level).
+Ans:- GET /api/bikes?city=Bangalore&battery=50&page=1&limit=5
+      
+      skip = (page - 1) * limit
+
+
+frontend se api call ka syntax =>
+
+import axios from "axios";
+
+axios.get("http://localhost:3000/api/bikes", {
+  params: {
+    city: "Bangalore",
+    battery: 50,
+    page: 1,
+    limit: 5
+  }
+})
+.then(res => {
+  console.log(res.data);
+});
+
+schema creation 
+
+const mongoose = require("mongoose");
+
+const bikeSchema = new mongoose.Schema({
+  name: String,
+  city: String,
+  batteryLevel: Number
+});
+
+module.exports = mongoose.model("Bike", bikeSchema);
+
+
+then come to the backend part of api creation then 
+
+router.get("/bikes", async (req, res) => {
+  try {
+    // 1️⃣ Get query params
+    const { city, battery, page = 1, limit = 10 } = req.query;
+
+    // 2️⃣ Create filter object
+    let filter = {};
+
+    if (city) {
+      filter.city = city;
+    }
+
+    if (battery) {
+      filter.batteryLevel = { $gte: Number(battery) };
+    }
+
+    // 3️⃣ Pagination calculation
+    const skip = (page - 1) * limit;
+
+    // 4️⃣ Fetch data from DB
+    const bikes = await Bike.find(filter)
+      .skip(skip)
+      .limit(Number(limit));
+
+    // 5️⃣ Send response
+    res.status(200).json({
+      success: true,
+      count: bikes.length,
+      data: bikes
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
 
 --------------------------------------------------------------------------------------------------------------------------
+
+13. fix a CORS error in a local dev setup (explain why browser throws it and how to fix server-side).
+Ans:- npm install cors
+      
+const cors = require("cors");
+app.use(cors({
+  origin: "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+14. Short Node task: write Express middleware for auth token validation.
+ANS:- const jwt = require("jsonwebtoken");
+
+const authMiddleware = (req, res, next) => {
+  try {
+    // 1️⃣ Get token from header
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader) {
+      return res.status(401).json({ message: "Token missing" });
+    }
+
+    // 2️⃣ Extract token (remove 'Bearer')
+    const token = authHeader.split(" ")[1];
+
+    // 3️⃣ Verify token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // 4️⃣ Attach user info to request
+    req.user = decoded;
+
+    // 5️⃣ Move to next middleware / controller
+    next();
+
+  } catch (error) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+};
+
+module.exports = authMiddleware;
+
+=> controller Part
+
+const authMiddleware = require("./authMiddleware");
+
+app.get("/api/profile", authMiddleware, (req, res) => {
+  res.json({
+    message: "Access granted",
+    user: req.user
+  });
+});
+
+
+=> fronted part of callin api 
+
+axios.get("/api/profile", {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+});
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
