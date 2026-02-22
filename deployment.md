@@ -755,21 +755,636 @@ module.exports=Router;
 
 --------------------------------------------------------------------------------------------------------------------------
 
-18. 
+18. Difference between class components and functional components; why hooks?
+ANS:- 
+class compoent is a component in which code is older way of writting react code in which everything is based on classes while functional compeont is newer way of writting code in react.
+ in class compent managing life cycle method is complex and class compoent code is complex .
+ in functional compoent ,hooks is introduced to manager lifecycle method. like useefect se phle timer banante h to creation ho gaya lifecycle method ka aur usko phir se return kr dete h taki next cycle me uska timer hata saker to ye lifecycle deletion ho gya.
+ claas compent me this bht confusiing hota hai jabki functional me nhi .
+ class compo me code reuse krna thoda muskil tha.
+
+
+ | Feature     | Class Component  | Functional Component |
+| ----------- | ---------------- | -------------------- |
+| Syntax      | Complex          | Simple               |
+| State       | `this.state`     | `useState`           |
+| Lifecycle   | Multiple methods | `useEffect`          |
+| `this`      | Required         | ❌ Not needed         |
+| Code reuse  | Hard             | Easy (custom hooks)  |
+| Performance | Same             | Same                 |
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+19. How would you design a “bike listing” component that lazy-loads images?
+ANS:- 
+  1.use loading='lazy' in image. iska mtlb hai ki. “Image tab load karna jab viewport ke paas aaye”.
+  like:- 
+  function BikeCard({ bike }) {
+  return (
+    <div className="bike-card">
+      <img
+        src={bike.image}
+        alt={bike.name}
+        loading="lazy"
+        width="200"
+        height="150"
+      />
+      <h3>{bike.name}</h3>
+      <p>City: {bike.city}</p>
+    </div>
+  );
+};
+
+“I design the bike listing using a parent BikeList and reusable BikeCard components. To optimize performance, I lazy-load images using the browser’s native loading='lazy' attribute, so images load only when they come into view. For larger lists, I can further optimize using Intersection Observer.”
+bellow is the intersection observer code.
+
+import { useEffect, useRef, useState } from "react";
+function LazyImage({ src, alt }) {
+  const imgRef = useRef();
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(imgRef.current);
+  }, []);
+
+  return (
+    <img
+      ref={imgRef}
+      src={visible ? src : ""}
+      alt={alt}
+    />
+  );
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+20. Explain React Router: dynamic routes, route params, nested routes.
+ANS:- react router is used for navigating fro one page to another page in react using react library react-rounter-dom.
+
+dymanic rounting means when one part of the route is dynamic oir chnageable like
+path='/bike/:id'
+
+/bike/101
+/bike/1019
+
+dynamic routing ke andar dynamic value jo bhejte h uske hi route params bolte h.
+
+ham us route param ko useParam hook ki help se access kr skte hai
+
+const {useParam} from 'react-router-dom';
+function app(){
+ {id}=useParam();
+ return(
+  <>THis is: {id}</>
+ )
+}
+export default app;
+
+
+nested routing me ek router ke andar sub router daal dete hai like bellow
+
+/dashboard
+/dashboard/profile
+/dashboard/settings
+
+<Route path="/dashboard" element={<Dashboard />}>
+  <Route path="profile" element={<Profile />} />
+  <Route path="settings" element={<Settings />} />
+</Route>
+
+aur ye tbhi kam krega jab ham dahsboard page me <Outlet/> decalre karenge return me
+
+import { Outlet } from "react-router-dom";
+
+function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <Outlet />
+    </div>
+  );
+}
+
+jab ham navbar aur footer fix rkhna chah rahe ho sabme to simply us navbar aur footer ko dahsboard me Outlet ke upar aur neeche declare kr denge jisse navbar aur footer sare page me fixed dikhne lagega.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+21. How to implement optimistic UI updates for booking a bike (UX + error rollback).
+ANs:-  
+optimistic ui ka mtlb hai ki user ke action se pahle hi success dikha dena.
+that mean ki without server ke response ke hi dikha de hi bike successfully book ho gayi hai.
+
+aur agr API fail ho jae to rollback(undo) kr dete hai .
+
+normally kya hota hai ki user book bike button pe click krta hai phir api call hota hai aur phir api response ke aane ka wait krta hai aur response aane par success ka msg  deta hai ,like bike booked succesfully.
+but ye bad UX represent krta hai kyui isme user ka wait time jada hoga.
+
+to ham krenge aisa ki user book bike botton pe click krnega to simply ham instantly success msg de deneg aur background me. api call hota rahega aur agr api fail hota hai to phir ham rollback kr denge aur msg dikha dnege ki failed in bike booking.
+this represents best UX as user will not have to wait for api response.
+
+🔁 Optimistic UI Flow (Very Important)
+1️⃣ User clicks Book
+2️⃣ UI me bike = BOOKED (optimistic update)
+3️⃣ API call sent
+4️⃣ If success → keep UI
+5️⃣ If error → rollback UI + show error
+
+
+
+import React,{useState} from "react";
+import './App.css';
+
+function App(){
+const [bikes,setBikes]=useState([
+  {id:1,name:"yulu1",book:false},
+   {id:2,name:"yulu2",book:false},
+    {id:3,name:"yulu3",book:false},
+     {id:4,name:"yulu4",book:false},
+      {id:5,name:"yulu5",book:false},
+       {id:6,name:"yulu6",book:false},
+]);
+
+function fakeBikeBook(id){
+   setTimeout(()=>{
+    return new Promise((resolve,reject)=>{
+      Math.random()>0.2?resolve():reject()
+    })
+   },1000);
+};
+
+ async function handleBikeBook(id){
+   const prevBike=[...bikes];
+   setBikes(bikes=>
+    bikes.map(bike=>
+      bike.id===id
+      ?{...bike,book:true}
+      :bike
+    )
+  );
+   try{
+    await fakeBikeBook(id);
+    alert("bike Booked successfully");
+   }
+   catch{
+    setBikes(prevBike);
+    alert("Booking failed. Rolled back!");
+   }
+};
+return(
+  <div>
+    <h2>bike list</h2>
+    {bikes.map(data=>(
+      <div key={data.id}>
+          <h3>{data.name}</h3>
+          <button
+             disabled={data.book}
+             onClick={()=>handleBikeBook(data.id)}
+          >
+            {data.book?"booked":"book bike"}
+            </button>
+      </div>
+    ))}
+  </div>
+)
+};
+export default App;
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+22. How do you handle form validation and accessibility in React?
+ANS:- there is many wasy to handle form validation 
+   1.manually using controllered component
+   2.using in-build libraries
+
+import React,{useState} from "react";
+function App(){
+  const[errors,setErrors]=useState({});
+  const [form,setForm]=useState({
+   userName:"",
+   password:""
+  });
+
+function  handleChnage(e){
+  setForm({...form,[e.target.name]:e.target.value})
+} ;
+function handleSubmit(e){
+  e.preventDefault();
+  const error={};
+  if(!form.userName)
+    error.userName="this field is required";
+  if(!form.password)
+    error.password="this field is required";
+  setErrors(error);
+  if(errors)return;
+  else
+  alert('form submitted asuccefully')
+};
+
+
+
+return (
+<form onSubmit={handleSubmit}>
+  <label>user Name</label>
+  <input 
+  type="text"
+  name="userName"
+  value={form.userName}
+  onChange={handleChnage}
+  />
+  {errors.userName && <p>{errors.userName}</p>}
+  <label>password</label>
+  <input  type="password"
+  name="password"
+  value={form.password}
+  onChange={handleChnage}
+  />
+{errors.password && <p>{errors.password}</p>}
+<input type="submit" />
+</form>
+);
+
+};
+export default App;
+
+email and password validation 
+
+password validation 
+
+What This Means:
+
+(?=.*[a-z]) → at least one lowercase
+(?=.*[A-Z]) → at least one uppercase
+(?=.*\d) → at least one number
+(?=.*[@$!%*?&]) → at least one special char
+{8,} → minimum 8 characters
+
+✅ React Example Validation
+function validatePassword(password) {
+  if (!password) return "Password is required";
+
+  if (password.length < 8)
+    return "Password must be at least 8 characters";
+
+  if (!/[A-Z]/.test(password))
+    return "Must contain one uppercase letter";
+
+  if (!/[a-z]/.test(password))
+    return "Must contain one lowercase letter";
+
+  if (!/[0-9]/.test(password))
+    return "Must contain one number";
+
+  if (!/[!@#$%^&*]/.test(password))
+    return "Must contain one special character";
+
+  return "";
+}
+
+
+email validation 
+A valid email generally must have:
+
+✅ Some text before @
+✅ @ symbol
+✅ Domain name
+✅ Dot (.)
+✅ Domain extension (like .com, .in)
+
+function validateEmail(email) {
+  if (!email) return "Email is required";
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRegex.test(email)) {
+    return "Invalid email format";
+  }
+
+  return "";
+}
+
+--------------------------------------------------------------------------------------------------------------------------
+
+23. How to implement infinite scroll or “load more” for lists?
+ANS:- 
+infinte scroll ya load more ke 3 ways hai 1. pagination se jisme load more pe click hon har baki data at hai 2.auto scroll using using joki insta utube me use hota hai jisme ham manually check krte h ki kahi hamara screen heigh jo h vo data display wale height se jada to nhi ho rhi agr hgo rhi to us case me kuch fixed px. height phle hi ham data ko load kr denge 3.ham insection observer ki help se karneg jisme ham ek dummy div bottom pe rkh deneg phir insection observer ki help se karnege ki kya ham us div tk pahich gye h kyaaur agr ha to us case me data load hone ka api call ho jaega.
+
+
+   1.pagination(doing manuaaly)
+         Idea (Simple)
+         First load 10 items
+         User clicks Load More
+         Load next 10 items
+
+
+import { useEffect, useState } from "react";
+function LoadMoreList() {
+  const [items, setItems] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetchItems(page);
+  }, [page]);
+
+  const fetchItems = async (pageNo) => {
+    const res = await fetch(
+      `/api/items?page=${pageNo}&limit=10`
+    );
+    const data = await res.json();
+
+    setItems(prev => [...prev, ...data]);
+  };
+
+  return (
+    <div>
+      {items.map((item, i) => (
+        <div key={i}>{item}</div>
+      ))}
+
+      <button onClick={() => setPage(page + 1)}>
+        Load More
+      </button>
+    </div>
+  );
+}
+
+export default LoadMoreList;    
+   2.Infinite Scroll (AUTOMATIC)- autoScroll using scroll
+        🧠 Idea 
+          User scrolls down
+          When near bottom → load more automatically
+          No button
+          Used in:
+            Instagram
+            LinkedIn
+            Twitter
+
+
+
+            import { useEffect, useState } from "react";
+
+function InfiniteScrollList() {
+  const [items, setItems] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    fetchItems(page);
+  }, [page]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 200;
+
+      if (nearBottom) {
+        setPage(prev => prev + 1);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const fetchItems = async (pageNo) => {
+    const res = await fetch(
+      `/api/items?page=${pageNo}&limit=10`
+    );
+    const data = await res.json();
+
+    setItems(prev => [...prev, ...data]);
+  };
+
+  return (
+    <div>
+      {items.map((item, i) => (
+        <div key={i}>{item}</div>
+      ))}
+    </div>
+  );
+}
+
+export default InfiniteScrollList;
+
+
+
+3. Infinite Scroll with Intersection Observer (BEST PRACTICE)
+     🧠 Idea
+      Watch a sentinel div at bottom
+      When it becomes visible → load more
+
+import { useEffect, useRef, useState } from "react";
+
+function InfiniteScrollIO() {
+  const [items, setItems] = useState([]);
+  const [page, setPage] = useState(1);
+  const loaderRef = useRef();
+
+  useEffect(() => {
+    fetchItems(page);
+  }, [page]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPage(prev => prev + 1);
+        }
+      },
+      { threshold: 1 }
+    );
+
+    observer.observe(loaderRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const fetchItems = async (pageNo) => {
+    const res = await fetch(
+      `/api/items?page=${pageNo}&limit=10`
+    );
+    const data = await res.json();
+
+    setItems(prev => [...prev, ...data]);
+  };
+
+  return (
+    <div>
+      {items.map((item, i) => (
+        <div key={i}>{item}</div>
+      ))}
+
+      <div ref={loaderRef}>Loading...</div>
+    </div>
+  );
+}
+
+export default InfiniteScrollIO;
+
+--------------------------------------------------------------------------------------------------------------------------
+
+24.How to unit test a React component (what to assert, tools you’d use).
+ANS:- Unit testing ka matlab,ek single component ko isolation me test karna bina poori app chalaye.
+
+✅ 1️⃣ Jest
+Test runner
+Assertions (expect())
+
+✅ 2️⃣ React Testing Library (RTL)
+Component render karne ke liye
+User ke jaise test likhne ke liye
+
+“I use Jest with React Testing Library to test components from the user’s perspective.”
+
+To check whether the actual result matches the expected result.
+
+function add(a, b) {
+  return a + b;
+}
+
+Now in unit test:
+
+test("adds two numbers", () => {
+  expect(add(2, 3)).toBe(5);
+});
+
+Here bellow one is assert :
+
+expect(add(2, 3)).toBe(5);
+
+--------------------------------------------------------------------------------------------------------------------------
+
+25. Explain handling file upload (images) from React to backend (presigned URLs vs multipart).
+ANS:- 
+   User React app se:
+
+Image select karta hai
+
+Backend / storage (S3, Cloudinary, etc.) me upload hoti hai
+
+👉 Do common approaches hain:
+1️⃣ Multipart upload (file goes via backend)
+2️⃣ Presigned URL upload (file goes directly to storage)
+
+
+🔹 1️⃣ Multipart Upload (Traditional Way)
+❓ Kya hota hai?
+Image pehle React → Backend jaati hai
+Backend us image ko store / forward karta hai
+
+🔹 2️⃣ Presigned URL Upload (Modern & Scalable)
+❓ Kya hota hai?
+Backend sirf temporary upload URL deta hai
+Image direct storage (S3) pe upload hoti hai
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
 
 --------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------
 
+
+
 --------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------
 
+
+
 --------------------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------------------
 
 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
 
 
 
