@@ -1290,8 +1290,89 @@ Backend sirf temporary upload URL deta hai
 Image direct storage (S3) pe upload hoti hai
 
 
+multipart easy to implement hota h but backend(server) pe load badha deta hai.
+
+
+“For file uploads, I use multipart uploads when the application is simple and files are small. For scalable systems, I prefer presigned URLs where the backend generates a temporary upload URL and the frontend uploads the file directly to cloud storage, reducing server load and improving performance.”
+
 --------------------------------------------------------------------------------------------------------------------------
 
+26. Implement rate limiting / protect endpoints from abuse — approaches and middleware.
+ANS:- 
+
+🔹 1️⃣ IP-based Rate Limiting (Most common)
+Client ke IP address ke basis par limit
+Easy & effective
+
+👉 Used for:
+Public APIs
+Login endpoints
+
+🔹 2️⃣ User-based Rate Limiting
+Logged-in user ke userId ke basis par
+JWT ke saath use hota hai
+
+👉 Used for:
+Authenticated APIs
+Paid users vs free users
+
+🔹 3️⃣ API-key based Rate Limiting
+Har client ko ek API key
+Enterprise / partner APIs
+
+🔹 4️⃣ Distributed Rate Limiting (Advanced)
+Redis / cache use karke
+Multiple servers ke liye
+👉 Used in:
+Production
+Microservices
+
+✅ Most Common Solution: express-rate-limit
+
+
+Step 2: Create Rate Limit Middleware
+const rateLimit = require("express-rate-limit");
+
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100,                // max 100 requests
+  message: {
+    error: "Too many requests, please try again later."
+  }
+});
+🔹 Step 3: Apply Middleware
+👉 Global (all APIs)
+app.use("/api", apiLimiter);
+👉 Or Specific Route (Best practice)
+app.post("/api/login", loginLimiter, loginController);
+🔹 Login-specific limiter (Interview Bonus)
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 5, // only 5 login attempts
+  message: "Too many login attempts"
+});
+
+
+
+🚀 Advanced: Redis-based Rate Limiting (Production)
+
+⚠️ Important for multiple server instances
+
+const RedisStore = require("rate-limit-redis");
+
+const limiter = rateLimit({
+  store: new RedisStore({
+    sendCommand: (...args) => redisClient.call(...args),
+  }),
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
+
+👉 Sab servers same Redis use karte hain
+👉 Consistent limits
+
+
+“To protect APIs from abuse, I implement rate limiting using middleware like express-rate-limit. I apply stricter limits on sensitive endpoints like login and use Redis-backed rate limiting in production to handle distributed systems.”
 
 
 --------------------------------------------------------------------------------------------------------------------------
