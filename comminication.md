@@ -421,4 +421,201 @@ it was nice, talking with you.
 100. धन्यवाद, आपका दिन शुभ हो।
 ANS:- thankyou, have a nice day.
 
+101. अगर मुझे यह अवसर मिलता है, तो मैं अपनी तकनीकी क्षमता का पूरा उपयोग करना चाहूँगा।
+ANS:- if i get this opportuninty, i wish to use my technical skills.
+if i get this opportunity then i will use my technicl skills to the fullest.
 
+102. पिछले दो वर्षों में मैंने कई प्रोजेक्ट्स पर काम किया है, जिनसे मेरी समस्या सुलझाने की क्षमता काफी बेहतर हुई है।
+ANS:- my problem solving skills improved a lot as i have worked on several projects in last two years so . 
+in last two year, i have worked on several projects that helps me imporve my problem solving skill.
+
+103. जब भी मुझे किसी कठिन समस्या का सामना करना पड़ता है, तो मैं पहले उसे छोटे हिस्सों में बाँटकर समझने की कोशिश करता हूँ।
+ANS:- when i need to face big problem then i solve that by breaking into small parts.
+whenever i face complex promlem , i would like to sove it by breaking it into parts.
+
+104. मेरी वर्तमान भूमिका में मुझे फ्रंटएंड और बैकएंड दोनों पर काम करने का अवसर मिला है।
+ANS:- in my cureent role i get chnace to work in both fronted and backend.
+in my current role, i get opportunity to work on both frontend and backend.
+
+105. अगर टीम में कोई तकनीकी चुनौती आती है, तो मैं उसे मिलकर हल करने में विश्वास करता हूँ।
+ANS:- if we get any technical issue in the team then i belive in solving in team.
+if any technical issue arises in the team then i believe in solving it collaboratively.
+
+106. पिछले प्रोजेक्ट में मैंने एक ऐसा फीचर बनाया था जिसने एप्लिकेशन की परफॉर्मेंस को काफी बेहतर कर दिया।
+ANS:- i implemented a feature in last projct which imporved performance of that project.
+i implemented a feature in lasrt project that significantly imporved application performance.
+
+107. जब मैंने पहली बार MERN स्टैक पर काम शुरू किया था, तब मुझे काफी चीजें नई सीखनी पड़ी थीं।
+ANS:- i learnt a lot when i started working on mern stcak first time.
+i learned many new things when i statred work on mern stack for the first time.
+
+108. अगर मुझे किसी नई टेक्नोलॉजी पर काम करने का मौका मिलता है, तो मैं उसे सीखने के लिए अतिरिक्त समय देता हूँ।
+ANS:- if i get a chance to work on new technology then give extra time to lern that.
+if i get opportunity ot work on new technology , i spend extra time to learn it. 
+
+109. मेरी कोशिश रहती है कि मैं ऐसा कोड लिखूँ जिसे टीम के दूसरे सदस्य भी आसानी से समझ सकें।
+ANS:- i allways try to write code so that other team member can easily understand that.
+i allways try to write code that other team members can esily understand .
+
+110. जब हम किसी प्रोजेक्ट पर काम करते हैं, तो सबसे पहले हम उसकी आवश्यकताओं को अच्छी तरह समझने की कोशिश करते हैं।
+ANS:- when we work on any project then firstly we try to understand the requirement of that project.
+when we wokr on any project, we firstly try to understnad the requirement  clearly.
+
+111. अगर कोई बग प्रोडक्शन में आ जाता है, तो मैं पहले उसकी जड़ तक पहुँचने की कोशिश करता हूँ।
+ANS:- when we get any bug in prod then firsrtly we try find root cause.
+if any bug arrises in prod , we try to find root cause.
+
+112. मुझे लगता है कि एक अच्छे डेवलपर को हमेशा नई चीजें सीखते रहना चाहिए।
+ANS:- i think a good developer  have to learn new things. 
+i think a good developer should allways keep learning new things.
+
+113. जब भी मैं नया फीचर बनाता हूँ, तो मैं उसकी परफॉर्मेंस और स्केलेबिलिटी पर भी ध्यान देता हूँ।
+ANS:- i allway try to focus of performance and scalabilty while implementing new feature.
+whenener i implemt new feature , i focus on performace and scalability.
+
+114. अगर मुझे किसी चीज़ का समाधान नहीं मिलता, तो मैं डॉक्यूमेंटेशन और रिसर्च की मदद लेता हूँ।
+ANS:- if i didnt get solution of anything then i take help from documentation and do rnd.
+if i cant find solution , i refer documentation and do further research. 
+
+115. पिछले कुछ महीनों में मैंने अपने कोडिंग स्टैंडर्ड्स को बेहतर बनाने पर काफी काम किया है।
+ANS:- i worked on betterment of  my coding standard for last few months.
+over last few months , i have worked on imporving my coding standard.
+
+116. जब टीम में कोड रिव्यू होता है, तो मैं उससे बहुत कुछ सीखने की कोशिश करता हूँ।
+ANS:- i try to learn a lot while team code review.
+while team code review, i try to learn as much posible.
+
+117. मुझे ऐसी टीम के साथ काम करना पसंद है जहाँ लोग एक-दूसरे से सीखने के लिए खुले हों।
+ANS:- i love to work with a team in which  people open to lern from each other.
+i love to work with the team where people are open to learn from each other.
+
+118. अगर कोई नया डेवलपर टीम में जुड़ता है, तो मैं उसे प्रोजेक्ट समझाने की कोशिश करता हूँ।
+ANS:- when new member added to my team ,i try to explain project to them.
+if new develope joins teams, i try to help them undestand the project.
+
+119. मैंने अपने पिछले प्रोजेक्ट में कई APIs डिजाइन और विकसित की हैं।
+ANS:- i designed and developed several api's in my last project.
+i designed and developed several apis in my last project.
+
+120. जब एप्लिकेशन का ट्रैफिक बढ़ता है, तो हमें उसके स्केलेबिलिटी पर विशेष ध्यान देना पड़ता है।
+ANS:- when application traffic increase , we need to focus on scalabilty of the project .
+when traffic of the project increases, we need to focus on scalabily.
+
+121. अगर यूज़र एक्सपीरियंस अच्छा नहीं होगा, तो यूज़र एप्लिकेशन को ज्यादा समय तक इस्तेमाल नहीं करेंगे।
+ANS:- if user experince is not good then user wont use application for longer timer.
+if user experince is not goof , uer will not continue using it for long.
+
+122. मैंने अपने प्रोजेक्ट में स्टेट मैनेजमेंट के लिए कई अलग-अलग तरीके आज़माए हैं।
+ANS:-  i tried lots of ways for state management in my project.
+i have tried several approaach for state mangement in my project. 
+
+123. जब भी हमें कोई नई रिक्वायरमेंट मिलती है, तो हम पहले उसका टेक्निकल अप्रोच तय करते हैं।
+ANS:- when i get any new requirement then firstly we try to find technical approach.
+whenever we get any new requirement , we firstly decide technical approach. 
+
+124. मुझे लगता है कि एक अच्छे डेवलपर को सिर्फ कोड ही नहीं बल्कि सिस्टम डिजाइन भी समझना चाहिए।
+ANS:- i think a good developer must understand system design not only writting code.
+i believe a good developer should understnad system desing , not just codinhg.
+
+125. अगर मुझे मौका मिलता है, तो मैं अपनी टीम के साथ मिलकर प्रोडक्ट को और बेहतर बनाना चाहूँगा।
+ANS:- if i get chnace , i would like to on betterment of the project alongwith team.
+if i get chnace, i would like to work with team to imporve project.
+
+126. मेरी कोशिश रहती है कि मैं हर प्रोजेक्ट में कुछ नया सीखकर आगे बढ़ूँ।
+ANS:- i allways try to  procced after learning something from the project.
+i allways try to learn soemthing new from the project before moving to next.
+
+127. जब मैं किसी जटिल समस्या को हल करता हूँ, तो मुझे उससे बहुत संतुष्टि मिलती है।
+ANS:- when i solve any complex problem then that satisfies me a lot.
+when i solve any complex problem, that give me lot satisfaction.
+
+128. अगर कंपनी में सीखने का अच्छा माहौल हो, तो डेवलपर्स तेजी से आगे बढ़ सकते हैं।
+ANS:- if there is good learning environment in the company, developers can easily move forward.
+if comopany has  good learnign environment , developer grow quickly.
+
+129. मैंने कई बार ऐसे बग्स को ठीक किया है जिन्हें समझने में काफी समय लगा।
+ANS:- i solved a bug which took lot of time to understand.
+i have fixed several bugs that took lots of time to understand.
+
+130. जब कोई फीचर सफलतापूर्वक डिप्लॉय हो जाता है, तो पूरी टीम को अच्छा महसूस होता है।
+ANS:- when any features deployed successfully then whole team feels good. 
+when any feature deployed successfully, whole team feels happy.
+
+131. अगर मुझे इस भूमिका के लिए चुना जाता है, तो मैं अपनी पूरी जिम्मेदारी के साथ काम करूँगा।
+ANS:- if i get selected for this role then i will try to work with responsibility.
+if i get selected for this role ,i will work with responsibiltty.
+
+132. मेरी कोशिश रहती है कि मैं समय पर और गुणवत्ता के साथ अपना काम पूरा करूँ।
+ANS:- i try to complete work on time with quality.
+i allways try to complete my work on time while maintinng quality.
+
+133. जब भी कोई डेडलाइन नजदीक होती है, तो मैं अपने काम को प्राथमिकता के आधार पर व्यवस्थित करता हूँ।
+ANS:- when deadline is near then i fix based on priority.
+when any deadsline is near, i organise my work based on priority.
+
+134. मुझे लगता है कि अच्छे कम्युनिकेशन के बिना टीम में सही तरीके से काम करना मुश्किल होता है।
+ANS:- i think working in team is difficult without proper comminication.
+i think it diicult to work efficiently in team without proper communication.
+
+135. अगर मुझे इस कंपनी में काम करने का मौका मिलता है, तो मैं लंबे समय तक योगदान देना चाहूँगा।
+ANS:- if i get chnace to with this company then i will contribute for long time.
+if i get ooportunity to work iwht this company , i would like contribute for long time.
+
+136. पिछले कुछ समय से मैं अपनी समस्या सुलझाने की क्षमता को और बेहतर बनाने की कोशिश कर रहा हूँ।
+ANS:- im trying to improve my problem solving skills for some time.
+for last few days, i have been tring to improve my promlem solving skill.
+
+137. अगर कोई नया टूल प्रोजेक्ट के लिए उपयोगी होता है, तो मैं उसे सीखने में समय लगाता हूँ।
+ANS:- if we user any new tool in the project then it take some time to learn.
+if new tool is used in the project, i spend time learning it.
+
+138. जब टीम में सहयोग अच्छा होता है, तो प्रोजेक्ट की गुणवत्ता भी बेहतर होती है।
+ANS:- if there is good contribution of team then project qualtity improved a lot.
+when team  collaboration is string , the quality of the project improves. 
+
+139. मुझे ऐसी भूमिका पसंद है जहाँ मुझे चुनौतीपूर्ण समस्याओं पर काम करने का अवसर मिले।
+ANS:- i love a role in which i get a chnace to face challengeous problem.
+i prefer role where i get opportunity to work on challengeous problems.
+
+140. अगर मुझे सिस्टम डिजाइन पर काम करने का मौका मिलता है, तो मैं उसमें भी सीखना चाहूँगा।
+ANS:- if i ger chnace to work on system design then love to lerrn that.
+if i get opportunity to wokr on system design, i would like to learn it.
+
+141. मैंने हाल ही में क्लाउड टेक्नोलॉजी के बारे में सीखना शुरू किया है।
+ANS:-  recently, i started learning about cloud technology.
+
+142. जब मैं किसी इंटरव्यू की तैयारी करता हूँ, तो मैं डेटा स्ट्रक्चर और सिस्टम डिजाइन पर ज्यादा ध्यान देता हूँ।
+ANS:- when i prepare for interview, i mainly focus on dsa and sustem design.
+
+
+143. अगर मुझे मौका मिलता है, तो मैं कंपनी के प्रोडक्ट को बेहतर बनाने के लिए नए आइडियाज भी साझा करना चाहूँगा।
+ANS:- if i get chnace to work with this compnay then i will share idieas for betterment of the cpmpany project.
+if i  get oppertunity to wokr with this company , i would like to share my ideas to imporve product quality.
+
+144. मुझे लगता है कि हर डेवलपर को अपने कोड की जिम्मेदारी लेनी चाहिए।
+ANS:- i think every develop should take responsibilty of their code.
+i think every developer should take responsibulty for their code.
+
+145. अगर किसी फीचर में सुधार की जरूरत होती है, तो मैं उसे बेहतर बनाने की कोशिश करता हूँ।
+ANS:- if any feature need improvemnt the i try to make that better.
+if any features needs imporvemnt, i try make it better.
+
+146. मैंने अपने पिछले अनुभव से टीमवर्क और समय प्रबंधन के बारे में बहुत कुछ सीखा है।
+ANS:- in my last experince i learnt a lot in learm work and time manangemtn.
+i have learned a lot about team work and time manaement from my last experince.
+
+147. जब मैं किसी समस्या को हल करता हूँ, तो मैं कोशिश करता हूँ कि उसका समाधान सरल और प्रभावी हो।
+ANS:- when i solve any issue then i try tto find easy and effective solution.
+when i solve any problem, i try to find simple and effective solution.
+
+148. मैं हमेशा यह कोशिश करता हूँ कि मेरा कोड भविष्य में भी आसानी से मेंटेन किया जा सके।
+ANS:- i allways try that my code will be maintanable in future.
+i allwasy to write code which can be easily maintain in future.
+
+149. मैं बैंगलोर में नौकरी इसलिए करना चाहता हूँ क्योंकि दिल्ली की प्रदूषित हवा के कारण मुझे स्वास्थ्य संबंधी समस्याएँ हो रही हैं।
+ANS:- i want to switch to  banglore location because im suffering from some health issue due to air pollution in delhi and  delhi not safe for girls.
+i am looking for opportunity in banglore becuase  air pollution delhi has been affecting my health.
+
+150. मुझे लगता है कि नई जगह पर काम करने से मुझे नई चीजें सीखने और अपने करियर को आगे बढ़ाने का अच्छा अवसर मिलेगा।
+ANS:- i think i get chnace to learn new thinks and move forward by working at new place. 
+i believe working in new place will help me learn new thing and grow in my carrer.

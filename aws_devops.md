@@ -493,3 +493,480 @@ Do we pay for multiple servers?	✅ Yes
 Many beginners confuse this with Auto Scaling Groups, where AWS can automatically launch servers across zones after you configure it.
 
 If you want, I can also explain the complete AWS beginner architecture (VPC + EC2 + Load Balancer + Database) in one very simple diagram. It will make DevOps networking much clearer.
+
+
+
+What is IAM?
+
+it is service in aws which control who can do what inside your aws account.
+
+IAM stands for Identity and Access Management.
+It is a service in Amazon Web Services that controls who can access AWS and what they are allowed to do.
+Think of it like a security system for AWS accounts.
+
+Simple Real-Life Example
+
+Imagine a company office.
+
+Different people have different permissions:
+
+| Person         | Permission                 |
+| -------------- | -------------------------- |
+| Security Guard | Can open the gate          |
+| Employee       | Can enter office           |
+| Manager        | Can access important files |
+| Admin          | Can control everything     |
+
+
+Not everyone should get full access.
+
+IAM works exactly like this.
+
+
+What IAM Controls
+
+IAM decides two things:
+
+1️⃣ Who can access AWS
+2️⃣ What they can do in AWS
+
+
+
+Example permissions:
+
+Create server
+
+Delete database
+
+View billing
+
+Read logs
+
+
+Main IAM Components
+1️⃣ IAM User
+
+An IAM User is a person who can log into AWS.
+
+Example:
+
+User: Rahul
+User: Shreya
+User: DevOpsEngineer
+
+Each user gets:
+
+username
+
+password
+
+permissions
+
+Example:
+
+Rahul → can only view servers
+Admin → can create and delete servers
+
+👉 IAM User = A person with an AWS login.
+
+2️⃣ IAM Policy
+
+A Policy is a permission rule.
+
+It tells AWS what actions are allowed or denied.
+
+it is just document that says things: 
+Example policy:
+
+Allow:
+Start EC2
+Stop EC2
+
+Deny:
+Delete EC2
+
+Policies are written in JSON format.
+
+Example:
+
+{
+ "Effect": "Allow",
+ "Action": "ec2:StartInstances",
+ "Resource": "*"
+}
+
+3️⃣ IAM Group (Team of Users)
+
+A Group is a collection of users.
+
+Instead of giving permissions to every user separately, we add them to a group.
+
+Example:
+
+Group: Developers
+Group: DevOps
+Group: Admins
+
+Example:
+
+Developers Group
+   ├── Rahul
+   ├── Aman
+   └── Neha
+
+If the Developers group has permission to:
+
+Start EC2
+Stop EC2
+
+Then all users in that group automatically get those permissions.
+
+Think:
+
+👉 IAM Group = Team of users with same permissions.
+
+
+4️⃣ IAM Role (Permission for AWS Services)
+
+A Role is used by AWS services, not humans.
+
+Example:
+
+An EC2 server wants to access S3 storage.
+
+Instead of storing passwords, we give it a role.
+
+EC2 Server
+   │
+IAM Role
+   │
+Access S3
+
+This is more secure.
+
+Think:
+
+👉 Role = Temporary permission for AWS services.
+
+Real Life Example for iam role
+
+Think of a hotel key card.
+
+You check into a hotel.
+
+The hotel gives you a temporary key card.
+
+That card lets you:
+
+open your room
+
+use the gym
+
+access the elevator
+
+But only while you stay there.
+
+After checkout → the card stops working.
+
+IAM Role works the same way:
+
+Temporary permission
+given when needed
+
+
+# 🧥 ROLES
+
+Roles are like **temporary permission jackets** that AWS services can wear.
+
+```
+                 🧥 ROLES
+   (Temporary permission jackets for AWS services)
+
+
+   🖥️ EC2 Instance
+        │
+        │  UPLOAD IMAGES
+        ▼
+   🪣 S3 Bucket
+        │
+        │  READ
+        ▼
+   ⚡ Lambda
+        │
+        │  WRITE
+        ▼
+   🗄️ RDS Database
+        │
+        │
+        ▼
+   📊 CloudWatch
+```
+
+### Flow
+
+```
+EC2 Instance  ──UPLOAD IMAGES──▶  S3 Bucket
+S3 Bucket     ─────READ───────▶  Lambda
+Lambda        ─────WRITE──────▶  RDS Database
+RDS Database  ─────LOGS───────▶  CloudWatch
+```
+
+### Explanation
+
+- 🖥️ **EC2 Instance** → Uploads images to S3  
+- 🪣 **S3 Bucket** → Stores images  
+- ⚡ **Lambda** → it is serverless funtion which Reads images and processes them  
+- 🗄️ **RDS Database** → Stores processed data  
+- 📊 **CloudWatch** → Monitors logs and performance  
+
+All these services use **IAM Roles (temporary permissions)** to communicate securely.
+reference image is inside image named IAM_Role
+
+Why IAM is Important
+
+Without IAM:
+
+❌ Everyone could access everything
+❌ Security risk
+❌ Data could be deleted accidentally
+
+With IAM:
+
+✅ Controlled access
+✅ Better security
+✅ Proper permission management
+
+
+
+now our vpc and subnets are ready so next step is to run our application. and this is how EC2 comes in.
+
+What is EC2?
+
+EC2 stands for Elastic Compute Cloud.
+EC2 is basically service from aws that let you create virtual computer(server) on your internet.
+EC2 = A computer you rent from AWS to run your applications.
+
+Simple Real-Life Example
+
+Imagine you want to create a website.
+
+A website needs a computer (server) that:
+
+runs the code
+
+stores files
+
+sends responses to users.
+
+Earlier companies had to buy physical servers.
+
+Now with EC2 you can create a server in a few seconds
+
+Why It Is Called "Elastic"
+
+Elastic means you can increase or decrease power anytime.
+
+Example:
+
+Small server:
+
+1 CPU
+1 GB RAM
+
+Large server:
+
+16 CPU
+64 GB RAM
+
+You can change this whenever you want.
+
+
+Example of Creating EC2
+
+When you create an EC2 instance you choose:
+
+Region → Mumbai
+
+Operating system → Linux / Windows
+
+CPU and RAM size
+
+Storage
+
+After that AWS launches your server.
+
+You can connect using SSH and use it like a normal computer.
+
+
+
+                                    🖥️ AWS EC2
+
+
+     ┌───────────────────────────────┐        ┌─────────────────────────────────┐
+     │         Instance Type         │        │      Amazon Machine Image       │
+     │                               │        │                                 │
+     │  This decides how powerful    │        │  It's like the template for     │
+     │  your server is               │        │  your server                    │
+     │                               │        │                                 │
+     │  • t2.micro   → tiny workloads│        │  • Amazon Linux                 │
+     │  • t3.medium  → lightweight   │        │  • Ubuntu                       │
+     │                   apps        │        │  • Windows                      │
+     │  • m5.large   → more power    │        │  • Custom image                 │
+     │                               │        │                                 │
+     └───────────────────────────────┘        └─────────────────────────────────┘
+
+in production, we must keep ec2 in private subnet becuase every ec2 instance has security group that control which traffic can come in and go out of your serever.
+ex:- we will configure ec2 instance only to accept traffic from load balancer not durectly from the internet.
+but due to free tier limitation in this lab, we will keep ec2 in public subnet.
+ 
+
+Agar direct EC2 bana sakte hain to VPC aur subnet kyun?
+
+Jab tum AWS me EC2 create karte ho, actually AWS automatically ek default VPC aur subnet use karta hai.
+
+matlab
+
+Default VPC
+   │
+Default Subnet
+   │
+EC2
+
+Isliye beginner ko lagta hai ki VPC ki zarurat nahi hai.
+
+
+Real Companies kya karti hain
+
+Production architecture me custom VPC banate hain for security.
+
+Example architecture:
+
+Internet
+   │
+Load Balancer
+   │
+Public Subnet
+   │
+EC2 (Web Server)
+   │
+Private Subnet
+   │
+Database
+
+
+Simple Flow (Remember this)
+
+1️⃣ Region choose
+2️⃣ VPC create
+3️⃣ Subnets create
+4️⃣ Internet Gateway attach
+5️⃣ Route table configure
+6️⃣ EC2 launch inside subnet
+
+
+Step-by-Step Real Process
+
+1️⃣ VPC create karte hain
+
+VPC matlab tumhara private network in cloud.
+
+VPC
+
+Iske andar hi saare resources rahenge:
+
+EC2
+
+Database
+
+Load balancer
+
+Example:
+
+VPC (10.0.0.0/16)
+
+
+2️⃣ Subnet create karte hain
+
+VPC ko hum chhote network parts me divide karte hain.
+
+Example:
+
+VPC
+ ├── Public Subnet
+ └── Private Subnet
+Public Subnet
+
+Internet access allowed.
+
+Example:
+
+Web server
+
+API server
+
+Private Subnet
+
+Internet se direct access nahi.
+
+Example:
+
+Database
+
+3️⃣ Internet Gateway attach karte hain
+
+Agar server ko internet se baat karni hai to Internet Gateway lagate hain.
+
+Internet
+   │
+Internet Gateway
+   │
+Public Subnet
+
+4️⃣ Ab EC2 create karte hain
+
+EC2 server hamesha kisi subnet ke andar hi launch hota hai.
+
+Example:
+
+VPC
+ ├── Public Subnet
+ │      └── EC2 (Web Server)
+ │
+ └── Private Subnet
+        └── Database
+
+
+
+while selctiing EC2 , we select operating system, cpu power, memory ,storage
+
+
+there is many ways to hois twebsite on aws including ec2
+
+| Method              | Kab Use Hota Hai    |
+| ------------------- | ------------------- |
+| EC2                 | Full backend apps   |
+| S3                  | Static websites     |
+| EC2 + Load Balancer | Large scalable apps |
+| Lambda              | Serverless apps     |
+| ECS / EKS           | Containerized apps  |
+
+
+every ec2 instance also need storage and this is where EBS(Elastic block store) volume come in. it is basically hard drive for your server. os ,logs and temproary files lives here.
+
+```
+                 💾 Elastic Block Store (EBS)
+
+        "It's basically a hard drive for your server"
+
+
+                         │
+                         │
+                         ▼
+
+        ┌───────────────────────────────────────----------------------------------------───┐
+        │                                                                                  │
+        │   ⚙️  OPERATING SYSTEM             📜  LOGS       📁  TEMPORARY FILES             │
+        │                                                                                  │
+        │                                                                                  │
+        ──────────────────────────────────────────------------------------------------------
+```
