@@ -969,4 +969,321 @@ every ec2 instance also need storage and this is where EBS(Elastic block store) 
         │                                                                                  │
         │                                                                                  │
         ──────────────────────────────────────────------------------------------------------
-```
+
+
+Elastic Block Store (EBS)
+
+EBS is a storage volume attached to an EC2 instance.
+
+It acts like a hard drive for the server.
+
+It stores:
+- Operating System
+- Application Logs
+- Temporary Files
+- Application Data
+
+
+==> RDS(relational database service)
+
+        🔴 Manual Database Setup (Using EC2)
+
+   🐬 MySQL  ─────────── Manual Installation ───────────▶  🖥️ EC2
+
+
+        🟢 Managed Database (Using RDS)
+
+   🗄️ RDS  ─────────── Production Ready Database ───────────▶
+
+                     • Backups
+                     • Scaling
+                     • Patching
+
+it is allways deployed inside vpc private subnet. that means our databse is not exporsed to interenet. only our ec2 server can talk to it. that controlles though security groups.
+
+RDS used security groups to control which services are allowed to connect.
+
+
+RDS is the code memory of our application.
+
+
+📦 What is Amazon S3?
+=> S3 is amazons cloud storage sevice.
+Amazon S3 (Simple Storage Service) is a storage service in Amazon Web Services.
+
+👉 Simple definition:
+
+S3 = Internet par files store karne ka storage system
+ 
+ in s3 , we store data into buckets, think of this like folder in the cloud. each files is an object with an data, metadata and unique key.
+
+🧠 Simple Example
+
+Socho Google Drive ya Dropbox.
+
+Tum waha:
+
+photos upload karte ho
+
+videos store karte ho
+
+documents save karte ho
+
+
+S3 me 2 main cheeze hoti hain:
+
+1️⃣ Bucket (Folder jaisa)
+
+Yeh ek container hota hai
+
+Isme tum files rakhte ho
+
+Example:
+
+my-images-bucket
+my-app-data
+2️⃣ Object (File)
+
+Har file ko object bolte hain
+
+Example:
+
+image.jpg
+
+video.mp4
+
+resume.pdf
+
+
+📌 Real Flow Example
+
+User uploads image
+        ↓
+EC2 / App
+        ↓
+S3 Bucket
+        ↓
+Image stored safely
+
+
+🚀 Where S3 is Used
+1️⃣ Image / File Storage
+
+Profile photos
+
+Videos
+
+Documents
+
+2️⃣ Static Website Hosting
+User → Internet → S3 → Website (HTML, CSS, JS)
+3️⃣ Backup Storage
+
+Database backups
+
+Logs
+
+System data
+
+
+🔐 Security in S3
+
+You can control:
+
+Who can access files
+
+Public or private files
+
+Permissions using IAM
+
+⚡ Why S3 is Powerful
+
+✅ Unlimited storage
+✅ Very secure
+✅ Highly durable (data rarely lost)
+✅ Cheap storage
+✅ Accessible from anywhere
+
+
+| Feature       | S3                     | EBS              |
+| ------------- | ---------------------- | ---------------- |
+| Type          | Object storage         | Block storage    |
+| Use           | Files (images, videos) | OS / server disk |
+| Attach to EC2 | No                     | Yes              |
+| Access        | Internet               | EC2 only         |
+
+
+
+🧠 Why S3-like Storage is Needed
+
+Think about Instagram:
+
+Millions of users
+
+Billions of images
+
+Huge videos uploaded every second
+
+So they need:
+
+✅ Very large storage
+✅ High speed
+✅ Global access
+✅ High durability
+
+This is exactly what S3 provides.
+
+
+🏢 What Instagram Actually Uses
+
+Instead of AWS S3, Instagram uses:
+
+👉 Their own infrastructure (Meta’s data centers)
+
+Meta has built its own storage systems like:
+
+Haystack (for photos)
+
+Other internal storage systems
+
+
+🌍 Real Companies Using S3
+
+Many companies DO use S3:
+
+Netflix
+
+Airbnb
+
+Pinterest
+
+
+📁 EFS (Elastic File System)
+
+EBS = Hard disk of a single server
+
+Attached to one EC2
+
+Used for:
+
+OS (Linux/Windows)
+
+Applications
+
+Database
+
+
+EFS = Shared folder/network drive
+
+Used by multiple EC2 at same time
+
+Used for:
+
+shared files
+
+media storage
+
+common data
+
+
+| Feature      | EBS 💾                  | EFS 📁               |
+| ------------ | ----------------------- | -------------------- |
+| Type         | Block storage           | File storage         |
+| Attach       | Single EC2              | Multiple EC2         |
+| Use          | OS, DB, apps            | Shared files         |
+| Performance  | Very fast (low latency) | Slightly slower      |
+| Scaling      | Manual                  | Automatic            |
+| Availability | Single AZ               | Multi-AZ             |
+| Mount type   | Like disk (`/dev/xvda`) | Like network (`NFS`) |
+
+
+)
+🧠 Real-Life Example
+EBS Example
+
+EC2 Server
+   │
+   └── EBS (Hard Disk)
+
+  OS installed here
+
+Database runs here
+Only that server uses it 
+EFS Example
+
+EC2-1 ─┐
+EC2-2 ─┼──▶ EFS (Shared Files)
+EC2-3 ─┘   
+
+  All servers share same data
+  Useful in load balancing
+
+
+🎯 When to Use What
+Use EBS when:
+
+✅ You need fast storage
+✅ You have single server
+✅ Running database
+✅ OS storage
+
+Use EFS when:
+
+✅ Multiple servers need same data
+✅ Shared file system required
+✅ Scalable architecture
+✅ Load balanced apps
+
+
+🧾 One Line Memory Trick
+EBS = One server ka hard disk
+EFS = Multiple servers ka shared folder
+
+
+Load Balancer
+      ↓
+ ┌───────────────┐
+ │   EC2 Servers │
+ └───────────────┘
+      ↓
+     EFS (Shared Data)
+
+Each EC2 also has its own EBS (OS + apps)
+
+
+EBS = Hard disk (1 server)
+EFS = Shared folder (multiple servers)
+S3  = Cloud storage (internet based)
+
+
+| Feature      | EBS 💾        | EFS 📁        | S3 📦                    |
+| ------------ | ------------- | ------------- | ------------------------ |
+| Type         | Block storage | File storage  | Object storage           |
+| Use          | OS, DB        | Shared files  | Media, backups           |
+| Attach       | 1 EC2         | Many EC2      | Internet                 |
+| Access       | EC2 only      | EC2 (network) | Anywhere (URL/API)       |
+| Scaling      | Manual        | Auto          | Auto                     |
+| Speed        | Very fast     | Medium        | Depends on internet      |
+| Availability | Single AZ     | Multi AZ      | Multi region (very high) |
+| Structure    | Disk          | Folder        | Bucket + Objects         |
+
+
+User uploads image
+        ↓
+EC2 Server
+        ↓
+S3 (stores image)
+
+EC2 also uses:
+- EBS → for OS + app
+- EFS → shared files across servers
+
+
+by defalut s3 bucket kept private
+that means user cant directly access data kept inside them.
+
+so when user wants to see a photo inside s3 bucket so application doesnt make the bucket public. instead the backend generate the pre-signed url(temporary secure link to a specific object). this link allows user to download the image directly from the s3 bucket. so once it expires , access is automatically revoked.
+
+
+every server is not need to run 24/7. so lambda comes in. aws lambda is serverlesss computer service. instead of lauching and manageing server,you just write a function , a small piece of code, aws runs it for you , you dont need to worry about servers, operatinf system, patching scaling.
+you simply write code , defince where it should run and aws handles it rest. lambda funtion can be written in mutiple laguages 
