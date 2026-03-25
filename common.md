@@ -446,27 +446,309 @@ So ERP = 👉 Software that plans and manages all organizational resources toget
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
+29. What happens when you paste a URL into a browser and press Enter?
+ANS:- 
+ 
+ 1. url parsing
+     Example: https://example.com/page
+       Browser breaks it into:
+          Protocol → https
+          Domain → example.com
+          Path → /page
+ 2. DNS lookup for finding ip address of that url ==> 👉 Browser asks to DNS : “What is the IP address of this domain?”
+ 3. after finding the ip address , browser connects to that server
+ 4. browser asks to the server for that page like home page
+ 5. server sends files like html,css,js
+ 6. browser shows the page ===>> Reads HTML → builds structure.....Applies CSS → adds styling.....Runs JS → adds functionality
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
+30. how http and https protocol works?
+ANS:- 
+What is HTTP / HTTPS?
+👉 Both are rules (protocols) for how browser and server talk
+HTTP = normal communication
+HTTPS = secure (encrypted) communication 🔒
+
+🧠 First understand HTTP (simple)
+📦 How HTTP works
+1️⃣ Browser sends request
+GET /home
+
+👉 Means: “Give me homepage”
+
+2️⃣ Server responds
+<h1>Hello</h1>
+
+👉 Server sends data back
+
+3️⃣ Browser shows it
+
+👉 Page appears on screen
+
+⚠️ Problem with HTTP
+
+👉 Everything is plain text
+
+If someone intercepts it:
+
+Can read your data ❌
+Can steal passwords ❌
+
+
+🔒 Now HTTPS (secure version)
+
+👉 HTTPS = HTTP + Security (TLS/SSL)
+
+🪜 How HTTPS works (simple)
+1️⃣ Browser connects to server
+
+👉 But before sending data, it says:
+
+“Let’s make this connection secure”
+
+2️⃣ TLS Handshake happens 🤝
+
+This is the main magic step
+
+👉 They:
+
+Verify server identity (certificate)
+Agree on a secret key
+  
+       1. You open a website
+
+     Example:
+     https://google.com
+
+    👉 Browser wants to talk to server
+
+     2. Before talking, they agree on a secret 🤝
+
+    Browser says:
+
+    “Let’s talk in a secret language”
+    Server agrees
+    👉 This step is called handshake
+
+    3️. Server proves it is real ✅
+
+   Server shows a certificate
+   👉 Like:
+   “Yes, I am real google.com, not fake”
+   4️. Secret key is created 🔑
+   👉 Both browser & server now share a secret key
+
+   5. Communication starts (encrypted)
+    Instead of:
+      password=1234
+    It becomes:
+    xk29@!#as
+    👉 Even if someone sees it → useless
+    6️. Server understands it
+    Server decrypts data
+    Sends encrypted response back
+   7️. Browser decrypts it
+  👉 You see normal page
+
+
+  HTTPS makes communication between browser and server secure by encrypting data using a secret key.
+  HTTPS works by first establishing a secure connection using a TLS handshake, where a secret key is shared. After that, all communication between the browser and server is encrypted and secure.
+
+
+  if there is tls handshake then what is ssl certification
+
+  👉 SSL Certificate = Identity (who are you?)
+  👉 TLS Handshake = Process (how we connect securely)
+
+
+🔒 What is SSL Certificate?
+
+👉 It’s like an ID card of a website
+
+Example:
+
+When you open https://google.com
+
+Server shows a certificate saying:
+
+“I am really Google, not a fake website”
+
+📌 What it contains:
+Website name (domain)
+Public key 🔑
+Issued by trusted authority (like DigiCert)
+
+👉 So its job = Trust establish karna
+
+
+🤝 What is TLS Handshake?
+
+👉 It’s the process of starting secure communication
+
+It uses the certificate to:
+
+Verify server identity
+Create a secret key
+Start encrypted communication
+
+
+
+🪜 Full flow (VERY IMPORTANT)
+Step 1️⃣ You open HTTPS site
+Step 2️⃣ Server sends SSL Certificate 📄
+
+👉 Browser checks:
+
+Is it valid?
+Is it trusted?
+Step 3️⃣ TLS Handshake happens 🤝
+
+👉 Using certificate’s public key, browser:
+
+Creates secret key
+Shares it securely
+Step 4️⃣ Secure communication starts 🔐
+
+👉 Now everything is encrypted
+
+
+🎯 Simple analogy
+
+Think:
+
+SSL Certificate = Aadhaar Card / ID proof 🪪
+TLS Handshake = Conversation to agree on secret language 🤝
+
+⚡ Ultra simple memory trick
+
+👉 Certificate = “Who are you?”
+👉 Handshake = “Let’s talk securely”
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
+31. why we use express js if we have node js 
+ANS:- Node.js provides the runtime to build servers, while Express.js is a framework that simplifies server development by providing routing, middleware, and better structure. 
+
+👉 Issues:
+Too much manual work 😓
+Routing is messy
+No built-in middleware
+Hard to scale 
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
+32. difference between react js and next js?
+ANS:- 
+
+| Feature         | React.js ⚛️ | Next.js 🚀         |
+| --------------- | ----------- | ------------------ |
+| Type            | Library     | Framework          |
+| Routing         | Manual      | Built-in           |
+| Rendering       | CSR         | SSR + CSR          |
+| SEO             | ❌ Poor      | ✅ Good             |
+| Backend support | ❌ No        | ✅ Yes (API routes) |
+| Setup           | More work   | Ready setup        |
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------
+33. how to solve cors error?
+ANS:- 
+
+✅ 1. Fix from Backend (Best way)
+
+If using Express:
+
+npm install cors
+const cors = require("cors");
+
+app.use(cors());
+
+👉 This allows all origins (for testing)
+
+✅ 2. Allow specific origin (Better)
+app.use(cors({
+  origin: "http://localhost:3000"
+}));
+
+
+✅ 3. Manual headers (without package)
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+});
+
+
+⚠️ Important (Interview point)
+
+👉 CORS is controlled by browser, not server
+
+👉 Server just allows or denies
 
 ---------------------------------------------------------------------------------------------------------------------------
 
+34. find secong largest in array in O(n)
+ANS:- 
+function findSecondHighest(arr){
+  let largest=-Infinity;
+  let secondHighest=-Infinity;
+  for(let item of arr){
+    if(item>largest){
+      secondHighest=largest;
+      largest=item;
+    }
+    else if(item<=largest && item>secondHighest )
+    secondHighest=item;
+  }
+  return secondHighest;
+}
+const arr=[7,9,45,21,56,78,87];
+console.log(findSecondHighest(arr));
+
 ---------------------------------------------------------------------------------------------------------------------------
+
+35. Whats the most challenging part while working?
+ANS:- i get variour chalenges while working.......
+so firstly i will explain about chaleneges while making dashboard
+  we made dasshborad suceefully and everything was fine except user Enxerince and good user expeince is one of the most imp thing about creating any website. like it was taking too much time on initial load and after applying filter, it was taking again that much of time.
+  and reason behind that was unecesary re-rendering, showing data which is not nencesary at that time.
+  what i did for that is optimisation like
+   memoiation of function reference and varilae using useCallback and use Memo, pagination, used lazy loading on compoenents,use redux and context api for state mamangement becuase earlier we were using only useState for state management,showed data only on the screen which is visible by calculating screen size and showed more data after scrolling,used debouncing and throatling.
+   our client asked for a data representation way , that was not suppported by highcart library version used by us so after lots ofr research and analysing we decided to  upgrade all the other data to new highcart version and during mgration code were breaking at many point so  fixed that by debugging.
+  on backend part we applied indexing ,otmitised query, pagination,caching using reddis.
+
+  during rag chatbot i was not able to create embedding of the data. so after analysing and dugugging i get tot know that i was creating embeding of all the data at a time and used wrong llm model so for that i break down the data into chunks then generated embedding of those chunked data.
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+36. how would you migrate from angular to react ?
+ANS:- i havent worked on angulaer to ract mingration but i have full idea of react js application like component based architecture. so if i get  work on this migration firstly i will will break angular modules into reusable compoents. replace  services with api calls using hook , manage state using statestate , context api and redux. amgular routing iwth react routing.
+
+
+---------------------------------------------------------------------------------------------------------------------------
+37. machanism available for caching rest response
+ANS:- we can cahce rest reposnse from brouser caching and server side caching like
+1. HTTP caching- 👉 Browser stores response → no need to call API again
+2. server side caching(Redis)
+3. clinet side caching usinf various react library
+4. CDN caching- 👉 Static API responses cached on CDN, 👉 Faster global access
+
+---------------------------------------------------------------------------------------------------------------------------
+
+38. karma and jasmine?
+ANS:- both are used for tesing poupose in angular.
+Jasmine is a testing framework used to write test cases, and Karma is a test runner used to execute those tests in a browser.
+
+---------------------------------------------------------------------------------------------------------------------------
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 

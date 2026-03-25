@@ -763,5 +763,143 @@ console.log("Time taken:", end - start, "ms");
 ANs:- Async performance is measured by calculating execution time and monitoring system metrics such as latency, memory usage, and event loop delay.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+34. what is meant by creating api with jwt authentication?
+ANS:-  creating api with endpoint is one of method of securing endpoint so user need  authentication for accessing the response of that 
+api. so in case of jwt authentication user need to  authenticate only once while login and and authenticate other api with the help of a token that is jwt toekn generated from server while login instead of checking username/password on each request. 
+
+🧠 Simple Idea
+
+Instead of checking username/password on every request, you:
+
+Login once ✅
+Get a token (JWT) 🔑
+Send that token with every API request
+
+
+after authenticated login Server generates a token like:
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+👉 This token contains:
+
+User ID
+Expiry time
+Signature (for security)
+
+
+Implementation :- 
+
+
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+
+app.use(express.json());
+app.use(cookieParser());
+
+const secret_key = 'sm1234';
+
+const user = {
+    id: 1,
+    userName: 'smadeshiya',
+    password: "1234"
+};
+
+app.post('/api/login', (req, res) => {
+    const { userName, password } = req.body;
+
+    if (userName === user.userName && password === user.password) {
+        const token = jwt.sign(
+            { id: user.id, userName: user.userName },
+            secret_key,
+            { expiresIn: '1h' }
+        );
+
+        res.cookie('token', token, { httpOnly: true });
+
+        return res.status(200).json({ message: "login successful!!" });
+    }
+
+    return res.status(401).json({ message: "invalid credential!!" });
+});
+
+
+const authenticateToken = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if (!token) return res.status(401).send("No token");
+
+    jwt.verify(token, secret_key, (err, user) => {
+        if (err) return res.sendStatus(403);
+
+        req.user = user;
+        next();
+    });
+};
+
+
+app.get('/api/protected', authenticateToken, (req, res) => {
+    res.json({
+        message: "this is authenticated data",
+        user: req.user
+    });
+});
+
+app.listen(3000, () => {
+    console.log("server is running on port: 3000");
+});
+
+
+
+
+🔹 1.
+const cookieParser = require('cookie-parser');
+
+👉 Meaning:
+
+You are importing the cookie-parser library
+This library helps your server read cookies sent by the browser
+
+👉 Without this:
+
+req.cookies   // ❌ undefined
+
+👉 With this:
+
+req.cookies   // ✅ { token: "abc123" }
+🔹 2.
+app.use(express.json());
+
+👉 Meaning:
+
+This tells Express to convert incoming JSON data into JavaScript object
+
+👉 Example:
+Client sends:
+
+{
+  "userName": "shreya",
+  "password": "1234"
+}
+
+👉 Without this:
+
+req.body   // ❌ undefined
+
+👉 With this:
+
+req.body   // ✅ { userName: "shreya", password: "1234" }
+🔹 3.
+app.use(cookieParser());
+
+👉 Meaning:
+
+This activates the cookie-parser middleware
+It reads cookies from request and puts them into:
+req.cookies
+
 ---------------------------------------------------------------------------------------------------------------------------
 

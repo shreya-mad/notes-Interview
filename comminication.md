@@ -619,3 +619,64 @@ i am looking for opportunity in banglore becuase  air pollution delhi has been a
 150. मुझे लगता है कि नई जगह पर काम करने से मुझे नई चीजें सीखने और अपने करियर को आगे बढ़ाने का अच्छा अवसर मिलेगा।
 ANS:- i think i get chnace to learn new thinks and move forward by working at new place. 
 i believe working in new place will help me learn new thing and grow in my carrer.
+
+
+151. अगर मैं समय का सही उपयोग करूँ, तो मैं अपने जीवन में बहुत कुछ हासिल कर सकता हूँ।
+ANS:- if i use my time properly , i can achience many things in my life.
+if i use my time properly, i can achieve many things in my life. 
+
+152. कभी-कभी हम बिना सोचे-समझे ऐसे फैसले ले लेते हैं जिनका हमें बाद में पछतावा होता है।
+ANS:- sometimes, we make decision without thinking which gives us guilt later.
+sometimes we make a decision wihtout thinking which we regret later.
+
+153. जब मैं थका हुआ महसूस करता हूँ, तब भी मैं अपने काम को पूरा करने की कोशिश करता हूँ।
+ANS:- whenever , i feel exausted, still try to complete my work.
+whenver i feel exausted, i still try to complete my work.
+
+154. मुझे समझ नहीं आता कि लोग छोटी-छोटी बातों पर इतना ज्यादा क्यों परेशान हो जाते हैं।
+ANS:- i dont undertsnad , how people get too worry on small thinks.
+i dont understand, why people get so worried about small things.
+
+155. अगर तुम अपने डर का सामना नहीं करोगे, तो तुम कभी आगे नहीं बढ़ पाओगे।
+ANS:- if you dont face your fear, you will never go forward.
+if u dont face your fears, you will never move forward.
+
+156. जब मुझे खाली समय मिलता है, तो मैं कुछ नया सीखने या किताब पढ़ने की कोशिश करता हूँ।
+ANS:- wjenever i get time, i try to learn something new or read book.
+whenver i get time,i try to lern new something things and read a book.
+
+157. मैंने महसूस किया है कि लगातार मेहनत करने से ही सफलता मिलती है, न कि सिर्फ सोचने से।
+ANS:- i felt, we succeed only by continour hard work, not just thinking.
+i feel we succeed only throught hard work, not just by thinking.
+
+158. अगर हम अपनी गलतियों से सीख लें, तो हम भविष्य में बेहतर निर्णय ले सकते हैं।
+ANS:- if we lern from our mistake, we can make better decision in future.
+if we learn from our mistake, we can make better decision in the future.
+
+159. मुझे ऐसा लगता है कि हर दिन थोड़ा-थोड़ा सुधार करना ही असली प्रगति होती है।
+ANS:- i think improving bit everyday is real progress.
+i think improving a little everyday is real progres.
+
+160. जब तक हम कोशिश करते रहते हैं, तब तक हार वास्तव में हार नहीं होती।
+ANS:- failier is not actually failtier untill we stop trying.
+failure is not true failure until stop trying or give up.
+
+===>>>> when should i use "when" and "Whenever"
+ANS:- 🔹 Use WHEN → for a specific time
+
+👉 Example:
+
+When I reached home, it started raining.
+Call me when you arrive.
+🔹 Use WHENEVER → for every time / any time
+
+👉 Example:
+
+Whenever I feel tired, I take a break.
+Whenever you need help, call me.
+
+    | WHEN                    | WHENEVER              |
+    | ----------------------- | --------------------- |
+    | specific time           | any time / every time |
+    | once or fixed situation | repeated or general   |
+    | “जब”                    | “जब भी”               |

@@ -901,13 +901,152 @@ axios.get("/api/profile", {
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+15. How do you stay updated with React?
+ANS:- 
+i stay updated with react in various ways like...
+ 1- i regularly follow react documentation.
+ 2- i follow developers and communities on various plateform like linkdin,twitter ,utube etc where people share any of the update relaed to nay langugae like here react js.
+ 3- i read articles on various plateforms as well like medium , dev.ot.
+ 4-i regulalry check github repos.
+ 5- after taking any of the update, i try to implement for beteer understanding. 
 
 --------------------------------------------------------------------------------------------------------------------------
 
---------------------------------------------------------------------------------------------------------------------------
+16. what is useRef?
+ANS:- useRef is react hook which is used for accessing DOM element directly. we use useRef when want to update value wihtout re-rendering. like we want to update any value but dont need to update that in UI.
+
+example:-
+ 
+ 🔍 Step-by-step simple explanation
+
+ 1. Create a ref
+         const inputRef = useRef();
+ 2. Attach it to element
+         <input ref={inputRef} />
+ 3. Access it
+         inputRef.current   
+ 4. Control it
+         inputRef.current.focus(); 
+
+ ✅ What actually happens
+
+meaning of <input ref={inputRef} />
+“Hey React, give me direct access to this input element”  
+
+
+🧠 What is inside inputRef?
+inputRef.current
+
+👉 This is the entire input DOM element, like:
+
+{
+  value: "hello",
+  focus: function,
+  style: {...},
+  ...
+}
+
+✅ How to get the typed value thorght input element
+
+If user types something, you access it like this:
+
+inputRef.current.value
+
+====> 
+import { useRef } from "react";
+
+function App() {
+  const inputRef = useRef();
+
+  const showValue = () => {
+    console.log(inputRef.current.value);
+  };
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={showValue}>Get Value</button>
+    </>
+  );
+}
 
 --------------------------------------------------------------------------------------------------------------------------
+
+17. What is hydration in React?
+ANS:- Hydration is the process where React attaches event handlers and makes server-rendered HTML interactive on the client side.
+👉 Hydration = attaching React to already rendered HTML
+
+🎯 Simple Meaning
+React takes HTML that is already present on the page and makes it interactive
+
+🔥 Why does this happen?
+
+In normal React apps (CSR — Client Side Rendering):
+Browser loads empty <div id="root"></div>
+React builds UI using JavaScript
+
+But in SSR (Server Side Rendering):
+
+Server sends ready-made HTML
+Page loads fast ⚡
+But it is not interactive yet
+
+👉 Now React comes and “hydrates” it
+
+
+📦 Real Flow
+Step 1: Server sends HTML
+<h1>Hello World</h1>
+
+👉 User sees content immediately
+
+Step 2: React loads JS
+
+👉 React matches this HTML with its virtual DOM
+
+Step 3: Hydration happens
+
+👉 React attaches:
+
+event listeners
+state
+logic
+
+
+====>>>>
+Framework like Next.js uses hydration.
+Server → sends HTML
+Client → hydrates it
+
+💡 Final clarity
+
+| Before Hydration | After Hydration |
+| ---------------- | --------------- |
+| Static HTML      | Interactive UI  |
+| No clicks work   | Buttons work    |
+
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+18. What is polyphil and map polyphil implementation?
+ANS:- Polyfill is a piece of code that provides functionality which is not supported in older browsers.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+19. code splitting for optimisation of load time?
+Ans:- Code splitting is technique where we break large bundle into smaller chunks so only required code loads first, which improves page load time.
+I implement code splitting in React using React.lazy and Suspense to load components only when needed.
+
+For example, in my dashboard, I can lazy load heavy modules like analytics pages so the initial load is faster.
+
+👉 lazy() → load component only when needed
+👉 Suspense → show loader while loading
+
+--------------------------------------------------------------------------------------------------------------------------
+
+20. useTransition hook in react?
+ANS:- it is used to mark non-urgent update in react so that react prioritise urgent UI updates.
 
 --------------------------------------------------------------------------------------------------------------------------
 

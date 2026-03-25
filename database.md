@@ -29,6 +29,24 @@ c.breaking existing functionality.
 
 2. What is Sharding?
 ANS:-Sharding in MongoDB means splitting (dividing) a large collection of data into smaller, more manageable chunks and distributing them across multiple servers (called shards).
+Instead of storing all data in one server, we divide it and store it in multiple servers.
+
+Sharding in MongoDB is a method of distributing data across multiple servers using a shard key to improve scalability and performance.
+
+📦 Example (easy to understand)
+
+Suppose you have users:
+
+1, 2, 3, 4, 5, 6
+
+Instead of storing all in one DB:
+
+👉 Shard 1
+1, 2, 3
+👉 Shard 2
+4, 5, 6
+
+👉 Now load is divided ✅
 
 ---------------------------------------------------------------------------------------------------------------------------
 
