@@ -447,6 +447,8 @@ class Hello extends react.Component{
 }
 
 so class components used before Hooks.before hooks state mangement and life cycle methods could handled by only class component.
+
+---------------------------------------------------------------------------------------------------------------------------
 5. What is useSelector?
 ANS:-useSelector is a React-Redux hook that allows you to read (access) data from the Redux store inside a React component.
 ---------------------------------------------------------------------------------------------------------------------------
@@ -1049,6 +1051,20 @@ For example, in my dashboard, I can lazy load heavy modules like analytics pages
 ANS:- it is used to mark non-urgent update in react so that react prioritise urgent UI updates.
 
 --------------------------------------------------------------------------------------------------------------------------
+
+21. difference among 
+onClick={handleClick}
+onClick={()=>handleClick(item)}
+onclick={handleClick(item)}
+
+ANs:- 
+
+| Syntax                    | When it runs | Argument |
+| ------------------------- | ------------ | -------- |
+| `handleClick`             | On click     | ❌ No     |
+| `() => handleClick(item)` | On click     | ✅ Yes    |
+| `handleClick(item)`       | On render ❌  | ✅ Yes    |
+                            (not on onClick event)
 
 --------------------------------------------------------------------------------------------------------------------------
 

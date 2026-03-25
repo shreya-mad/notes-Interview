@@ -4,6 +4,8 @@ import { useDispatch } from "react-redux";
 import { addItem, removeItem, clearCart } from "./Redux/CartSlice";
 
 function Navbar() {
+  //subscribilg to the store to get the cart items from our store and we will 
+  // use that data to show the number of items in our cart and also to show the items in our cart modal.
   const cartItems = useSelector((store) => store.cart.items);
   const [showModal, setShowModal] = React.useState(false);
 const [qty, setQty] = useState({});
