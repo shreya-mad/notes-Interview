@@ -680,3 +680,43 @@ Whenever you need help, call me.
     | specific time           | any time / every time |
     | once or fixed situation | repeated or general   |
     | “जब”                    | “जब भी”               |
+
+
+161. मैं आज थोड़ा थका हुआ हूँ क्योंकि मैंने पूरे दिन काम किया है।
+ANS:- today ,im exausted bcause i did work whole day.
+today, im exausted because i worked whole day.
+
+162. अगर तुम समय पर नहीं आओगे, तो हम बिना तुम्हारे ही शुरू कर देंगे।
+ANS:- if u will not come on time then we will start without you.
+if you do not come on time ,we will start without you.
+
+163. मुझे समझ नहीं आता कि वह ऐसा व्यवहार क्यों कर रहा है।
+ANS:- i dont understand why he is behaving like this.
+
+164. जब मैं फ्री होता हूँ, तो मैं अपने दोस्तों से बात करना पसंद करता हूँ।
+ANS:- whenever i free, i liketo talk to my frients.
+whvener im free, i like to talk to my frients.
+
+165. मैंने आज कुछ नया सीखने की कोशिश की, लेकिन मुझे थोड़ा मुश्किल लगा।
+ANS:- today i tried to learn something new, but it seems bit difficult.
+itoday i tried to learn something new, but it seemed a bit difficult.
+
+166. अगर तुम मुझसे पहले बता देते, तो मैं तुम्हारी मदद कर सकता था।
+ANS:- if u told me  earlier then i could help u.
+if you had told me earlier , i could have helped u. 
+
+167. मुझे लगता है कि हमें इस विषय पर थोड़ा और सोचना चाहिए।
+ANS:- i think we have to think over it.
+i think we should think about it more.
+
+168. जब तक तुम खुद पर विश्वास नहीं करोगे, तब तक तुम सफल नहीं हो सकते।
+ANS:- u will never succed untill u start trusting yourself.
+i will never succed untilll you start believing in youself.
+
+169. मैंने कल रात बहुत देर तक काम किया, इसलिए आज मुझे नींद आ रही है।
+ANS:- i worked for longer last night, however im feeling sleepy today.
+i woerked late last night,so i am feeling sleepy today.
+
+170. अगर हम मिलकर काम करेंगे, तो हम इस काम को जल्दी पूरा कर सकते हैं।
+ANS:- if we do it colaboratively then we can finish this work early.
+i we work together, we can complete this work early.ss

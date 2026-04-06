@@ -451,16 +451,19 @@ so class components used before Hooks.before hooks state mangement and life cycl
 ---------------------------------------------------------------------------------------------------------------------------
 5. What is useSelector?
 ANS:-useSelector is a React-Redux hook that allows you to read (access) data from the Redux store inside a React component.
+
 ---------------------------------------------------------------------------------------------------------------------------
 6. two ways to install. react app?
 ANS:- webpack bundler- npx create-react-app my-app
       vite bundler- npm create vite@latest my-app
+
 ---------------------------------------------------------------------------------------------------------------------------
 7. difference between state and props in react?
 ANS:-State is a built-in object that stores data that can change over time within a component.
 Props (short for properties) are inputs passed from a parent component to a child component.
 state is mutable and props is immutable.
 state managed by compoent itself and props is mamanged by parent compoent.
+
 ---------------------------------------------------------------------------------------------------------------------------
 8. pure and impure compoent in react?
    ANS:-
@@ -538,6 +541,7 @@ configureStore() → store setup becomes simple
 createAsyncThunk() → easy async API calls
 Removes 70–80% boilerplate code
 👉 Less code, fewer errors, super developer-friendly.
+
 ---------------------------------------------------------------------------------------------------------------------------
 10. Redux toolkit(RTK)?
 ANS:-
@@ -753,7 +757,7 @@ redux-logger → logs actions & state changes
 
 --------------------------------------------------------------------------------------------------------------------------
 
-11. passing dat from child to parent?
+11. passing data from child to parent?
 Ans:- by calling function which was declared in parent component and then pass data as parameter in function.
 “In React, data is passed from child to parent by passing a callback function from the parent to the child, and the child calls that function with required data.”
 context api ke case me ye hota h ki ham update function me as data child me bhej dete h to jb usse shared data ko update krte h to parent componet me bhi data update ho jata hai but child -> parent data send ka actual soultion callback hai phir uske bad context api hai jisse ek store bana dete h.
@@ -1067,6 +1071,8 @@ ANs:-
                             (not on onClick event)
 
 --------------------------------------------------------------------------------------------------------------------------
+22.What is Tree Shaking? — Short & Crisp (Interview-Ready)
+ANS:- Tree shaking is a technique used by bundlers (like Webpack/Vite) to remove unused code from the final bundle.
 
 --------------------------------------------------------------------------------------------------------------------------
 
