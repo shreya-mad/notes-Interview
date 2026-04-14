@@ -1,3 +1,33 @@
+why we need virtual machine?
+ANS:- computer me sabse pahlde ata hai hardware (RAM,ROM etc) phir ata hai os(windows) then ata hai application. to 
+yha virtualisation ata hai os aur application layer ke beechme.
+to agar hame koi application ko dusre os pe check krna ho to ham virtualisation ka use krte hai.
+to phir ham windows ke uoar virtualisation krenege phir uske linux set krenege.
+
+we can do same thing with other os as well, like setting up windows or linux in mac or mac or windows in linux.
+we can set more than one os in one laptop at a time.
+
+but how to setup the virtualisation?
+virtualisation layer ko actual me hypervisor bolte hai. it is a software that creates and run virtual machine.
+
+
+
+HOST OS ====> Hypervisor ====>linux,windows,macOS
+
+hyoervisor ka ek simple example hai oracle Virtual box joki ke open source tool hai , jisko ham virtual.org site pe jaake simply download krke use skte hai.
+
+how hyperevisor works?
+=> virtual box share hardware resources from host OS
+   seperate set of virtual CPU,RAM ,storage etc.
+   VNs are fully isolated(independednt of hosted OS)
+
+![AWS Diagram](IAM_Role.png)
+
+
+------------------------------------
+
+
+
 1️⃣ What is AWS?
 AWS (Amazon Web Services) is a cloud platform created by the Amazon.
 

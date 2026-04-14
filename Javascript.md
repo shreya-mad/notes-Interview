@@ -43,7 +43,10 @@ step1(function(result1) {
 });
 
 
-4.Above code with promise?
+---------------------------------------------------------------------------------------------------------------------------
+
+
+4. Above code with promise?
 ANS:- function step1() {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -1721,6 +1724,28 @@ arr.flat();      // [1, 2, [3, 4]]
 arr.flat(2);     // [1, 2, 3, 4, 5]
 arr.flat(Infinity); // fully flat
 
+
+function flattenArray(arr) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            result = result.concat(flattenArray(arr[i]));
+        } else {
+            result.push(arr[i]);
+        }
+    }
+
+    return result;
+}
+
+// Dummy Data (Yulu bikes)
+const bikes = [1, [2, 3], [4, [5, 6]], 7];
+
+const flat = flattenArray(bikes);
+
+console.log("Original:", bikes);
+console.log("Flattened:", flat);
 
 ---------------------------------------------------------------------------------------------------------------------------
 

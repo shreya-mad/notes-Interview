@@ -412,10 +412,18 @@ return(
  }
  export default Child3;
 
- 6.what iss vanilla js?
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+ 6. what iss vanilla js?
  ANS:- vanilla js is nothing but javScript without any framework like react js,vue.js,jQuery,Three.js
 
-7.Why use React instead of plain JavaScript (Vanilla JS)?
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+7. Why use React instead of plain JavaScript (Vanilla JS)?
 Ans:- We use React instead of plain JavaScript because:
 Easier UI updates (Virtual DOM)
 Reusable components
@@ -424,7 +432,10 @@ Supports SPA (no reload navigation)
 Cleaner, maintainable, scalable code
 
 
-8.What is a Component in React?
+---------------------------------------------------------------------------------------------------------------------------
+
+
+8. What is a Component in React?
 Ans:-A component in React is like a small, reusable building block of a user interface (UI).
 Each component is independent and manages its own structure, styling, and behavior.
 You can combine many components to build a complete application.
@@ -433,10 +444,16 @@ a.Functional component(js function which returns JSX).
 b.class component
 
 
-9.what is functional componenet?
+---------------------------------------------------------------------------------------------------------------------------
+
+
+9. what is functional componenet?
 ANS:- functional component is nothing but a type of component which is similar to javascript function.it takes props as an input and return JSX.it used Hooks for variour operations like state management,navigation using react router.
 
-10.What is class component?
+
+---------------------------------------------------------------------------------------------------------------------------
+
+10. What is class component?
 ANS:-as its name includes class soit totally related to class,so class component is nothing but s class which render() method and return UI similar to functional component.
 
 like below one is using class component
@@ -449,6 +466,7 @@ class Hello extends react.Component{
 so class components used before Hooks.before hooks state mangement and life cycle methods could handled by only class component.
 
 ---------------------------------------------------------------------------------------------------------------------------
+
 5. What is useSelector?
 ANS:-useSelector is a React-Redux hook that allows you to read (access) data from the Redux store inside a React component.
 

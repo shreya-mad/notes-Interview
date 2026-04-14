@@ -719,4 +719,81 @@ i woerked late last night,so i am feeling sleepy today.
 
 170. अगर हम मिलकर काम करेंगे, तो हम इस काम को जल्दी पूरा कर सकते हैं।
 ANS:- if we do it colaboratively then we can finish this work early.
-i we work together, we can complete this work early.ss
+i we work together, we can complete this work early.
+
+we dont use past perfect tense too much because past perfect sentences sounds like past continuous tense.
+when any work goes for long time then we use past perfect tense.
+
+171. jab tum aaye to mai jack se bat kr rha tha.
+ANS:- 
+
+when you treat it like past continuous tense 
+  ==> i was talking to jack when you came.
+when you treat it like pas perfect continuos tense
+  ==> i had been talking to jack when you came.
+
+  treating it like pas perfect continuous is right ,not past continuous.
+
+172. mai vaha 30 min se jada time se wait kr rhi thi jab vah aya.
+ANS:- i had been waiting for more than 30 min when he arrived.
+
+173. mai kafi der se cab book krne ki koshish kr rhi thi.
+ANS:- i had been trying to book the cab for long time.
+
+173. mai kaafi time se iss book ko dudh rhi thi.
+ANS:- i had beed looking for this book for quite a long time.
+
+174. mai kayi salo se is din ka intjar kr rhi thi.
+ANS:- i had been waiting for this day for many years.
+
+175. 2 hafto se meri taboiyat thik nhi chl rhi thi.
+ANS:- my health has not been good for the  last two weeks.
+
+176. mai xyz ke sath breakuo ke bad abc ke sath last 3 years se sath hu.
+ANS:- i have been in relationship  with abc for last 3 years after breaking up with xyz.
+
+177. ye bahut hi dudh ki bt hai ki vo 7 sal se sath me they jab unhone breakup kiya.
+ANS:- it is  very painfull that they had been together for last 7 year when they  broke up.
+
+178. mai bht thak hua hu kyuki mai pura din drive kr rha tha.
+ANS:- i am exhausted because i had been driving all day.
+
+179. ab tum drive krlo kyuki mai suabh se drive kr rha hu to thak gya hu.
+ANS:- could you drive now beucase i have been drving since morning and im exhausted.
+
+180. vo exam me fail ho gyi kyuki vo lecture attend nhi krti thi.
+ANS:- she failed the exam becuase she had not beed attending the lectures.
+
+181. vo class me first aya h kyuki vo sare lectures attend krta tha.
+ANs:- He came first in the exam in class becuase he had been attending all the lectures.
+
+182. vo 1 sal se ye lene ki jid kr rha tha to maine aaj dila diya.
+ANS:- i bought this for him on his brithday becuase he had been asking me to buy this for this for one years.
+
+183. vo beemar ho gyi kyuki kuch dino se vo bht jada exercise kr rhi thi.
+ANS:- she fell sick becuase she has been exercising so hard for few days.
+
+184. jab mai vaha gyi to usse phle se vo kitni der se bt kr rhe the.
+ANS:- for how long  had they beed talking when got there.
+
+185. vo kitne time se kha rhe the jb mai vaha gyi.
+ANS:- for how long had they beed eating when i got there.
+
+186. aap puri rat kam kr rhe the kya.
+ANS:- had you been wokring all night.
+
+187. kya vo meri burai kr rhe the
+ANS:- had they beed talking badly about me.
+
+188. tum vaha kitni der se wait kr rhe they jb vo vaha pahucha?
+ANS:- how long had you beed waiting threre when he finally arived.\
+
+189. tum bus par chdne ke liye kitni der se wait kr rhe the.
+ANS:- for how long had you waiting there to get on the bus.
+
+
+
+
+
+
+

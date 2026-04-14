@@ -17,7 +17,7 @@ plane redux is also known as vanilla redux.
 here we are going to study redux toolkit.
 
 redux team offers two libraries for state management 
-1. redux-redux - this library is like bridge between react and redux.
+1. react-redux - this library is like bridge between react and redux.
 2. redux-toolkit
 
 redux-toolkit comes to solve few major issue of redux-
