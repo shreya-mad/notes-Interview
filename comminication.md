@@ -791,6 +791,45 @@ ANS:- how long had you beed waiting threre when he finally arived.\
 189. tum bus par chdne ke liye kitni der se wait kr rhe the.
 ANS:- for how long had you waiting there to get on the bus.
 
+180. अगर मैंने उस समय सही निर्णय लिया होता, तो आज मुझे इस स्थिति का सामना नहीं करना पड़ता।
+ANS:- i dont need to face this situation , if i take this decision at that time.
+i would not have to face this situation , if i had taken right decision at that time.
+
+181. जब तक तुम अपनी गलतियों को स्वीकार नहीं करोगे, तब तक तुम उनमें सुधार नहीं कर पाओगे।
+ANS:- you cant improve your mistake until you accept that.
+you cant improve your mistakes until you accept them.
+
+182. मुझे नहीं लगता कि वह इतनी आसानी से अपनी आदतें बदल पाएगा।
+ANS:- i dont think he can change his habbits so easily.
+
+183. अगर तुमने पहले से योजना बनाई होती, तो तुम्हें इतनी परेशानी नहीं होती।
+ANS:- you dont suffer from this problem if you made plan earliar.
+you woudnt have to face this situation if you had planned earliar.
+
+
+184. मैं यह समझ नहीं पा रहा हूँ कि वह मुझसे नाराज़ क्यों है, जबकि मैंने कुछ गलत नहीं किया।
+ANS:- i dont understand why  he is angry with me when i didnt do anyting wrong.
+
+
+185. जैसे ही मुझे इस बारे में पता चला, मैंने तुरंत उसे कॉल किया।
+ANS:- i called him as soon as i got to know about this.
+
+
+186. अगर हम इस समस्या का समाधान अभी नहीं ढूँढेंगे, तो यह आगे चलकर और बड़ी बन सकती है।
+ANS:- if we dont search its solution then it can become big.
+if we dont find solution to this problem now then it can become bigger later.
+
+187. मुझे यह स्वीकार करने में कोई हिचक नहीं है कि मैंने इस मामले में गलती की थी।
+ANS:- i have no hesitation to admit that i was wrong in thid matter.
+
+
+188. जब मैं उस समय के बारे में सोचता हूँ, तो मुझे एहसास होता है कि मैंने कितनी गलतियाँ की थीं।
+ANS:- whenever i think about that time then i realise that how many mistake i made.
+
+
+189. अगर तुम लगातार मेहनत करते रहोगे, तो एक दिन जरूर सफल हो जाओगे।
+ANS:- if you keep working hard then  you will definitely suceed one day.
+
 
 
 

@@ -21,7 +21,7 @@ how hyperevisor works?
    seperate set of virtual CPU,RAM ,storage etc.
    VNs are fully isolated(independednt of hosted OS)
 
-![AWS Diagram](IAM_Role.png)
+jaise ki hamara computer hai jiksa storage 8GB ram aur 100Gb Hard disk hai aur hamne ek virtualisation layer lga diya to phir ye isi storge ko use krke virual machines manaega vm1(2gmb ram, 20gb hard disk),vm2(2 gb ram, 10 gb hard disk) to vm1,vm2 me  jo resources hote hai vo main computer ka resource hota hai joki ham share krte hai main computer se.
 
 
 ------------------------------------
