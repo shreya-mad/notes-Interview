@@ -2,6 +2,8 @@
 
 (Interview-ready answer, very easy language)
 
+a powerful optimization technique in JavaScript used to speed up computer programs by caching the results of expensive function calls.
+
 Memoization is a technique where we store the result of a function so that when the same input is used again, the stored result is returned instead of recalculating it.
  
 1. useMemo Hook?

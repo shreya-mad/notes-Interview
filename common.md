@@ -380,7 +380,12 @@ ANS:- Indexing is a database technique used to speed up data retrieval.
 ---------------------------------------------------------------------------------------------------------------------------
 
 22. Write a query to find the second highest salary.
-ANS:-INNER JOIN returns only matching records, while LEFT JOIN returns all records from the left table.
+ANS:-
+
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1 OFFSET N-1;
 
 ---------------------------------------------------------------------------------------------------------------------------
 

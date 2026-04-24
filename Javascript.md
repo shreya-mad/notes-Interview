@@ -637,7 +637,8 @@ add(2, 3); // always 5
     exa:-
     let total=0;
     function sum(num){
-      return total+num;
+      total=total+num;
+      return total;
     }
     sum(4);  // 4
     sum(4);  // 8
@@ -1372,8 +1373,14 @@ It does NOT run because some other useEffect runs.
 Each useEffect manages its own cleanup.
 One useEffect has NOTHING to do with another useEffect.
 
+cleanup function bottom to top chlta hai. last useeffect ka cleanup chlega phir uske phle ka
+
 WHAT HAPPEN WHEN WE WANT TO USE MORE THAN ONE USEEFFECT
 useEffect hooks run asynchronously after render, and when multiple effects exist, React executes them sequentially in the order they are defined.
+
+ui paint ke bad sare hi useefect ek sath run karega.
+agr first useefect 5 sec le rha aur second 10 sec to phir total execution time 10 sec hoga naaki 15 sec kyuki dono ek sath executiuon start kjr dega.
+
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -1590,7 +1597,7 @@ ANS:- A tagged template literal allows a function to process a template literal 
 function tag(strings, value) {
   console.log(strings);
   console.log(value);
-}
+
 let name = "Shreya";
 tag`Hello ${name}!`;
 
@@ -1626,6 +1633,18 @@ function shallowEqual(obj1, obj2) {
 
 shallowEqual(a, b); // true ✅
 
+array compare 
+const a = [1,3,4,2 ];
+const b = [1,3,4,2 ];
+const isEqual=a.length===b.length &&
+a.every((val,i)=>val===b[i]);
+
+console.log(isEqual);
+
+or 
+
+
+JSON.stringify(arr1) === JSON.stringify(arr2)
 
 ---------------------------------------------------------------------------------------------------------------------------
 
@@ -1929,8 +1948,15 @@ function debounce(fn, delay) {
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-91. find uniqye elemnts from array without any inbuild function?
+91. difference between forEach and map in js?
 ANS:- 
+| Feature      | `forEach()`                 | `map()`                     |
+| ------------ | --------------------------- | --------------------------- |
+| Return value | `undefined`                 | New array                   |
+| Mutates data | Often used for side effects | Pure transformation         |
+| Chainable    | ❌ No                        | ✅ Yes                      |
+| Use case     | Logging, side effects       | Creating transformed arrays |
+
 
 
 
