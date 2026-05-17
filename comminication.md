@@ -830,6 +830,238 @@ ANS:- whenever i think about that time then i realise that how many mistake i ma
 189. अगर तुम लगातार मेहनत करते रहोगे, तो एक दिन जरूर सफल हो जाओगे।
 ANS:- if you keep working hard then  you will definitely suceed one day.
 
+==> RULE OF PRONOUNCIATION. 
+
+When we break any word in parts then that is known as syllable - a unit of prounciation having one vowel sound, with or without sorrounding consonents.
+
+we cant break any word as per our choice. we have to follow some techniqe for figuring out no of syllables in any word.
+we can figure out by pronouciating like robot.
+
+there will be stressed syllable in any world.....to jab bhi ham google par kisi world ka syllable search karenge to vo stressed syllable ko highlight kar deta hai and we have to focus give extra time for that slabble while pronounciation.
+
+190. how are you doing?
+ANS:- im doing great. how about you?
+
+191. apne ye proffesion kyu choose kiya?
+ANS:- why did you choose this proffesion?
+     how did you get into this proffesion?
+
+192. ye khana ungli chatne layak hai?
+ANs:- this food is finger licking good.
+
+193. mai kisi kam me busy hu? mai apko thodi der me call karti hu.
+ANS:- im busy with some work. i will call you in while.
+      im tied up with some work. please allow me some time to call you back in a while.
+
+194. ye bahut hi behtarin hai?
+ANS: it is next level.
+
+195. kya ham aaj rat ka plan cancell kr sakte hai?
+ANS:- would you mind if we change plan for tonight.
+
+196. yrr ab ye bht acha hai.
+ANS:- it is really better now.
+
+197. yrr party kal bht achi thi.
+ANS:- party was really fun and exiting.
+
+198. kya paisa advance me dena hai kya?
+ANS:- do i need to pay in advance.
+
+199. sir apka budget kya hai?
+ANS:- sir, do you have budget in mind.
+
+USE OF MAGICAL WORD - GET
+
+get ka apna keval ek matlab hai - hona
+it is a informal word so try to avoid in formal communication.
+get is used in place of 
+ 1. understand 
+ 2. bring
+ 3. buy
+ 4. recieve 
+ 5. find 
+
+kisi kam ke hone me ham get ka use karenge
+ex:- andhera ho rha  hai , muje late ho rha hai , meri usse bat nhi ho pa rahi hai
+
+200. mujhe late ho raha hai
+ANs:- im getting late
+
+201. andhera ho raha hai
+ANS:- its getting dark
+
+202. halat bht khaarab hota ja rha hai
+ANS:- the situation is getting worse.
+
+203. meri usse bat nhi ho payi
+ANS:- i didnt get to talk to him.
+
+204. mera usse milna nahi ho paya.
+ANS:- i didnt get chance to meet him.
+
+mauka na milne ke case me get ka use karenge
+
+205. mera usse batana nhi ho paya.
+ANS:- i didnt get chance to share with him.
+
+206. meri rooommate moti ho rahi hai
+ANS:- my roommate is getting fat.
+
+207. vo gussa ho gaya.
+ANS:- he got angry.
+
+208. kya tumhe jalan ho rahi hai.
+ANS:- are you getting jelous.
+
+209.  muje nhi pata ki vo log alag kyu ho gye.
+ANS:- i didnt get why they broke up.
+
+210. aap mujhe galat samajh rahe hai.
+ANS:- you are getting me wrong.
+
+211. thoda milk bhi le lena.
+ANS:- get some milk as well.
+
+212. ye apne kitne rs ka kharida.
+ANS:- how much did you get this for.
+
+213. kya tumhe kal mera email mila tha.
+ANS:- did you get my email yerterday.
+
+214. thoda aur kursiya lado.
+ANS:- please get me some more chairs.
+
+215. ham ye kam kisi aur se krwa lenege.
+ANS:- we will get it done by someone else.
+
+GET == recieved/find=milna
+
+216. apko apka pen mil gaya kya?
+ANS:- did you get your pen? did you get your key.
+
+217. kya tumhe nayi naukri mil gayi kya?
+ANS:- have you got new job?
+
+218. ye mujhe mere birthday par mila.
+ANS:- i got this on my birthday.
+
+219. please mujhe ek glass pani do.
+ANS:- please get me a glass of water.
+
+220. aap mere liye kya laye hai.
+ANS:- what did you got for me?
+
+
+GET- karwana 
+use of get in smart english starts here
+that mean kam na mai karungi na hi tum karoge, kam koi aur karega
+
+221. mai ye kam kal tak krwa dunga.
+ANS:- i will get it done by tommorow.
+
+222. sir mai aaj office nhi aa paungi kyuki aaj mai apna ghr paint krwa rhi hu.
+ANS:- sir, i wilnt be able to  come office today because im getting my house painted. 
+
+223.meri gadi chal nhi rahi hai to mai apni gadi repair kara rha hu.
+ANS:- my car has brkoen down, im getting it repaired/fixed.
+
+224. mai apni ghadi thik krwa rha hu.
+ANS:- im getting my watch fixed.
+
+225. apne bal katwalo.
+ANS:- get your hair hair cut.
+
+226. table saf karwalo.
+ANS:- get the table cleaned.
+
+227. mai sunday ko bal katwaungi.
+ANS:- i will get my hair cut on sunday.
+      im going to get my hair cut on sunday.
+
+
+GET- kisiko kisi kam ke liye convince krna ya manana.
+
+228. mai use yah kam free me krne ke liye mana lunga.
+ANS:- i will get him to do this work for free.
+
+229. bht der discussion ke bad maine use maine use mana liya.
+ANS:- after lots of discussiion, i finallly get him to agree with me.
+
+230. ye kam usse karwana bht muskil hai.
+ANS:- its very difficult to get this done by him.
+
+HAVE GOT TO(gotta)- karna padega, mtlab forcefully krna paddega. 
+HAVE GOT A- hai 
+
+231. mujhe ye kam krna padega.
+ANS:- i have got to do.
+
+232. mujhe jana padega.
+ANS:- i have got to go.
+
+233. tumhe mere bacho ko school se pick krna padega.
+ANS:- you have got to pickup my kids from school.
+you gotta pickup my kids from school.
+
+234. mere pas tumhare liye ek idea hai.
+ANS:- i have got an idea for you.
+
+GET- kisi cheej ko bahar na nikal pane ya nikal dene ke case me
+ex:- get out of the class
+
+235. mai use apne dimag se bahar nhi nikal pa rha hu.
+ANS:- i can't get him out of my mind.
+
+236. mai us incident ko apne dimag se bahar nhi nikal pa rha hu.
+ANS:- i cant get that incident out of my mind.
+
+237. maine apko call krne ki bht koshish ki but apka call nhi mila.
+ANS:- i tried to call you but counld not get through.
+get thought means call connect nhi ho paya.
+
+238. kya tumhara jukham thik ho gaya hai.
+ANS:- have you got over your cold.
+
+we follow british english in india.
+
+239. mera bukhar abhi tk thik nhi hua hai.
+ANS:- i have not gotten over  my fever yet.
+
+240. ab iss kam ko khtm krte hai.
+ANS:- lets get it done now.
+
+241. mai nhi samjha ki aap kya kahna chahte ho.
+ANS:- i didnt get what do you want to say.
+
+242. ham iss fact se bhag nhi sakte.
+ANS:- i cant get away from this fact.
+
+243. tumhe uske bare me kaise pta chala?
+ANS:- how did you get to know about her.
+
+244. meri meri rishtedaro se nhi banti.
+ANS:- i can't get along with my relatives.
+
+245. mai kisi samasya me nhi fasna chahti hu.
+ANS:- i dont want to get into any trouble.
+
+246. kya aap bata sakte hai ki vaha kaise jana hai?
+ANS:- could you tell me how to get there.
+
+247. meri mere boss ke sath nhi banati
+ANs:- i dont get on well with my boss.
+
+248. mai in sabse dur jana chahti hu.
+ANS:- i want to get away from it all.
+
+249. ofice ke aaj ke incidence ne mjye bht neecha kar diya ya demotivate kr diya.
+ANS:- todays office incident really get me down.
+
+
+
+
+
 
 
 
