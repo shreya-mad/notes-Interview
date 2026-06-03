@@ -694,7 +694,208 @@ just imagine ki hamne ek blog page hai usme views,comments,likes aa rha hai us p
 
 same cheej ham comment aur like ke case me bhi kr skte h to ise hi ham streaming bolte h mtlb server se data streaming.
 
+## hydration 
+it is the process of adding interactivity to our pre rendered html pages.
+Ques:- ya hydration tbhi hota h jb hamre pas client compoent ho?
+ANS:-  nhi, ye server component me bhi hota hai.
+agar hamare project me pure html element hoga to bhi hydration hota hai. isme developement mode me ye check krega ki jo server se renderf hhau tha vhi yha render ho rha aur agr kuch different render ho rha hoga to ye hydration error dega.
 
+WHY WE GET HYDRATION ERROR?
+ANS:- whenever anything tried to modify DOM then it will through hydration error. we get hydration error only in case of developement mode, not in production mode.hydration error se developement mode me error ata h prod me nhi to isse ye profit h ki next js bata deta h ki jo tum rhe usme user experince ke perspective se  kuch glt ho rha hai.
+like ham agr time ya random no(math.random) print kr rhe h to server aur client pe different different hoga to phir ye hydration error dega.
+
+if we are fetching data freom two cdifferent api and one is taking 5 sec and another is taking 10 sec them whole data will  load after 10 sec.
+so we can handle it using various ways 
+1. sleep in end of the api and 
+2. another one is suspense.
+3. break all the api in components
+4. use promise.All if we are not allowed to break into compoents
+
+
+## how we can render server component in client component
+
+if we have imported server componet in client component then it will become client component. to isme ham ye dekhenge ki client compoent me jb server compoent ko impor krnege to vo client compoent i tarah nhi jabki server component ki tarah hi behave krega aur ye client compoent ki tarah behave nhi krega.
+
+manlo ki hamne ek parent component banaya joki server component hai aur phir usme ek child component lagaya joki joki client hai aur pjir usme ek child component lagaya joki server comooent tha but cleint compoent me import kr diya to phir vo cleint compoent ban gya to aise me hame ye krna ha ki jo second child compoent h usko client componenet na balki server compoent hi render karwana hai to aise me jo jo data ham child1 se child2 me pas kr rhe the usko an ham parent se hi as a prop pass kr deneg aur phir us prop ko child1 me get krke disnplay krnwa denge.
+
+EXAMPLE:-
+
+> child2 behave as client component
+
+PARENT COMPONENT(server)
+
+import Child1 from "./Child1";
+
+export default function Page() {
+
+  console.log("Parent Server Component");
+
+  return (
+    <div>
+      <h1>Parent Component</h1>
+
+      <Child1 />
+    </div>
+  );
+}
+
+CHILD1 COMPONENT(client )
+
+"use client";
+
+import Child2 from "./Child2";
+
+export default function Child1() {
+
+  console.log("Child1 Client Component");
+
+  const students = [
+    "Rahul",
+    "Aman",
+    "Priya",
+    "Shreya"
+  ];
+
+  return (
+    <div>
+      <h2>Child1 Component</h2>
+
+      {
+        students.map((student, index) => (
+          <Child2
+            key={index}
+            name={student}
+          />
+        ))
+      }
+    </div>
+  );
+}
+
+CHILD2 COMPONENT(server but will behave like client due to imported in cleint)
+
+export default function Child2({ name }) {
+
+if(typeof window=='undefined')
+  console.log("Child2 Component is server compoent");
+  else
+  console.log("Child2 Component is client component");
+
+
+  return (
+    <div>
+      Student Name : {name}
+    </div>
+  );
+}
+
+> now we will set it so that child2 will behave as server compoent 
+
+PARENT COMPONENT(server)
+
+import Child1 from "./Child1";
+import Child2 from "./Child2";
+
+export default function Page() {
+
+  console.log("Parent Server Component");
+
+  const students = [
+    "Rahul",
+    "Aman",
+    "Priya",
+    "Shreya"
+  ];
+
+  return (
+    <div>
+      <h1>Parent Component</h1>
+
+      <Child1
+        studentsList={students.map((student, index) => (
+    <Child2
+      key={index}
+      name={student}
+    />
+  ))}
+      />
+    </div>
+  );
+}
+
+CHILD1 COMPONENT(client )
+
+"use client";
+
+export default function Child1({ studentsList }) {
+
+  console.log("Child1 Client Component");
+
+  return (
+    <div>
+      <h2>Child1 Component</h2>
+
+      {studentsList}
+    </div>
+  );
+}
+
+
+CHILD2 COMPONENT(server and will behave like server as well)
+
+export default function Child2({ name }) {
+
+if(typeof window=='undefined')
+  console.log("Child2 Component is server compoent");
+  else
+  console.log("Child2 Component is client component");
+
+
+  return (
+    <div>
+      Student Name : {name}
+    </div>
+  );
+};
+
+---
+
+jab koi component server component hota h to uska code browser ke js file me nhi ata hai.
+
+> jab kisi ek page pe error ata  h to next js me pura app crash kr jata hai.
+
+
+
+# NEXT JS OPTIMISATION
+## avoid making components client side:- 
+ avoid making any server compnent to client component by declaring 'use client'. make client component to  only those component which needs client ineraction.
+
+it will help to avoid hydration process which doesnt not required any browser interaction. hydrartion occur only in client component where server send html and then  browser download js then react run attach events and then hydration completed wahile in case of server component server directly sent html and browser shows this html.
+in case of client component hyration proces and js downloading process takes time.
+
+### Visual Difference
+
+- Server Component
+
+Server
+ ↓
+HTML
+ ↓
+Browser
+
+- Client Component
+
+Server
+ ↓
+HTML
+ ↓
+Browser
+ ↓
+Download JS
+ ↓
+React attaches events
+ ↓
+Hydration Complete
 
 
 
